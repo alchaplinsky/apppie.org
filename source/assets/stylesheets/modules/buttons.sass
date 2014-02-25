@@ -1,0 +1,52 @@
+.button
+  display: inline-block
+  padding: 10px 15px
+  font-size: 1.2em
+  line-height: 1.31rem
+  //line-height: 1.3125rem
+  cursor: pointer
+  +border-radius(5px)
+  color: #fff
+  background-color: #00b2a3
+  border:
+    color: #00b2a3
+    width: 0px
+  text-decoration: none
+  +transition(background .2s)
+  &:hover
+    color: #fff
+    background: darken(#00b2a3, 2%)
+  &:active
+    background: darken(#00b2a3, 5%)
+  &.warning
+    background-color: #fec800
+    border-color: #fec500
+    &:hover
+      color: #fff
+      background: darken(#fec800, 2%)
+    &:active
+      background: darken(#fec800, 5%)
+  &.directed
+    position: relative
+    padding-right: 10px
+    +border-radius(5px 0 0 5px)
+    &:after
+      content: ""
+      position: absolute
+      left: 100%
+      top: 50%
+      height: 0
+      width: 0
+      margin: -21px 0 0 0
+      background-color: transparent
+      border:
+        color: inherit
+        top: 20px solid transparent
+        bottom: 21px solid transparent
+        left:
+          width: 10px
+          style: solid
+      +transition(border-color .2s)
+    &:hover
+      &:after
+        border-left-color: darken(#00b2a3, 2%)

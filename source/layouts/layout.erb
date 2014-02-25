@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title><%= current_page.data.title || "ApplePie" %></title>
+  <%= stylesheet_link_tag "application" %>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <%= javascript_include_tag  "all" %>
+</head>
+<body class="<%= page_classes %>">
+  <nav class="navbar">
+    <%= link_to image_tag('logo.png', class: 'logo'), '/'%>
+    <ul class="navigation">
+      <li><%= link_to "Approach", '/approach', class: "approach"%></li>
+      <li><%= link_to "Toolkit", '/toolkit', class: "toolkit"%></li>
+      <li><%= link_to "FAQ", '/faq', class: 'faq'%></li>
+      <li><a href="http://github.com/alchapone/applepie" class="github">GitHub</a></li>
+    </ul>
+  </nav>
+  <section class="content">
+    <section class="body">
+      <%= yield %>
+      <footer class="footer">
+        <div class="container">
+          <%= image_tag 'rw_logo.png'%>
+        </div>
+      </footer>
+    </section>
+  </section>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("section.body").height($(window).height());
+    });
+  </script>
+</body>
+</html>

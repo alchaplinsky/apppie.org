@@ -1,0 +1,22 @@
+.contact-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+  font-family: 'Ruda'
+  text-transform: capitalize
+  a
+    text-decoration: none
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2)
+    &[href^='http']
+      &:after
+        content: ""
+        opacity: .3
+        vertical-align: middle
+        display: inline-block
+        margin:
+          left: .3rem
+          top: -3px
+        width: .8rem
+        height: .66rem
+        background: image-url('new_tab.png') no-repeat center center transparent
+        background-size: cover

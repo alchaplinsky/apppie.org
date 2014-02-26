@@ -11,9 +11,9 @@
   <nav class="navbar">
     <%= link_to image_tag('logo.png', class: 'logo'), '/'%>
     <ul class="navigation">
-      <li><%= link_to "Approach", '/approach', class: "approach"%></li>
-      <li><%= link_to "Toolkit", '/toolkit', class: "toolkit"%></li>
-      <li><%= link_to "FAQ", '/faq', class: 'faq'%></li>
+      <li><%= link_to "Approach", '/views/approach', class: "approach"%></li>
+      <li><%= link_to "Toolkit", '/views/toolkit', class: "toolkit"%></li>
+      <!-- <li><%= link_to "FAQ", '/views/faq', class: 'faq'%></li> -->
       <li><a href="http://github.com/alchapone/applepie" class="github">GitHub</a></li>
     </ul>
   </nav>
@@ -22,7 +22,33 @@
       <%= yield %>
       <footer class="footer">
         <div class="container">
-          <%= image_tag 'rw_logo.png'%>
+          <div class="left">
+            <a href="http://railsware.com"><%= image_tag 'rw_logo.png'%></a>
+          </div> <!-- /left -->
+          <div class="row ohidden pll">
+            <div class="col1of2 prs">
+              <h6 class="mbs">Contacts</h6>
+              <ul class="contact-list">
+                <li>
+                  <a href="mailto:applepie@railsware.com">Mail us</a>
+                </li>
+              </ul>
+            </div> <!-- /col1of2 -->
+            <div class="col1of2 pls">
+              <h6 class="mbs">Railsware OSS</h6>
+              <ul class="contact-list">
+                <li>
+                  <a href="http://scaffy.railsware.com/">Scaffy</a>
+                </li>
+                <li>
+                  <a href="https://github.com/railsware/jdt">JDT</a>
+                </li>
+                <li>
+                  <a href="http://github.com/railsware/caphub">CapHub</a>
+                </li>
+              </ul>
+            </div> <!-- /col1of2 -->
+          </div> <!-- /row -->
         </div>
       </footer>
     </section>

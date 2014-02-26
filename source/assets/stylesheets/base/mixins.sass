@@ -8,3 +8,24 @@
   -moz-transition: $properties
   -o-transition: $properties
   transition: $properties
+
+=box-sizing($property: border-box)
+  -webkit-box-sizing: $property
+  -moz-box-sizing: $property
+  box-sizing: $property
+
+=vertical-gradient($from, $to)
+  background: $to
+  background-repeat: repeat-x
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $from), color-stop(100%, $to)) // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, $from, $to) // Safari 5.1+, Chrome 10+
+  background-image: -moz-linear-gradient(top, $from, $to) // FF 3.6+
+  background-image: -ms-linear-gradient(top, $from, $to) // IE10
+  background-image: -o-linear-gradient(top, $from, $to) // Opera 11.10
+  background-image: linear-gradient(top, $from, $to) // The standard
+
+=box-shadow($properties)
+  -webkit-box-shadow: $properties
+  -moz-box-shadow: $properties
+  -o-box-shadow: $properties
+  box-shadow: $properties

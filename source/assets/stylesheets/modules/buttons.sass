@@ -1,3 +1,5 @@
+$buttonDefaultColor: #00b2a3
+$buttonWarningColor: #fec800
 .button
   display: inline-block
   padding: 10px 15px
@@ -7,25 +9,18 @@
   cursor: pointer
   +border-radius(5px)
   color: #fff
-  background-color: #00b2a3
+  background-color: $buttonDefaultColor
   border:
-    color: #00b2a3
+    color: $buttonDefaultColor
     width: 0px
   text-decoration: none
   +transition(background .2s)
   &:hover
     color: #fff
-    background: darken(#00b2a3, 2%)
+    background: darken($buttonDefaultColor, 2%)
   &:active
-    background: darken(#00b2a3, 5%)
-  &.warning
-    background-color: #fec800
-    border-color: #fec500
-    &:hover
-      color: #fff
-      background: darken(#fec800, 2%)
-    &:active
-      background: darken(#fec800, 5%)
+    background: darken($buttonDefaultColor, 5%)
+    +box-shadow(none)
   &.directed
     position: relative
     padding-right: 10px
@@ -37,16 +32,35 @@
       top: 50%
       height: 0
       width: 0
-      margin: -21px 0 0 0
+      margin: -20px 0 0 0
       background-color: transparent
       border:
         color: inherit
         top: 20px solid transparent
-        bottom: 21px solid transparent
+        bottom: 20px solid transparent
         left:
           width: 10px
           style: solid
       +transition(border-color .2s)
     &:hover
       &:after
-        border-left-color: darken(#00b2a3, 2%)
+        border-left-color: darken($buttonDefaultColor, 2%)
+    &:active
+      &:after
+        border-left-color: darken($buttonDefaultColor, 5%)
+  &.warning
+    background-color: $buttonWarningColor
+    border-color: $buttonWarningColor
+    &:hover
+      color: #fff
+      background: darken($buttonWarningColor, 2%)
+      &:after
+        border-left-color: darken($buttonWarningColor, 2%)
+    &:active
+      background: darken($buttonWarningColor, 5%)
+      &:after
+        border-left-color: darken($buttonWarningColor, 5%)
+  .presenter &
+    +box-shadow(none)
+    &:active
+      +box-shadow(-1px -1px 5px rgba(0,0,0,.1))

@@ -2,6 +2,7 @@ html, body
   height: 100%
   margin: 0
   padding: 0
+  background: #81807a
 
 nav.navbar
   float: left
@@ -36,12 +37,19 @@ section.content
 
 section.body
   overflow: scroll
+  position: relative
   margin-bottom: -1px
+  +box-sizing()
 
 .container
   margin: 0 60px
   max-width: 1040px
 
 footer.footer
-  background: #81807a
+  +vertical-gradient(#72746e, #81807a)
+  //background: #81807a
   padding: 40px 0
+
+.row
+  &.ohidden
+    overflow: hidden

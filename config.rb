@@ -39,11 +39,22 @@
 # activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def section_class
+    if /approach/ =~ current_page.url
+      'arroach'
+    elsif /toolkit/ =~ current_page.url
+      'toolkit'
+    elsif /faq/ =~ current_page.url
+      'faq'
+    end
+  end
+
+  def navigation_helper(page)
+    match = /#{page}/ =~ current_page.url
+    return match.nil? ? '' : 'class="current"'
+  end
+end
 
 set :css_dir, 'assets/stylesheets'
 
@@ -56,17 +67,22 @@ set :fonts_dir, 'assets/fonts'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
 end

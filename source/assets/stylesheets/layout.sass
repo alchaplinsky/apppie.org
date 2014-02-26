@@ -2,7 +2,7 @@ html, body
   height: 100%
   margin: 0
   padding: 0
-  background: #81807a
+  background: #fff
 
 nav.navbar
   float: left
@@ -11,11 +11,18 @@ nav.navbar
   background: #222222
 
 header.header
-  padding: 0 40px
-  height: 80px
+  padding: 15px 40px
+  height: 40px
   width: 100%
-  background: #72746e
   color: #fff
+  &.approach
+    background: #fec600
+  &.toolkit
+    background: #04aa9d
+  &.faq
+    background: #f8581f
+  h1
+    font: 1.875rem 'Play'
 
 section.content
   overflow: hidden
@@ -39,17 +46,11 @@ section.body
   overflow: scroll
   position: relative
   margin-bottom: -1px
-  +box-sizing()
 
 .container
-  margin: 0 60px
+  margin: 0 40px
   max-width: 1040px
 
 footer.footer
   +vertical-gradient(#72746e, #81807a)
-  //background: #81807a
   padding: 40px 0
-
-.row
-  &.ohidden
-    overflow: hidden

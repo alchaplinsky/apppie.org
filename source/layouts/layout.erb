@@ -7,13 +7,13 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <%= javascript_include_tag  "all" %>
 </head>
-<body class="<%= page_classes %>">
+<body class="<%= section_class %>">
   <nav class="navbar">
-    <%= link_to image_tag('logo.png', class: 'logo'), '/'%>
+    <%= link_to 'ApplePie', '/', class: 'logo'%>
     <ul class="navigation">
-      <li><%= link_to "Approach", '/views/approach', class: "approach"%></li>
-      <li><%= link_to "Toolkit", '/views/toolkit', class: "toolkit"%></li>
-      <!-- <li><%= link_to "FAQ", '/views/faq', class: 'faq'%></li> -->
+      <li <%= navigation_helper('approach')%>><%= link_to "Approach", '/views/approach', class: "approach"%></li>
+      <li <%= navigation_helper('toolkit')%>><%= link_to "Toolkit", '/views/toolkit', class: "toolkit"%></li>
+      <li <%= navigation_helper('faq')%>><%= link_to "FAQ", '/views/faq', class: 'faq'%></li>
       <li><a href="http://github.com/alchapone/applepie" class="github">GitHub</a></li>
     </ul>
   </nav>
@@ -21,11 +21,11 @@
     <section class="body">
       <%= yield %>
       <footer class="footer">
-        <div class="container">
+        <div class="container row">
           <div class="left">
             <a href="http://railsware.com"><%= image_tag 'rw_logo.png'%></a>
           </div> <!-- /left -->
-          <div class="row ohidden pll">
+          <div class="last-col pll">
             <div class="col1of2 prs">
               <h6 class="mbs">Contacts</h6>
               <ul class="contact-list">

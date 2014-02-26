@@ -2,22 +2,31 @@
   list-style: none
   margin: 0
   padding: 0
-  li a
-    display: block
-    padding: 50px 10px 10px 10px
-    border-bottom: 1px solid #2a2a2a
-    text-align: center
-    font-size: 12px
-    color: #62645f
-    text-decoration: none
-    +transition(background .4s)
-    &.approach
-      background: image-url('approach.png') no-repeat center 10px
-    &.toolkit
-      background: image-url('toolkit.png') no-repeat center 10px
-    &.faq
-      background: image-url('faq.png') no-repeat center 10px
-    &.github
-      background: image-url('github.png') no-repeat center 10px
-    &:hover
+  li
+    a
+      display: block
+      padding: 50px 10px 10px 10px
+      border-bottom: 1px solid #2a2a2a
+      text-align: center
+      font-size: 12px
+      color: #62645f
+      text-decoration: none
+      +transition(background .4s)
+      &.approach
+        background: image-url('approach.png') no-repeat center 10px
+      &.toolkit
+        background: image-url('toolkit.png') no-repeat center 10px
+      &.faq
+        background: image-url('faq.png') no-repeat center 10px
+      &.github
+        background: image-url('github.png') no-repeat center 10px
+      &:hover
+        background-color: #121212
+    &.current a
       background-color: #121212
+      &.approach
+        +box-shadow(inset 3px 0 0 0 #fec600)
+      &.toolkit
+        +box-shadow(inset 3px 0 0 0 #04aa9d)
+      &.faq
+        +box-shadow(inset 3px 0 0 0 #f8581f)

@@ -29,3 +29,17 @@
   -moz-box-shadow: $properties
   -o-box-shadow: $properties
   box-shadow: $properties
+
+=background-size($size)
+  -webkit-background-size: $size
+  -moz-background-size: $size
+  -o-background-size: $size
+  background-size: $size
+
+=user-select($properties)
+  -webkit-touch-callout: $properties
+  -khtml-user-select: $properties
+  -ms-user-select: $properties
+  -webkit-user-select: $properties
+  -moz-user-select: -moz-$properties
+  user-select: $properties

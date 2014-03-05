@@ -5,22 +5,33 @@
   text-indent: -9999px
   background: #121212 image-url('logo.png') 0 0
   border-bottom: 1px solid #2a2a2a
+  +transition($nav-transition)
   .arroach &
     background-color: #ca8237
-    background-position: 0 -70px
   .toolkit &
     background-color: #099386
-    background-position: 0 -140px
   .faq &
     background-color: #aa2e24
-    background-position: 0 -210px
 
 .brand
-  font: 1.875rem 'Play'
+  height: 70px
+  +box-sizing(border-box)
+  .brand-logo
+    position: relative
+    top: 4px
+    background: image-url('logo-lettering.svg') no-repeat center left transparent
+    display: inline-block
+    text-indent: -99999em
+    font-size: 1.875rem
+    line-height: 2rem
+    width: 6.4rem
   .authorship
+    margin-left: .2rem
     font:
-      family: initial
+      family: Tahoma
       size: .55rem
+      weight: normal
+    line-height: .7rem
     display: inline-block
     .company
       display: block

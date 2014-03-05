@@ -12,77 +12,89 @@
   <nav class="navbar">
     <%= link_to 'ApplePie', '/', class: 'logo'%>
     <ul class="navigation">
-      <li <%= navigation_helper('approach')%>><%= link_to "Approach", '/views/approach', class: "approach"%></li>
-      <li <%= navigation_helper('toolkit')%>><%= link_to "Toolkit", '/views/toolkit', class: "toolkit"%></li>
-      <li <%= navigation_helper('faq')%>><%= link_to "FAQ", '/views/faq', class: 'faq'%></li>
-      <li><a href="http://github.com/alchapone/applepie" class="github">GitHub</a></li>
+      <li <%= navigation_helper('approach')%>>
+        <% link_to('/views/approach', { :class => 'approach'}) do %>
+          <span class="icon-approach"></span>
+          Approach
+        <% end %>
+      </li>
+      <li <%= navigation_helper('toolkit')%>>
+        <% link_to('/views/toolkit', { :class => 'toolkit'}) do %>
+          <span class="icon-toolkit"></span>
+          Toolkit
+        <% end %>
+      </li>
+      <li <%= navigation_helper('faq')%>>
+        <% link_to('/views/faq', { :class => 'faq'}) do %>
+          <span class="icon-faq"></span>
+          FAQ
+        <% end %>
+      </li>
+      <li>
+        <a href="http://github.com/alchapone/applepie" class="github">
+          <span class="icon-github"></span>
+          GitHub
+        </a>
+      </li>
     </ul>
   </nav>
   <section class="content">
     <section class="body">
       <%= yield %>
-      <footer class="footer">
-        <div class="container row">
-          <div class="left">
-            <a href="http://railsware.com"><%= image_tag 'rw_logo.png'%></a>
-          </div> <!-- /left -->
-          <div class="last-col pll">
-            <div class="col2of3 prs">
-              <div class="col1of2">
-                <h6 class="mbs intensive">Products</h6>
-                <ul class="footer-list">
-                  <li>
-                    <a href="http://pivotalbooster.com/">PivotalBooster</a>
-                  </li>
-                  <li>
-                    <a href="http://piro.railsware.com/">PiRo</a>
-                  </li>
-                  <li>
-                    <a href="http://mailtrap.io/">Mailtrap</a>
-                  </li>
-                </ul>
-              </div> <!-- /col1of2 -->
-              <div class="col1of2">
-                <h6 class="mbs intensive">Experience</h6>
-                <ul class="footer-list">
-                  <li>
-                    <a href="http://railsware.github.io/">OpenSource</a>
-                  </li>
-                  <li>
-                    <a href="http://railsware.com/blog/">Blog</a>
-                  </li>
-                </ul>
-              </div> <!-- /col1of2 -->
-            </div> <!-- /col1of2 -->
-            <div class="col1of3 pls">
-              <h6 class="mbs">Contacts</h6>
-              <ul class="footer-list">
-                <li>
-                  <a href="mailto:applepie@railsware.com">Mail us</a>
-                </li>
-                <li>
-                  <a href="https://github.com/alchapone">Alex</a> and <a href="https://github.com/varg">Dmitry</a> on GitHub
-                </li>
-                <li>
-                  <a href="https://twitter.com/a1chapone">Alex's twitter</a>
-                </li>
-              </ul>
-            </div> <!-- /col1of2 -->
-          </div> <!-- /row -->
-        </div>
-      </footer>
     </section>
   </section>
+  <footer class="footer">
+    <div class="container row">
+      <div class="left">
+        <a href="http://railsware.com" class="crafted"><!-- crafted by Railsware --></a>
+      </div> <!-- /left -->
+      <div class="last-col pll">
+        <div class="col2of3 prs">
+          <div class="col1of2">
+            <h6 class="mbs intensive">Products</h6>
+            <ul class="footer-list">
+              <li>
+                <a href="http://pivotalbooster.com/">PivotalBooster</a>
+              </li>
+              <li>
+                <a href="http://piro.railsware.com/">PiRo</a>
+              </li>
+              <li>
+                <a href="http://mailtrap.io/">Mailtrap</a>
+              </li>
+            </ul>
+          </div> <!-- /col1of2 -->
+          <div class="col1of2">
+            <h6 class="mbs intensive">Experience</h6>
+            <ul class="footer-list">
+              <li>
+                <a href="http://railsware.github.io/">OpenSource</a>
+              </li>
+              <li>
+                <a href="http://railsware.com/blog/">Blog</a>
+              </li>
+            </ul>
+          </div> <!-- /col1of2 -->
+        </div> <!-- /col1of2 -->
+        <div class="col1of3 pls">
+          <h6 class="mbs">Contacts</h6>
+          <ul class="footer-list">
+            <li>
+              <a href="mailto:applepie@railsware.com">Mail us</a>
+            </li>
+            <li>
+              <a href="https://github.com/alchapone">Alex</a> and <a href="https://github.com/varg">Dmitry</a> on GitHub
+            </li>
+            <li>
+              <a href="https://twitter.com/a1chapone">Alex's twitter</a>
+            </li>
+          </ul>
+        </div> <!-- /col1of2 -->
+      </div> <!-- /row -->
+    </div>
+  </footer>
   <script type="text/javascript">
     $(document).ready(function(){
-
-      function elResize(el) {
-        $(el).height($(window).height());
-      }
-      elResize("section.body")
-      $(window).resize(function(){
-        elResize("section.body");
-      })
 
       hljs.configure({classPrefix: ''});
       hljs.configure({tabReplace: '<span class="indent">\t</span>'});

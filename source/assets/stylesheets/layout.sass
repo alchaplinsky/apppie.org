@@ -1,64 +1,72 @@
+$mainGray: #72746e
+
 html, body
   height: 100%
   margin: 0
   padding: 0
   background: #fff
-  font-family: "Open Sans"
+  font-family: "Tahoma"
+
+body
+
 
 nav.navbar
+  position: fixed
+  left: 0
+  top: 0
   float: left
   width: 80px
   height: 100%
   background: #222222
+  z-index: 1
 
-header.header
+header
   padding: 15px 40px
-  height: 70px
-  width: 100%
-  color: #fff
   +box-sizing(border-box)
-  position: fixed
-  top: 0
-  background: #72746e
-  &.approach
-    background: #fec600
-  &.toolkit
-    background: #04aa9d
-  &.faq
-    background: #f8581f
-  h1
-    font: 1.875rem 'Play'
+  height: 70px
+  color: #fff
+  &.header
+    width: 100%
+    position: fixed
+    top: 0
+    &.approach
+      background: #fec600
+    &.toolkit
+      background: #04aa9d
+    &.faq
+      background: #f8581f
+    h1
+      font:
+        size: 1.875rem
+        family: "Maven Pro"
+      line-height: 1em
 
 section.content
   overflow: hidden
-  display: table-cell
+  //display: table-cell
   float: none
   width: auto
+  margin:
+    bottom: -175px
+    left: 80px
+  min-height: 100%
   _margin-right: -3px
   _left: -3px
   _position: relative
   *display: block
   *zoom: 1
   &:after
+    height: 175px
     content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     clear: both
     display: block
-    height: 1px !important
     line-height: 0
     visibility: hidden
+
 
 section.body
   overflow: scroll
   position: relative
-  margin-bottom: -1px
-  &:before
-    content: ''
-    display: block
-    height: 70px
-  &:after
-    content: ''
-    display: block
-    height: 175px
   > .container
     margin:
       top: 30px
@@ -69,8 +77,10 @@ section.body
   max-width: 1040px
 
 footer.footer
-  +vertical-gradient(#72746e, #81807a)
+  background-color: #81807a
   padding: 40px 0
-  position: fixed
-  bottom: 0
-  width: 100%
+  height: 175px
+  position: relative
+  z-index: 11
+  margin-left: 80px
+  +box-sizing(border-box)

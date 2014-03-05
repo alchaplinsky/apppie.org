@@ -3,9 +3,11 @@ $buttonWarningColor: #fec800
 .button
   display: inline-block
   padding: 10px 15px
-  font-size: 1.2em
+  font:
+    size: 1.5em
+    family: "Maven Pro"
   line-height: 1.31rem
-  //line-height: 1.3125rem
+  letter-spacing: -.05em
   cursor: pointer
   +border-radius(5px)
   color: #fff
@@ -15,6 +17,7 @@ $buttonWarningColor: #fec800
     width: 0px
   text-decoration: none
   +transition(background .2s)
+  +user-select(none)
   &:hover
     color: #fff
     background: darken($buttonDefaultColor, 2%)

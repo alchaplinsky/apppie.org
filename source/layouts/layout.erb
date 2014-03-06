@@ -20,7 +20,7 @@
         <% end %>
       </li>
       <li <%= navigation_helper('toolkit')%>>
-        <% link_to('/views/toolkit', { :class => 'toolkit'}) do %>
+        <% link_to('/views/toolkit/grid.html', { :class => 'toolkit'}) do %>
           <span class="icon-toolkit"></span>
           Toolkit
         <% end %>
@@ -96,7 +96,7 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
-      $("section.content").height($(window).height());
+      $(".subnavigation").height($(document).height() - $('.header').height() - $('.footer').outerHeight());
       hljs.configure({classPrefix: ''});
       hljs.configure({tabReplace: '<span class="indent">\t</span>'});
       $('code').each(function(i, e) {hljs.highlightBlock(e)});

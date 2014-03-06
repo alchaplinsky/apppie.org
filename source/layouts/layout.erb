@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title><%= current_page.data.title || "ApplePie" %></title>
+  <%=favicon_tag "favicon.ico" %>
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "http://yandex.st/highlightjs/8.0/styles/default.min.css" %>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -95,7 +96,6 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
-
       hljs.configure({classPrefix: ''});
       hljs.configure({tabReplace: '<span class="indent">\t</span>'});
       $('code').each(function(i, e) {hljs.highlightBlock(e)});

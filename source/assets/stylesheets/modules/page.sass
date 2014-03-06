@@ -1,0 +1,30 @@
+$pages: approach #fec400, toolkit #04aa9e, faq #f8581f
+
+@each $page in $pages
+  body.#{nth($page, 1)}
+    .logo
+      background-color: darken(nth($page, 2), 15)
+      background-image: image-url('pie-white.svg')
+
+    article.main h1
+      border-bottom-color: nth($page, 2)
+      color: nth($page, 2)
+
+    header.header
+      background-color: nth($page, 2)
+      background-image: image-url('hero-#{nth($page, 1)}.svg')
+
+    .navigation
+      li
+        &.current a
+          +box-shadow(inset 3px 0 0 0 #{nth($page, 2)})
+          [class^="icon-"], [class*="icon-"]
+            color: nth($page, 2)
+
+header.header
+  background-position: center right
+  background-repeat: no-repeat
+  +background-size( auto 100%)
+
+body.approach header.header
+  margin-right: -10px

@@ -42,7 +42,7 @@
 helpers do
   def section_class
     if /approach/ =~ current_page.url
-      'arroach'
+      'approach'
     elsif /toolkit/ =~ current_page.url
       'toolkit'
     elsif /faq/ =~ current_page.url

@@ -4,10 +4,14 @@ html, body
   height: 100%
   margin: 0
   padding: 0
-  background: #fff
 
 body
   min-width: 640px
+  background-color: $mainGray
+  &[class]
+    background-color: white
+    section.body
+      padding-top: 70px
 
 nav.navbar
   position: fixed
@@ -20,11 +24,14 @@ nav.navbar
   z-index: 1
 
 header
-  padding: 15px 40px
-  +box-sizing(border-box)
-  height: 70px
-  color: #fff
   &.header
+    padding: 15px 40px
+    +box-sizing(border-box)
+    height: 70px
+    color: #fff
+    background-position: center right
+    background-repeat: no-repeat
+    +background-size(auto 100%)
     width: 100%
     position: fixed
     top: 0
@@ -39,7 +46,6 @@ header
 
 section.content
   overflow: hidden
-  //display: table-cell
   float: none
   width: auto
   margin:
@@ -63,6 +69,8 @@ section.content
 section.body
   overflow: scroll
   position: relative
+  height: 100%
+  +box-sizing(border-box)
   > .container
     margin:
       top: 30px

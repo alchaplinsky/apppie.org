@@ -9,7 +9,7 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <%= javascript_include_tag  "all" %>
 </head>
-<body class="<%= section_class %>">
+<body <%=section_class ? "class=#{section_class}" : nil%>>
   <nav class="navbar">
     <%= link_to 'ApplePie', '/', class: 'logo'%>
     <ul class="navigation">
@@ -96,6 +96,7 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
+      $("section.content").height($(window).height());
       hljs.configure({classPrefix: ''});
       hljs.configure({tabReplace: '<span class="indent">\t</span>'});
       $('code').each(function(i, e) {hljs.highlightBlock(e)});

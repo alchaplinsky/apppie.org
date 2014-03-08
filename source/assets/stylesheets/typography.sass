@@ -36,70 +36,71 @@
 body
   font:
     family: Verdana
-    size: 0.75rem
+    size: 0.85rem
   color: #484848
   line-height: 1.5
   -webkit-font-smoothing: antialiased
 
-h1, h2, h3, h4, h5, h6
-  margin: 0
-  font-family: 'Maven Pro'
-  letter-spacing: -.05em
+*:not(.example)
+  h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-family: 'Maven Pro'
+    letter-spacing: -.05em
 
-h1
-  font-size: 2rem
-  .presenter &
-    font: 3.5rem/1 'Maven Pro'
-    line-height: 1
-    text-shadow: 1px 1px 0px rgba(0,0,0,.3)
+  h1
+    font-size: 2rem
+    .presenter &
+      font: 3.5rem/1 'Maven Pro'
+      line-height: 1
+      text-shadow: 1px 1px 0px rgba(0,0,0,.3)
 
-h2
-  font:
-    size: 1.875rem
-    weight: 300
-  line-height: 1em
-  .emphasis
-    color: #ff2501
+  h2
+    font:
+      size: 1.875rem
+      weight: 300
+    line-height: 1em
+    .emphasis
+      color: #ff2501
 
-h3
-  font:
-    weight: 300
-    size: 1.7rem
+  h3
+    font:
+      weight: 300
+      size: 1.7rem
 
-h4
-  font:
-    weight: 300
-    size: 1.5rem
+  h4
+    font:
+      weight: 300
+      size: 1.5rem
 
-h5
-  font:
-    weight: 300
-    size: 1.25rem
+  h5
+    font:
+      weight: 300
+      size: 1.25rem
 
-h6
-  font:
-    weight: 300
-    size: .9rem
-  text-transform: uppercase
-  .footer &
-    font: 400 .9rem/1 "Armata"
-    color: rgba(255,255,255, .8)
-    padding-bottom: .5rem
+  h6
+    font:
+      weight: 300
+      size: .9rem
     text-transform: uppercase
-    border-bottom: 1px solid rgba(255,255,255, .3)
-    text-shadow: 1px 1px 0px rgba(0,0,0,.2)
-  .footer &.intensive
-    border-bottom-color: #f1c002
+    .footer &
+      font: 400 .9rem/1 "Armata"
+      color: rgba(255,255,255, .8)
+      padding-bottom: .5rem
+      text-transform: uppercase
+      border-bottom: 1px solid rgba(255,255,255, .3)
+      text-shadow: 1px 1px 0px rgba(0,0,0,.2)
+    .footer &.intensive
+      border-bottom-color: #f1c002
 
-p + p
-  margin: 1rem 0
-  line-height: 1.5em
+  p + p
+    margin: 1rem 0
+    line-height: 1.5em
 
-a
-  color: rgba(0,0,0, 0.7)
-  &:hover
-    text-decoration: none
-    opacity: .7
-  .footer &
-    color: rgba(255,255,255, .8)
-    text-decoration: none
+  a
+    color: rgba(0,0,0, 0.7)
+    &:hover
+      text-decoration: none
+      opacity: .7
+    .footer &
+      color: rgba(255,255,255, .8)
+      text-decoration: none

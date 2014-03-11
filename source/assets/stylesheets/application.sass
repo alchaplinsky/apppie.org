@@ -3,25 +3,27 @@
 @import "base/normalize"
 @import "base/grid"
 @import "base/helpers"
-@import "base/spaces"
+*:not(.example)
+  @import "base/spaces"
 
 //Basics
 @import "typography"
 @import "layout"
 
 //Modules
-@import "modules/navigation"
-@import "modules/buttons"
-@import "modules/sections"
-@import "modules/brand"
-@import "modules/by-ribbon"
-@import "modules/footer-list"
-@import "modules/code"
-@import "modules/crafted"
-@import "modules/page"
-@import "modules/article"
-@import "modules/subnavigation"
-@import "modules/example"
+*:not(.example)
+  @import "modules/navigation"
+  @import "modules/buttons"
+  @import "modules/sections"
+  @import "modules/brand"
+  @import "modules/by-ribbon"
+  @import "modules/footer-list"
+  @import "modules/code"
+  @import "modules/crafted"
+  @import "modules/page"
+  @import "modules/article"
+  @import "modules/subnavigation"
+  @import "modules/example"
 
 //Sections
 

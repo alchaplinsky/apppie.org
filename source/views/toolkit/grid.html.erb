@@ -14,6 +14,52 @@
   <li>It uses "box-sizing: border-box," so that borders and padding do not affect the overall width of the columns</li>
 </ul>
     <h2>Helpers</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p>
+      Helpers is scope that provides some global tools that developers use to define simple element behavior which cannot be treated as element-specific. According to tendency to code elements location independent, these rules cannot be included within element (object or module) style rules.
+    </p>
+    <p>
+      So considering written above, we separated them as isolated classes which can be added to any element to bring needed effect. They can be appraised as a global modifier classes.
+    </p>
+    <p>
+      Obviously, each developer has own helpers or something that makes life easier. So feel free to add anything you feel considerable to <code class="inline">helpers.sass</code>
+    </p>
+    <pre><code lang="scss" class="scss">
+      .right {
+          float: right;
+        }
+
+        .left {
+          float: left;
+        }
+
+        .center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .relative {
+          position: relative;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .by-left {
+          text-align: left;
+        }
+
+        .by-right {
+          text-align: right;
+        }
+
+        .by-center {
+          text-align: center;
+        }
+
+        .fittogrid {
+          max-width: 100%;
+        }
+      </code></pre>
   </div> <!-- /article-content -->
 </article>

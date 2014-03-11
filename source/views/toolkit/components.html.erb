@@ -5,6 +5,195 @@
 <article class="main">
   <h1>Components</h1>
   <div class="article-content">
+    <div class="component">
+      <h2>Navigation</h2>
+      <div class="example">
+        <div class="navbar"></div>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+        <pre><code>
+          &lt;ul class="navigation"&gt;
+            &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        </code></pre>
+    </div> <!-- /component -->
+    <div class="component">
+      <h3>Inside navbar</h3>
+      <p></p>
+      <div class="example">
+        <div class="navbar">
+          <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <pre><code>
+        &lt;div class="navbar"&gt;
+          &lt;ul class="navigation"&gt;
+            &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div> <!-- /component -->
+    <div class="component">
+      <h2>Tabs</h2>
+      <div class="example">
+        <ul class="tabs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div> <!-- /example -->
+      <pre><code>
+        &lt;ul class="tabs"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      </code></pre>
+    </div> <!-- /component -->
+    <div class="component">
+      <h2>Pagination</h2>
+      <div class="example">
+        <ul class="pagination">
+          <li class="prev"><a href="#">&lt;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li class="next"><a href="#">&gt;</a></li>
+        </ul>
+      </div> <!-- /example -->
+      <pre><code>
+        &lt;ul class="pagination"&gt;
+          &lt;li class="prev"&gt;&lt;a href="#"&gt;&amp;lt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">3&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">4&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">5&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="next"&gt;&lt;a href="#"&gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      </code></pre>
+    </div> <!-- /component -->
+    <div class="component">
+      <h2>Flash</h2>
+      <div class="example">
+        <div class="flash mbs">
+          Flash message: default
+        </div> <!-- /flash -->
+        <div class="flash error mbs">
+          Flash message: error
+        </div> <!-- /flash -->
+        <div class="flash warning mbs">
+          Flash message: warning
+        </div> <!-- /flash -->
+        <div class="flash success">
+          Flash message: success
+        </div> <!-- /flash -->
+      </div> <!-- /example -->
+      <pre><code>
+          &lt;div class="flash"&gt;
+            Flash message: default
+          &lt;/div&gt;
+
+          &lt;div class="flash error"&gt;
+            Flash message: error
+          &lt;/div&gt;
+
+          &lt;div class="flash warning"&gt;
+            Flash message: warning
+          &lt;/div&gt;
+
+          &lt;div class="flash success"&gt;
+            Flash message: success
+          &lt;/div&gt;
+      </code></pre>
+    </div> <!-- /component -->
+    <div class="component">
+      <h2>Buttons</h2>
+      <div class="example">
+        <button class="button">Button: default</button>
+        <button class="button warning">Button: warning</button>
+        <button class="button success">Button: success</button>
+        <button class="button disabled">Button: disabled</button>
+      </div> <!-- /example -->
+      <div class="example">
+        <a href="#" class="button">Button: default</a>
+        <a href="#" class="button warning">Button: warning</a>
+        <a href="#" class="button success">Button: success</a>
+        <a href="#" class="button disabled">Button: disabled</a>
+      </div> <!-- /example -->
+      <pre><code>
+        &lt;button class=&quot;button&quot;&gt;Button: default&lt;/button&gt;
+        &lt;button class=&quot;button warning&quot;&gt;Button: warning&lt;/button&gt;
+        &lt;button class=&quot;button success&quot;&gt;Button: success&lt;/button&gt;
+        &lt;button class=&quot;button disabled&quot;&gt;Button: disabled&lt;/button&gt;
+      </code></pre>
+      <pre><code>
+        &lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button: default&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;button warning&quot;&gt;Button: warning&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;button success&quot;&gt;Button: success&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Button: disabled&lt;/a&gt;
+      </code></pre>
+    </div> <!-- /component -->
+      <h2>Buttons Modifications</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Iconed Buttons</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Input</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Textarea</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Select</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 class="mbm">Tables</h2>
+    <div class="component">
+      <pre><code class="scss">
+        @mixin table {
+          width: 100%;
+          td, th {
+            border: 1px solid #eee;
+          }
+          td {
+            padding: 10px 15px;
+          }
+          th {
+            padding: 15px;
+            background: #fff;
+            border-bottom: 2px solid #eee;
+            font-weight: bold;
+            text-align: left;
+          }
+          tr {
+            background: #fff;
+          }
+          tr:nth-child(odd) {
+            background: #fbfbfb;
+          }
+        }
+      </code></pre>
+    </div> <!-- /component -->
+  </div> <!-- /article-content -->
+</article>
+<%= render_partial "subnavigation" %>
+<header class="header">
+  <h1>Toolkit</h1>
+</header>
+<article class="main">
+  <h1>Components</h1>
+  <div class="article-content">
     <h2>Navigation</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class="example">
@@ -15,12 +204,13 @@
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
-<pre><code>&lt;ul class="navigation"&gt;
-  &lt;li&gt;&lt;a href="#">Home</a>&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#">Docs</a>&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#">Blog</a>&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+      <pre><code>
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      </code></pre>
     <h3>Inside navbar</h3>
     <p></p>
     <div class="example">
@@ -32,16 +222,26 @@
         </ul>
       </div>
     </div>
-    <pre><code>&lt;div class="navbar"&gt;
-  &lt;ul class="navigation"&gt;
-    &lt;li&gt;&lt;a href="#">Home</a>&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#">Docs</a>&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#">Blog</a>&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+    <pre><code>
+      &lt;div class="navbar"&gt;
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    </code></pre>
     <h2>Tabs</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div class="component">
+      <div class="example">
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+      </div> <!-- /example -->
+    </div> <!-- /component -->
     <h2>Pagination</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     <h2>Flash</h2>
@@ -60,28 +260,130 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     <h2 class="mbm">Tables</h2>
     <div class="component">
-      <pre><code class="scss">@mixin table {
-  width: 100%;
-  td, th {
-    border: 1px solid #eee;
-  }
-  td {
-    padding: 10px 15px;
-  }
-  th {
-    padding: 15px;
-    background: #fff;
-    border-bottom: 2px solid #eee;
-    font-weight: bold;
-    text-align: left;
-  }
-  tr {
-    background: #fff;
-  }
-  tr:nth-child(odd) {
-    background: #fbfbfb;
-  }
-}</code></pre>
+      <pre><code class="scss">
+        @mixin table {
+          width: 100%;
+          td, th {
+            border: 1px solid #eee;
+          }
+          td {
+            padding: 10px 15px;
+          }
+          th {
+            padding: 15px;
+            background: #fff;
+            border-bottom: 2px solid #eee;
+            font-weight: bold;
+            text-align: left;
+          }
+          tr {
+            background: #fff;
+          }
+          tr:nth-child(odd) {
+            background: #fbfbfb;
+          }
+        }
+      </code></pre>
+    </div> <!-- /component -->
+  </div> <!-- /article-content -->
+</article>
+<%= render_partial "subnavigation" %>
+<header class="header">
+  <h1>Toolkit</h1>
+</header>
+<article class="main">
+  <h1>Components</h1>
+  <div class="article-content">
+    <h2>Navigation</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="example">
+      <div class="navbar"></div>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+      <pre><code>
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      </code></pre>
+    <h3>Inside navbar</h3>
+    <p></p>
+    <div class="example">
+      <div class="navbar">
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <pre><code>
+      &lt;div class="navbar"&gt;
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    </code></pre>
+    <h2>Tabs</h2>
+    <div class="component">
+      <div class="example">
+        &lt;ul class="navigation"&gt;
+          &lt;li&gt;&lt;a href="#">Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#">Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+      </div> <!-- /example -->
+    </div> <!-- /component -->
+    <h2>Pagination</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Flash</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Buttons</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <h2>Buttons Modifications</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Iconed Buttons</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Input</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Textarea</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2>Select</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 class="mbm">Tables</h2>
+    <div class="component">
+      <pre><code class="scss">
+        @mixin table {
+          width: 100%;
+          td, th {
+            border: 1px solid #eee;
+          }
+          td {
+            padding: 10px 15px;
+          }
+          th {
+            padding: 15px;
+            background: #fff;
+            border-bottom: 2px solid #eee;
+            font-weight: bold;
+            text-align: left;
+          }
+          tr {
+            background: #fff;
+          }
+          tr:nth-child(odd) {
+            background: #fbfbfb;
+          }
+        }
+      </code></pre>
     </div> <!-- /component -->
   </div> <!-- /article-content -->
 </article>

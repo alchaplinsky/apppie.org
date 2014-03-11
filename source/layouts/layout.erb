@@ -96,10 +96,15 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
-      $("section.body > .subnavigation").height($("section.content").height() - $("header.header").outerHeight())
+      $("section.body > .subnavigation").height($("section.content").height() - $("header.header").outerHeight());
       hljs.configure({classPrefix: ''});
       hljs.configure({tabReplace: '<span class="indent">\t</span>'});
-      $('code').each(function(i, e) {hljs.highlightBlock(e)});
+      $('code').each(function(i, e) {
+        hljs.highlightBlock(e);
+        console.log($(this).html());
+        $(this).html(htmlClean($(this).html()));
+        console.log($(this).html());
+      });
     });
   </script>
 </body>

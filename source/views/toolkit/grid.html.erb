@@ -5,15 +5,78 @@
 <article class="main">
   <h1>Grid and Helpers</h1>
   <div class="article-content">
-    <h2>Grid</h2>
     <p>ApplePie Grid is easy to work with and very powerfull tool for building complex flexible and responsive layouts. This grid 6-column nestable grid which is really simple because it is  based on proportions rather than columns count. It is similar to <a href="https://github.com/stubbornella/oocss/wiki/Grids">OOCSS Grid</a> with extra features and more consistent naming.</p>
-<ul>
-  <li>Minimalistic and simple grid based on proportions (allows you not to count collumns but divide page into half, thirds, fourth, etc.)</li>
-  <li>It is fluid and doesn't use fixed width for columns, so can scale to an arbitrary size (defined by the max width of the row)</li>
-  <li>Infinite nesting and stacking</li>
-  <li>It uses "box-sizing: border-box," so that borders and padding do not affect the overall width of the columns</li>
-</ul>
-    <h2>Helpers</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <ul>
+      <li>Minimalistic and simple grid based on proportions (allows you not to count collumns but divide page into half, thirds, fourth, etc.)</li>
+      <li>It is fluid and doesn't use fixed width for columns, so can scale to an arbitrary size (defined by the max width of the row)</li>
+      <li>Infinite nesting and stacking</li>
+      <li>It uses "box-sizing: border-box," so that borders and padding do not affect the overall width of the columns</li>
+    </ul>
+    <h3>Usage</h3>
+    <p>Creating grid is pretty simple. Just add element with a class of <strong class="highlight">row</strong> to create a horizontal block that will contain vertical columns. Row basically acts as css <strong>clearfix</strong> to fight the <a href="http://complexspiral.com/publications/containing-floats/" target="_blank">zero-height container problem</a>.</p>
+      <p>Columns are represented by various class names that describe their widths. For instance <strong class="highlight">.col1of2</strong> has a width of 50%, and <strong class="highlight">.col1of5</strong>  would have a width of 20%</p>
+      <p>All content which is visible to users needs to be contained inside a grid column. This ensures that the content will be rendered properly.</p>
+      <p>Let's start with a simple example. Here's a grid with three equal columns:</p>
+      <code class="mbl"><pre>&lt;body&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col1of3"&gt;
+      &lt;!-- Content for first column --&gt;
+    &lt;/div&gt;
+    &lt;div class="col1of3"&gt;
+      &lt;!-- Content for second column --&gt;
+    &lt;/div&gt;
+    &lt;div class="col1of3"&gt;
+      &lt;!-- Content for third column --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</pre></code>
+    <h3>Grid Collumn Sizes</h3>
+    <p>ApplePie ships with 6-collumn grid. Why not 12 or 24 collumns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest collumns inside other collumns). And it is more convinient to think about collumns in terms of proportions rather thanthink about how much space will take 4 collumns out of 24 or 8 collumns out of 24.</p>
+    <p>Collumns don't always have to be equal width, you can mix different collumn width inside one row, but they should not take more than 100% width or parent row element. Depending on your needs you can create mixed grids:</p>
+    <code class="mbm"><pre>&lt;div class="row"&gt;
+  &lt;div class="col2of3"&gt;
+    &lt;!-- Content for first column --&gt;
+  &lt;/div&gt;
+  &lt;div class="col1of3"&gt;
+    &lt;!-- Content for second column --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+    <p>or</p>
+    <code class="mbm"><pre>&lt;div class="row"&gt;
+  &lt;div class="col1of4"&gt;
+    &lt;!-- Content for first column --&gt;
+  &lt;/div&gt;
+  &lt;div class="col1of2"&gt;
+    &lt;!-- Content for second column --&gt;
+  &lt;/div&gt;
+  &lt;div class="col1of4"&gt;
+    &lt;!-- Content for third column --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+
+    <h3>Nesting Grids</h3>
+    <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid collumn should also be divided into collumns - you can nest grids as many times as you need. Remember that collumn width is calculated related to a parent element, not overal page width. So if you place <strong class="highlight">col1of3</strong> into another collumn of width 480px, you'll get a 160px width fraction.</p> <p>Trivial example: you have main content and a sidebar and there are 3 collumns of text in main section - following markup will solve this problem:</p>
+    <code class="mbm"><pre>&lt;div class="row"&gt;
+  &lt;div class="col3of4"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col1of3"&gt;
+        &lt;!-- Content collumn one --&gt;
+      &lt;/div&gt;
+      &lt;div class="col1of3"&gt;
+        &lt;!-- Content collumn two --&gt;
+      &lt;/div&gt;
+      &lt;div class="col1of3"&gt;
+        &lt;!-- Content collumn three --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col1of4"&gt;
+    &lt;!-- Sidebar --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+    <h3>Grid Gutters</h3>
+    <p>By default ApplePie grid collumns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to collumns - this won't break layout because of use of <em>box-sizing: border-box</em>.</p>
+    <h3>Responsive Grid</h3>
+    <p>-----TO DO----------</p>
   </div> <!-- /article-content -->
 </article>

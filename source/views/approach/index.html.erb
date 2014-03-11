@@ -2,7 +2,7 @@
   <h1>Approach</h1>
 </header>
 <article class="main">
-  <h1>ApplePie at a glance</h1>
+  <h1>Overview</h1>
   <div class="article-content">
     <p>Everyone’s wish is easy-maintainable, simple code that accomplishes initial goal of building product.</p>
     <p>But real life often shows that designs are often done in chunks with weeks gap between ones, fixes fit ok at the very end of huge CSS file, adding new rule is more effective that investigatng into existing, coding element in way it will work just here and that’s it, short-hand class names are understandable enough and its not essentially that guy from other team should share your practices and approaches or at least be aware of them.</p>
@@ -18,6 +18,7 @@
     </p>
     <p>
       And we are going to accomplish that by:
+    </p>
       <ul>
         <li>define approach, share and follow it</li>
         <li>assembling all elements (objects, modules etc.) into UI library with design process involved</li>
@@ -25,7 +26,6 @@
         <li>use simple, semantic and human class names</li>
         <li>avoid to use hacks.</li>
       </ul>
-    </p>
     <h3>Independency</h3>
     <p>Current web apps tendency/fashion is about building interfaces from independent elements. ApplePie approach stands for flexibility in re-using anything that was already created. That seems obvious when its a button but somehow its missed when element is composite. Main idea is to think about elements as building blocks from semantic and logical perspective and then code composite elements independently. “Independently” means that each element has its own world with own rules and does not know about other elements’ worlds and rules. Elements should be as small and independent as logic allows.</p>
     <p>In chasing code beaty and consiceness its always a temptation to take out all rules that are repeated. But doing so, its important to keep elements’ independency in mind. Stop every time when “taking out” of common rule could hurt independency.</p>

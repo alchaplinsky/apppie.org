@@ -58,7 +58,30 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     <h2>Select</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    <h2>Tables</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 class="mbm">Tables</h2>
+    <div class="component">
+      <pre><code class="scss">@mixin table {
+  width: 100%;
+  td, th {
+    border: 1px solid #eee;
+  }
+  td {
+    padding: 10px 15px;
+  }
+  th {
+    padding: 15px;
+    background: #fff;
+    border-bottom: 2px solid #eee;
+    font-weight: bold;
+    text-align: left;
+  }
+  tr {
+    background: #fff;
+  }
+  tr:nth-child(odd) {
+    background: #fbfbfb;
+  }
+}</code></pre>
+    </div> <!-- /component -->
   </div> <!-- /article-content -->
 </article>

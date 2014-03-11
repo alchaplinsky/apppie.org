@@ -59,7 +59,7 @@ section.content
   *display: block
   *zoom: 1
   &:after
-    height: 175px
+    height: 1px
     content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     clear: both
     display: block
@@ -72,6 +72,11 @@ section.body
   position: relative
   height: 100%
   +box-sizing(border-box)
+  &:after
+    // footer push
+    content: ""
+    display: block
+    height: 175px
   > .container
     margin:
       top: 30px

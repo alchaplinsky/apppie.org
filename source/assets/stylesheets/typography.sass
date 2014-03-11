@@ -43,9 +43,9 @@ body
 
 *:not(.example)
   h1, h2, h3, h4, h5, h6
-    margin: 0
     font-family: 'Maven Pro'
     letter-spacing: -.05em
+    margin: 0
 
   h1
     font-size: 2rem
@@ -98,12 +98,35 @@ body
 
   a
     color: rgba(0,0,0, 0.7)
+    border-bottom: 1px solid rgba(255,255,255, .3)
+    text-shadow: 1px 1px 0px rgba(0,0,0,.2)
     &:hover
       text-decoration: none
       opacity: .7
     .footer &
       color: rgba(255,255,255, .8)
       text-decoration: none
+      border-bottom: none
+  .footer &.intensive
+    border-bottom-color: #f1c002
+
+p
+  margin: .2rem 0 1.2rem
+  + p
+    margin: 1rem 0 .8rem
+    line-height: 1.5em
+
+a
+  color: rgba(0,0,0, 0.7)
+  &:hover
+    text-decoration: none
+    opacity: .7
+  .footer &
+    color: rgba(255,255,255, .8)
+    text-decoration: none
+  .example &
+    text-shadow: none
+    -webkit-font-smoothing: auto
 
   .highlight
     color: #04aa9e

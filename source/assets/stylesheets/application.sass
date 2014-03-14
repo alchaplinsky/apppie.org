@@ -3,29 +3,33 @@
 @import "base/normalize"
 @import "base/grid"
 @import "base/helpers"
-*:not(.example)
-  @import "base/spaces"
+@import "base/fonts"
+@import "base/spaces"
 
 //Basics
 @import "typography"
 @import "layout"
 
+// Vendor
+@import "vendor/prism"
+
 //Modules
-*:not(.example)
-  @import "modules/navigation"
-  @import "modules/buttons"
-  @import "modules/sections"
-  @import "modules/brand"
-  @import "modules/by-ribbon"
-  @import "modules/footer-list"
-  @import "modules/code"
-  @import "modules/crafted"
-  @import "modules/page"
-  @import "modules/article"
-  @import "modules/subnavigation"
-  @import "modules/example"
+@import "modules/navigation"
+@import "modules/buttons"
+@import "modules/sections"
+@import "modules/brand"
+@import "modules/by-ribbon"
+@import "modules/footer-list"
+@import "modules/code"
+@import "modules/crafted"
+@import "modules/page"
+@import "modules/article"
+@import "modules/subnavigation"
+@import "modules/example"
 
 //Sections
 
-.example
+body article .example
+  @import "base/normalize"
+
   @import "applepie"

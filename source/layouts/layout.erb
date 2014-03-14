@@ -5,8 +5,8 @@
   <title><%= current_page.data.title || "ApplePie" %></title>
   <%=favicon_tag "favicon.ico" %>
   <%= stylesheet_link_tag "application" %>
-  <%= stylesheet_link_tag "http://yandex.st/highlightjs/8.0/styles/default.min.css" %>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/prism.js" data-manual></script>
   <%= javascript_include_tag  "all" %>
 </head>
 <body <%=section_class ? "class=#{section_class}" : nil%>>
@@ -96,15 +96,12 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
-      $("section.body > .subnavigation").height($("section.content").height() - $("header.header").outerHeight());
-      hljs.configure({classPrefix: ''});
-      hljs.configure({tabReplace: '<span class="indent">\t</span>'});
+      $("section.body > .subnavigation").height($(document).height() - $("header.header").outerHeight() - $("footer.footer").outerHeight());
       $('code').each(function(i, e) {
-        hljs.highlightBlock(e);
-        console.log($(this).html());
-        $(this).html(htmlClean($(this).html()));
-        console.log($(this).html());
+        if (!($(this).is("[class*='language-']"))) $(this).addClass("language-markup");
+        $(this).html(codeClean($(this).html()));
       });
+      Prism.highlightAll();
     });
   </script>
 </body>

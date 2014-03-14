@@ -7,7 +7,7 @@
   <div class="article-content">
     <p>ApplePie Grid is easy to work with and very powerfull tool for building complex flexible and responsive layouts. This grid 6-column nestable grid which is really simple because it is  based on proportions rather than columns count. It is similar to <a href="https://github.com/stubbornella/oocss/wiki/Grids">OOCSS Grid</a> with extra features and more consistent naming.</p>
     <ul>
-      <li>Minimalistic and simple grid based on proportions (allows you not to count collumns but divide page into half, thirds, fourth, etc.)</li>
+      <li>Minimalistic and simple grid based on proportions (allows you not to count columns but divide page into half, thirds, fourth, etc.)</li>
       <li>It is fluid and doesn't use fixed width for columns, so can scale to an arbitrary size (defined by the max width of the row)</li>
       <li>Infinite nesting and stacking</li>
       <li>It uses "box-sizing: border-box," so that borders and padding do not affect the overall width of the columns</li>
@@ -17,65 +17,72 @@
       <p>Columns are represented by various class names that describe their widths. For instance <strong class="highlight">.col1of2</strong> has a width of 50%, and <strong class="highlight">.col1of5</strong>  would have a width of 20%</p>
       <p>All content which is visible to users needs to be contained inside a grid column. This ensures that the content will be rendered properly.</p>
       <p>Let's start with a simple example. Here's a grid with three equal columns:</p>
-      <code class="mbl"><pre>&lt;body&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col1of3"&gt;
-      &lt;!-- Content for first column --&gt;
-    &lt;/div&gt;
-    &lt;div class="col1of3"&gt;
-      &lt;!-- Content for second column --&gt;
-    &lt;/div&gt;
-    &lt;div class="col1of3"&gt;
-      &lt;!-- Content for third column --&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;</pre></code>
-    <h3>Grid Collumn Sizes</h3>
-    <p>ApplePie ships with 6-collumn grid. Why not 12 or 24 collumns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest collumns inside other collumns). And it is more convinient to think about collumns in terms of proportions rather thanthink about how much space will take 4 collumns out of 24 or 8 collumns out of 24.</p>
-    <p>Collumns don't always have to be equal width, you can mix different collumn width inside one row, but they should not take more than 100% width or parent row element. Depending on your needs you can create mixed grids:</p>
-    <code class="mbm"><pre>&lt;div class="row"&gt;
-  &lt;div class="col2of3"&gt;
-    &lt;!-- Content for first column --&gt;
-  &lt;/div&gt;
-  &lt;div class="col1of3"&gt;
-    &lt;!-- Content for second column --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></code>
+      <pre class="mbl"><code class="language-markup">
+        &lt;body&gt;
+          &lt;div class="row"&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content for first column --&gt;
+            &lt;/div&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content for second column --&gt;
+            &lt;/div&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content for third column --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/body&gt;
+    </code></pre>
+    <h3>Grid Column Sizes</h3>
+    <p>ApplePie ships with 6-column grid. Why not 12 or 24 columns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest columns inside other columns). And it is more convinient to think about columns in terms of proportions rather thanthink about how much space will take 4 columns out of 24 or 8 columns out of 24.</p>
+    <p>Columns don't always have to be equal width, you can mix different column width inside one row, but they should not take more than 100% width or parent row element. Depending on your needs you can create mixed grids:</p>
+    <pre class="mbm"><code class="language-markup">
+      &lt;div class="row"&gt;
+        &lt;div class="col2of3"&gt;
+          &lt;!-- Content for first column --&gt;
+        &lt;/div&gt;
+        &lt;div class="col1of3"&gt;
+          &lt;!-- Content for second column --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
     <p>or</p>
-    <code class="mbm"><pre>&lt;div class="row"&gt;
-  &lt;div class="col1of4"&gt;
-    &lt;!-- Content for first column --&gt;
-  &lt;/div&gt;
-  &lt;div class="col1of2"&gt;
-    &lt;!-- Content for second column --&gt;
-  &lt;/div&gt;
-  &lt;div class="col1of4"&gt;
-    &lt;!-- Content for third column --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></code>
-
+    <pre class="mbm"><code class="language-markup">
+      &lt;div class="row"&gt;
+        &lt;div class="col1of4"&gt;
+          &lt;!-- Content for first column --&gt;
+        &lt;/div&gt;
+        &lt;div class="col1of2"&gt;
+          &lt;!-- Content for second column --&gt;
+        &lt;/div&gt;
+        &lt;div class="col1of4"&gt;
+          &lt;!-- Content for third column --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
     <h3>Nesting Grids</h3>
-    <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid collumn should also be divided into collumns - you can nest grids as many times as you need. Remember that collumn width is calculated related to a parent element, not overal page width. So if you place <strong class="highlight">col1of3</strong> into another collumn of width 480px, you'll get a 160px width fraction.</p> <p>Trivial example: you have main content and a sidebar and there are 3 collumns of text in main section - following markup will solve this problem:</p>
-    <code class="mbm"><pre>&lt;div class="row"&gt;
-  &lt;div class="col3of4"&gt;
-    &lt;div class="row"&gt;
-      &lt;div class="col1of3"&gt;
-        &lt;!-- Content collumn one --&gt;
+    <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid column should also be divided into columns - you can nest grids as many times as you need. Remember that column width is calculated related to a parent element, not overal page width. So if you place <strong class="highlight">col1of3</strong> into another column of width 480px, you'll get a 160px width fraction.</p> <p>Trivial example: you have main content and a sidebar and there are 3 columns of text in main section - following markup will solve this problem:</p>
+    <pre class="mbm"><code class="language-markup">
+      &lt;div class="row"&gt;
+        &lt;div class="col3of4"&gt;
+          &lt;div class="row"&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content column one --&gt;
+            &lt;/div&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content column two --&gt;
+            &lt;/div&gt;
+            &lt;div class="col1of3"&gt;
+              &lt;!-- Content column three --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col1of4"&gt;
+          &lt;!-- Sidebar --&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class="col1of3"&gt;
-        &lt;!-- Content collumn two --&gt;
-      &lt;/div&gt;
-      &lt;div class="col1of3"&gt;
-        &lt;!-- Content collumn three --&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="col1of4"&gt;
-    &lt;!-- Sidebar --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></code>
+    </code></pre>
     <h3>Grid Gutters</h3>
-    <p>By default ApplePie grid collumns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to collumns - this won't break layout because of use of <em>box-sizing: border-box</em>.</p>
+    <p>By default ApplePie grid columns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to columns &ndash; this won't break layout because of use of <em>box-sizing: border-box</em>.</p>
     <h3>Responsive Grid</h3>
     <p>-----TO DO----------</p>
   </div> <!-- /article-content -->

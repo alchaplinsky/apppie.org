@@ -6,9 +6,12 @@ $pages: approach #fec400, toolkit #04aa9e, faq #f8581f
       background-color: darken(nth($page, 2), 15)
       background-image: image-url('pie-white.svg')
 
-    article.main h1
-      border-bottom-color: nth($page, 2)
-      color: nth($page, 2)
+    article.main
+      h1
+        border-bottom-color: nth($page, 2)
+        color: nth($page, 2)
+      a
+        color: nth($page, 2)
 
     header.header
       background-color: nth($page, 2)

@@ -87,7 +87,7 @@
               <a href="https://github.com/alchapone">Alex</a> and <a href="https://github.com/varg">Dmitry</a> on GitHub
             </li>
             <li>
-              <a href="https://twitter.com/a1chapone">Alex's twitter</a>
+              <a href="https://twitter.com/a1chapone">Alex</a> and <a href="https://twitter.com/varg_ua">Dmitry</a> twitters
             </li>
           </ul>
         </div> <!-- /col1of2 -->
@@ -129,12 +129,11 @@
   <!-- /Yandex.Metrika counter -->
   <script type="text/javascript">
     $(document).ready(function(){
-      $("section.body > .subnavigation").height($(document).height() - $("header.header").outerHeight() - $("footer.footer").outerHeight());
-      $('code').each(function(i, e) {
-        if (!($(this).is("[class*='language-']"))) $(this).addClass("language-markup");
-        $(this).html(codeClean($(this).html()));
-      });
+      $('div.component').each(function(){makeComponent($(this));});
+      $('code').each(function(i, e) {codePrepare($(this));});
       Prism.highlightAll();
+      totalHeight = $(document).height() > $("section.body").height() ? $(document).height() : $("section.body").outerHeight()
+      $("section.body > .subnavigation").height(totalHeight - $("header.header").outerHeight() - $("footer.footer").outerHeight());
     });
   </script>
 </body>

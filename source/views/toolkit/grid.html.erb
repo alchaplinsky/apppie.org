@@ -13,8 +13,8 @@
       <li>It uses "box-sizing: border-box," so that borders and padding do not affect the overall width of the columns</li>
     </ul>
     <h3>Usage</h3>
-    <p>Creating grid is pretty simple. Just add element with a class of <strong class="highlight">row</strong> to create a horizontal block that will contain vertical columns. Row basically acts as css <strong>clearfix</strong> to fight the <a href="http://complexspiral.com/publications/containing-floats/" target="_blank">zero-height container problem</a>.</p>
-      <p>Columns are represented by various class names that describe their widths. For instance <strong class="highlight">.col1of2</strong> has a width of 50%, and <strong class="highlight">.col1of5</strong>  would have a width of 20%</p>
+    <p>Creating grid is pretty simple. Just add element with a class of <code class="inline">row</code> to create a horizontal block that will contain vertical columns. Row basically acts as css <code>clearfix</code> to fight the <a href="http://complexspiral.com/publications/containing-floats/" target="_blank">zero-height container problem</a>.</p>
+      <p>Columns are represented by various class names that describe their widths. For instance <code>.col1of2</code> has a width of 50%, and <code>.col1of5</code>  would have a width of 20%</p>
       <p>All content which is visible to users needs to be contained inside a grid column. This ensures that the content will be rendered properly.</p>
       <p>Let's start with a simple example. Here's a grid with three equal columns:</p>
       <pre class="mbl"><code class="language-markup">
@@ -33,7 +33,7 @@
         &lt;/body&gt;
     </code></pre>
     <h3>Grid Column Sizes</h3>
-    <p>ApplePie ships with 6-column grid. Why not 12 or 24 columns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest columns inside other columns). And it is more convinient to think about columns in terms of proportions rather thanthink about how much space will take 4 columns out of 24 or 8 columns out of 24.</p>
+    <p>ApplePie ships with 6-column grid. Why not 12 or 24 columns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest columns inside other columns). And it is more convenient to think about columns in terms of proportions rather than think about how much space will take 4 columns out of 24 or 8 columns out of 24.</p>
     <p>Columns don't always have to be equal width, you can mix different column width inside one row, but they should not take more than 100% width or parent row element. Depending on your needs you can create mixed grids:</p>
     <pre class="mbm"><code class="language-markup">
       &lt;div class="row"&gt;
@@ -60,7 +60,8 @@
       &lt;/div&gt;
     </code></pre>
     <h3>Nesting Grids</h3>
-    <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid column should also be divided into columns - you can nest grids as many times as you need. Remember that column width is calculated related to a parent element, not overal page width. So if you place <strong class="highlight">col1of3</strong> into another column of width 480px, you'll get a 160px width fraction.</p> <p>Trivial example: you have main content and a sidebar and there are 3 columns of text in main section - following markup will solve this problem:</p>
+    <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid column should also be divided into columns - you can nest grids as many times as you need. Remember that column width is calculated related to a parent element, not overall page width. So if you place <code class="inline">col1of3</strong> into another column of 480px, you'll get a 160px wide fraction.</p>
+    <p>Trivial example: you have main content and a sidebar and there are 3 columns of text in main section - following markup will solve this problem:</p>
     <pre class="mbm"><code class="language-markup">
       &lt;div class="row"&gt;
         &lt;div class="col3of4"&gt;
@@ -82,7 +83,7 @@
       &lt;/div&gt;
     </code></pre>
     <h3>Grid Gutters</h3>
-    <p>By default ApplePie grid columns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to columns &ndash; this won't break layout because of use of <em>box-sizing: border-box</em>.</p>
+    <p>By default ApplePie grid columns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to columns &ndash; this won't break layout because of use of <code class="inline language-css">box-sizing: border-box</code>.</p>
     <h3>Responsive Grid</h3>
     <p>-----TO DO----------</p>
   </div> <!-- /article-content -->

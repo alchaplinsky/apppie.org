@@ -4,8 +4,8 @@
 <article class="main">
   <h1>Overview</h1>
   <div class="article-content">
-    <p>Everyone’s wish is easy-maintainable, simple code that accomplishes initial goal of building product.</p>
-    <p>But real life often shows that designs are often done in chunks with weeks gap between ones, fixes fit ok at the very end of huge CSS file, adding new rule is more effective that investigatng into existing, coding element in way it will work just here and that’s it, short-hand class names are understandable enough and its not essentially that guy from other team should share your practices and approaches or at least be aware of them.</p>
+    <p>Easy-maintainable, simple code that accomplishes initial goal of building product is everyone’s wish.</p>
+    <p>But real life demonstrates that designs are often done in chunks with weeks gap between ones without solid app vision, fixes fit ok at the very end of huge CSS file with MOAR selector weight, adding new rule is more effective that investigatng into existing, coding element in way it will work just here and that’s it, short-hand class names are understandable enough and its not essentially that guy from other team should share your practices and approaches or at least be aware of them.</p>
     <p>
       So our approach starts from getting away from
       <ul>
@@ -27,10 +27,13 @@
         <li>avoid to use hacks.</li>
       </ul>
     <h3>Independency</h3>
-    <p>Current web apps tendency/fashion is about building interfaces from independent elements. ApplePie approach stands for flexibility in re-using anything that was already created. That seems obvious when its a button but somehow its missed when element is composite. Main idea is to think about elements as building blocks from semantic and logical perspective and then code composite elements independently. “Independently” means that each element has its own world with own rules and does not know about other elements’ worlds and rules. Elements should be as small and independent as logic allows.</p>
-    <p>In chasing code beaty and consiceness its always a temptation to take out all rules that are repeated. But doing so, its important to keep elements’ independency in mind. Stop every time when “taking out” of common rule could hurt independency.</p>
+    <p>Current web apps fashion is about building interfaces from independent elements. ApplePie approach stands for flexibility in re-using anything that was already created. That seems obvious when its a button but somehow its missed when element is composite. Main idea is to think about elements as building blocks from semantic and logical perspective and then code composite elements independently. “Independently” means that each element has its own world with own rules and does not know about other elements’ worlds and rules. Elements should be as small and independent as logic allows.</p>
+    <p>In chasing code beauty and conciseness its always a temptation to take out all rules that are repeated. But doing so, its important to keep elements’ independency in mind. Stop and think well every time when “taking out” of common rule could hurt independency.</p>
     <h3>Naming</h3>
-    <p>Obviously, element’s name should be a clear mirror of its independent nature. Other aspect is semantic. Name it from functionality not position. Name it from its purpose and benefit but not from look. So that elements are named with honest names. And, finally, keep them as simple as possible. Following these three intentions along with keeping them from hurting each other (i.e. simplicity hurts clarity when “button” is called “btn”) will make code healthy.</p>
+    <p>Obviously, element’s name should be a clear mirror of its independent nature. So no more <code class="inline language-scss">.button-for-header</code> excuses.</p>
+    <p>Other aspect is semantic. Name it from functionality not position or appearance. Name it from its purpose and benefit but not from look. So that elements are named with honest and functional names.</p>
+    <p>And, finally, keep them as simple as possible. In our vision, this "possible" ends when simplicity hurts readability: <code class="inline language-scss">.button</code> is named as <code class="inline language-scss">.btn</code></p>
+    <p>Following these three intentions will make code healthy.</p>
   </div> <!-- /article-content -->
 </article>
 

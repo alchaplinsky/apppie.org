@@ -12,11 +12,19 @@
     <p>Most modern methodologies like <a href="">OOCSS</a>, BEM, SMACSS are all about learning to think about your UI and CSS in terms of objects. You might have heard diffrent terms - block, object, module. But they all about pretty much the same approach - having modular CSS and independent UI elements. And it appears to be really useful and flexible approach.</p>
     <p>Before getting to actual code writing look through all designs and think about interface you see in terms of elements. You will definitely see several heading styles repeated through all screens, alike button styles with minor differences in colors or sizes and uniform inputs, textareas etc. Start extractig these simple elements and implement them independently, so it doesn't matter where you place them, they would look the same.</p>
     <div class="note">
-      The only dependency for all elements it typography. You wouldn't like to hardcode font falimlies or font sizes into each element.
+      The only dependency for all elements is typography. You wouldn't like to hardcode font families or font sizes into each element. Typography should be changed in one place and be applied to entire interface.
     </div>
-    <h3>Keep it simple as you possibly can!</h3>
-    <h3>Humanreadable Naming</h3>
-    <p></p>
+    <p>Once you have all of obejcts implemented, you can craft pages super easy and quickly, just like building something from LEGO blocks.</p>
+    <h3>Human Readable Naming</h3>
+    <p>Looking through numerous CSS frameworks one thing makes wonder - inconsistency in naming. There are bunch of really different naming conventions with all that <span class="code">.whatever__something</span> stuff in class names or mix of underscores and dashes like <span class="code">.font-size_XL</span>. And even generic UI elements has different names <span class="code">.button</span> vs <span class="code">.btn</span>, isn't <span class="code">.button</span> more descriptive?</p>
+    <p>Looking at cusotm developer's code - it sometimes even worse:). Why don't we come up with some general and flexible conventions that feels rigth? Why do we need to make up tricky class names each time while working on new project? And do we really need to get used to all aukward naming that is used by another developer you're working with?</p>
+    <p>Well truth is that all web interface elements you're building allready have their names. You use them in real life, communicating with designers, disscussing something with other developers. What if instead writing something like <span class="code">.top-nav</span> or <span class="code">.navig-bar</span> you can just use <span class="code">.navigation</span>? It is pretty descriptive, it means what you're actually building and it is more semantic! And offcourse it can easily become a standard for all developers accross the world because everybody call it <em>navigation</em></p>
+    <p>If we go further we can agree on the same convention for lots of other widely used UI elements. </p>
+
+    <h3>Keep it simple as you possibly can</h3>
+    <p>Reduce complexity of your HTML code. Try to avoid lots of nested elements or wrapper elements that are needed only for styling. If extra styling is needed, consider using pseudo selectors <span class="code">:after</span> and <span class="code">:before</span>. Reduce to minimum number of classes applied to a single element. Your code needs to be written in such way so that you are comfortable wit 2-3 classes (1 - element selector, 2 - class modifier, 3 - some helper class you might need). If you're going more than 3 classes for styling a single element - there's something wrong with your CSS code.</p>
+
+    <p>Avoid deep nesting of your CSS rules. It's ok if you're changing particular element's behaviour or even override/extend it's children elements depending on parrent node. For instance different navigation links styling and positioning depending on where <span class="code">.navigation</span> element is placed. But still if your selectors nesting goes beyond 3 levels - you should re-think styling of this elements.</p>
   </div> <!-- /article-content -->
 </article>
 

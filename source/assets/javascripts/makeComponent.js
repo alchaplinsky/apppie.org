@@ -1,5 +1,5 @@
 makeComponent = function(el) {
-  var code = el.find('pre code');
+  var code = el.find('pre>code');
   var example = el.find('div.example');
   if (!code.length) {
     example.before("<pre><code></code></pre>")

@@ -6,8 +6,8 @@
   <%=favicon_tag "favicon.ico" %>
   <%= stylesheet_link_tag "application" %>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/javascripts/prism.js" data-manual></script>
   <%= javascript_include_tag  "all" %>
+  <script type="text/javascript" src="/assets/javascripts/prism.js" data-manual></script>
 </head>
 <body <%=section_class ? "class=#{section_class}" : nil%>>
   <nav class="navbar">
@@ -94,47 +94,15 @@
       </div> <!-- /row -->
     </div>
   </footer>
-  <!-- Yandex.Metrika informer -->
-  <a href="https://metrika.yandex.ru/stat/?id=24307159&amp;from=informer"
-  target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/24307159/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-  style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:24307159,lang:'ru'});return false}catch(e){}"/></a>
-  <!-- /Yandex.Metrika informer -->
-
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-  (function (d, w, c) {
-      (w[c] = w[c] || []).push(function() {
-          try {
-              w.yaCounter24307159 = new Ya.Metrika({id:24307159,
-                      webvisor:true,
-                      clickmap:true,
-                      trackLinks:true,
-                      accurateTrackBounce:true});
-          } catch(e) { }
-      });
-
-      var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-      s.type = "text/javascript";
-      s.async = true;
-      s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-      if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-      } else { f(); }
-  })(document, window, "yandex_metrika_callbacks");
-  </script>
-  <noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
   <script type="text/javascript">
     $(document).ready(function(){
       $('div.component').each(function(){makeComponent($(this));});
-      $('code').each(function(i, e) {codePrepare($(this));});
+      $('code').each(function(){codePrepare($(this));});
       Prism.highlightAll();
       totalHeight = $(document).height() > $("section.body").height() ? $(document).height() : $("section.body").outerHeight()
       $("section.body > .subnavigation").height(totalHeight - $("header.header").outerHeight() - $("footer.footer").outerHeight());
     });
   </script>
+  <%= render_partial "layouts/yandex"%>
 </body>
 </html>

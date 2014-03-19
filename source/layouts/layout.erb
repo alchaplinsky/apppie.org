@@ -14,19 +14,19 @@
     <%= link_to 'ApplePie', '/', class: 'logo'%>
     <ul class="navigation">
       <li <%= navigation_helper('approach')%>>
-        <% link_to('/views/approach') do %>
+        <% link_to('/pages/approach') do %>
           <span class="icon-approach"></span>
           Approach
         <% end %>
       </li>
       <li <%= navigation_helper('toolkit')%>>
-        <% link_to('/views/toolkit/grid.html') do %>
+        <% link_to('/pages/toolkit/grid.html') do %>
           <span class="icon-toolkit"></span>
           Toolkit
         <% end %>
       </li>
       <li <%= navigation_helper('faq')%>>
-        <% link_to('/views/faq', { :class => 'faq'}) do %>
+        <% link_to('/pages/faq', { :class => 'faq'}) do %>
           <span class="icon-faq"></span>
           FAQ
         <% end %>

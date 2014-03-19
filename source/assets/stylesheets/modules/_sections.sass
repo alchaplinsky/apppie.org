@@ -1,19 +1,17 @@
 @import "base/mixins"
 $mainGray: #72746e
-section.presenter
-  background: image-url('hero.svg') no-repeat 90% 100% $mainGray
-  +background-size(auto 100%)
-  color: #fff
-  +screen(tablet-down)
-    +background-size(60% auto)
-  h1
-    letter-spacing: -4px
 
-section.shaded
-  padding: 50px 0
-  background: #edebe8
-
-section.light
-  padding: 50px 0
-  background-color: #fff
+section
+  &.presenter
+    background: image-url('hero.svg') no-repeat 90% 100% $mainGray
+    +background-size(auto 100%)
+    color: #fff
+    +screen(tablet-down)
+      +background-size(60% auto)
+    h1
+      letter-spacing: -4px
+  &.shaded
+    background: #edebe8
+  &.light
+    background-color: #fff
 

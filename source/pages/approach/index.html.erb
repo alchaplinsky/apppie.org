@@ -1,20 +1,21 @@
+<%= render_partial "subnavigation" %>
 <header class="header">
   <h1>Approach</h1>
 </header>
 <article class="main">
   <h1>Main Principles</h1>
   <div class="article-content">
-    <p>How do you scale your frontend for thousands of pages? How do you name your selectors and organize CSS? ApplePie gives you and approach to build your frontend faster, keep code maintainable, easy to reand and standard-based. It brings reasonability predictability to CSS and HTML it is a lot easier to build great web applications.</p>
-    <p>ApplePie consist of two core things. First is basic idea and a set of conventions build on top of this idea. And second is a minimalistic <a href="https://github.com/alchapone/applepie" target="_blank">CSS framework</a>, that practically describes how those ideas can be implemented in real life and gives web developers a tool to build interfaces.</p>
+    <p><em>How do you scale your frontend for thousands of pages? How do you name your selectors and organize CSS? ApplePie gives you and approach to build your frontend faster, keep code maintainable, easy to reand and standard-based. It brings reasonability predictability to CSS and HTML it is a lot easier to build great web applications.</em></p>
+<!--     <p>ApplePie consist of two core things. First is basic idea and a set of conventions build on top of this idea. And second is a minimalistic <a href="https://github.com/alchapone/applepie" target="_blank">CSS framework</a>, that practically describes how those ideas can be implemented in real life and gives web developers a tool to build interfaces.</p> -->
 
     <h3>Modularity</h3>
     <p>Most modern methodologies like OOCSS, BEM, SMACSS are all about learning to think about your UI and CSS in terms of modular and reusable components. You might have heard diffrent terms for components - block, object, module. But they all about pretty much the same approach - having modular CSS and independent UI elements. And it appears to be really useful and flexible approach.</p>
-    <p>Before getting to actual code writing look through all designs and think about interface you see in terms of elements. You will definitely see several heading styles repeated through all screens, alike button styles with minor differences in colors or sizes and uniform inputs, textareas etc. Start extractig these simple elements and implement them independently, so it doesn't matter where you place them, they would look the same.</p>
+    <p>Before getting to actual code writing look through all design screens of your application and think about interface you see in terms of elements. You will definitely see several heading styles repeated through all screens, alike button styles with minor differences in colors or sizes and uniform inputs, textareas etc. Start extractig these simple elements and implement them independently, so it doesn't matter where you place them, they would look the same.</p>
     <div class="note">
       The only dependency for all elements is typography. You wouldn't like to hardcode font families or font sizes into each element. Typography should be changed in one place and be applied to entire interface.
     </div>
     <p>Once you have all of obejcts implemented, you can craft pages super easy and quickly, just like building something from LEGO blocks.</p>
-    <h3>Human Readable Naming</h3>
+    <h3>Standardized Naming</h3>
     <p>Looking through numerous CSS frameworks one thing makes wonder - inconsistency in naming. There are bunch of really different naming conventions with all that <code>.whatever__something</code> stuff in class names or mix of underscores and dashes like <code>.font-size_XL</code>. And even generic UI elements has different names <code>.button</code> vs <code>.btn</code>, isn't <code>.button</code> more descriptive?</p>
     <p>Looking at cusotm developer's code - it sometimes even worse:). Why don't we come up with some general and flexible conventions that feels rigth? Why do we need to make up tricky class names each time while working on new project? And do we really need to get used to all aukward naming that is used by another developer you're working with?</p>
     <p>Well truth is that all web interface elements you're building allready have their names. You use them in real life, communicating with designers, disscussing something with other developers. What if instead writing something like <code>.top-nav</code> or <code>.navig-bar</code> you can just use <code>.navigation</code>? It is pretty descriptive, it means what you're actually building and it is more semantic! And offcourse it can easily become a standard for all developers accross the world because everybody call it <em>navigation</em></p>
@@ -26,4 +27,3 @@
     <p>Avoid deep nesting of your CSS rules. It's ok if you're changing particular element's behaviour or even override/extend it's children elements depending on parrent node. For instance different navigation links styling and positioning depending on where <code>.navigation</code> element is placed. But still if your selectors nesting goes beyond 3 levels - you should re-think styling of this elements.</p>
   </div> <!-- /article-content -->
 </article>
-

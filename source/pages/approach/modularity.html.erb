@@ -1,3 +1,4 @@
+<%= render_partial "subnavigation" %>
 <header class="header">
   <h1>Approach</h1>
 </header>
@@ -9,7 +10,51 @@
     <h3>Application Layers</h3>
     <p>Before we can start implement independent interface elements, there are couple of things we need to take care about. There are some basic setup, our components will depend on (yes, components aren't really fully independent). This base styles are divided into  two layers: Base layer (including resets, helpers and grids) and typography layer (globally defined styles for text elements).</p>
     <p>- <strong>Base layer</strong> does reset of inconsistent default browser styling. There are two most popular techniques for this: reset.css and normalize.css - you can use one you prefer most. ApplePie Toolkit includes some kind of merge of this two solutions. Also base layer adds different kinds of helpers you might need, like grids, responsive helpers, spasings helpers etc. Most of them have become almost standartized among developers from all over the world.</p>
-    <p>- <strong>Typography layer</strong> defines basic text styles for all <strong>needed</strong> text elements like headings, paragraphs, link styles etc. Of course you wouldn't  want to include nd repeat all that styling to each element individualy, because they are project wide and you'd like to have ability to change it in one place. A nice starting typography module is included to Apple Pie Toolkit which you can use as is or modify by your needs.</p>
-    <p>- Third layer is a <strong>components layer</strong></p>
+    <p>- <strong>Typography layer</strong> defines basic text styles for all <strong>needed</strong> text elements like headings, paragraphs, link styles etc. Of course you wouldn't  want to include nd repeat all those styling to each element individualy, because you'd like to have ability to change typography styles in one place. A nice starting typography module is included to Apple Pie Toolkit which you can use as is or modify by your needs.</p>
+    <p>- Third layer is a <strong>components layer</strong>. It is built on top of typography layer - so every component inherits all styles of text elements. </p>
+    <h3>Building modular interface</h3>
+    <p>Before getting to implementation of web pages out of design screens take a look at all those screens and define all the elemets your interface cosists of. Build components library first and it will save a lot of time while building actual pages out of existing components.</p>
+    <p>Interface components are divided ito two categories: objects and modules. Object is simple independent and indivisible element of a page, like heading, link, button or input.</p>
+    <p>In order Object Oriented approach set up one to one relationship between CSS selector (component name) and component itself considering <%= link_to 'naming convention', '/pages/approach/naming.html'%>. </p>
+
+    <h3>Basic rules</h3>
+    <p>- Avoid location depenedent styling to keep component independent and preserve ability to re-use it in other part of application. </p>
+    <div class="row mbm">
+      <div class="col1of2 prs">
+        <pre class="wrong"><code class="language-scss">
+          .header ul.navigation {
+            ...
+          }
+        </code></pre>
+        </div>
+      <div class="col1of2 pls">
+        <pre class="correct"><code class="language-scss">
+          .navigation {
+            ...
+          }
+        </code></pre>
+      </div>
+    </div>
+    <p>- Do not use presentational class names. You never know when presentation of an object gona change and it may happen that class <code>.blue</code> will add a CSS rule like <code>background: green;</code></p>
+      <div class="row mbm">
+        <div class="col1of2 prs">
+          <div class="code-sample wrong">
+            <a href="#" class="button blue">
+              Button text
+            </a>
+          </div>
+        </div>
+        <div class="col1of2 pls">
+          <div class="code-sample correct">
+            <a href="#" class="button primary">
+              Button text
+            </a>
+          </div>
+        </div>
+      </div>
+
+    - Each component in a separate file
+    - Types of components: objects and modules
+    <p></p>
   </div>
 </article>

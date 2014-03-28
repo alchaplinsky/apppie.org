@@ -6,7 +6,7 @@ $buttonWarningColor: #fec800
   display: inline-block
   padding: 10px 15px
   font:
-    size: 1.5em
+    size: 1.3em
   line-height: 1.31rem
   letter-spacing: -.05em
   cursor: pointer
@@ -53,6 +53,11 @@ $buttonWarningColor: #fec800
     &:active
       &:after
         border-left-color: darken($buttonDefaultColor, 5%)
+  &.pale
+    background: #edebe8
+    color: #333
+    &:hover
+      background: darken(#edebe8, 8%)
   &.warning
     background-color: $buttonWarningColor
     border-color: $buttonWarningColor

@@ -96,6 +96,7 @@
   </footer>
   <script type="text/javascript">
     $(document).ready(function(){
+      example = new Example();
       $('div.component').each(function(){makeComponent($(this));});
       $('code').each(function(){codePrepare($(this));});
       Prism.highlightAll();

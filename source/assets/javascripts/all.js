@@ -3,4 +3,4 @@
 //= require 'htmlToText'
 //= require 'makeComponent'
 //= require 'codePrepare'
-
+//= require 'ga'

@@ -4,4 +4,4 @@
 //= require 'makeComponent'
 //= require 'codePrepare'
 //= require 'example'
-
+//= require 'ga'

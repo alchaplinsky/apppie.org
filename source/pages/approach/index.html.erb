@@ -8,22 +8,57 @@
     <p><em>How do you scale your frontend for thousands of pages? How do you name your selectors and organize CSS? ApplePie gives you and approach to build your frontend faster, keep code maintainable, easy to reand and standard-based. It brings reasonability predictability to CSS and HTML it is a lot easier to build great web applications.</em></p>
 <!--     <p>ApplePie consist of two core things. First is basic idea and a set of conventions build on top of this idea. And second is a minimalistic <a href="https://github.com/alchapone/applepie" target="_blank">CSS framework</a>, that practically describes how those ideas can be implemented in real life and gives web developers a tool to build interfaces.</p> -->
 
-    <h3>Modularity</h3>
-    <p>Most modern methodologies like OOCSS, BEM, SMACSS are all about learning to think about your UI and CSS in terms of modular and reusable components. You might have heard diffrent terms for components - block, object, module. But they all about pretty much the same approach - having modular CSS and independent UI elements. And it appears to be really useful and flexible approach.</p>
-    <p>Before getting to actual code writing look through all design screens of your application and think about interface you see in terms of elements. You will definitely see several heading styles repeated through all screens, alike button styles with minor differences in colors or sizes and uniform inputs, textareas etc. Start extractig these simple elements and implement them independently, so it doesn't matter where you place them, they would look the same.</p>
-    <div class="note">
-      The only dependency for all elements is typography. You wouldn't like to hardcode font families or font sizes into each element. Typography should be changed in one place and be applied to entire interface.
+    <div class="heading">
+      <h3>Components approach</h3>
+      <%= link_to "Read more &rarr;".html_safe, "/pages/approach/components.html"%>
     </div>
-    <p>Once you have all of obejcts implemented, you can craft pages super easy and quickly, just like building something from LEGO blocks.</p>
-    <h3>Standardized Naming</h3>
-    <p>Looking through numerous CSS frameworks one thing makes wonder - inconsistency in naming. There are bunch of really different naming conventions with all that <code>.whatever__something</code> stuff in class names or mix of underscores and dashes like <code>.font-size_XL</code>. And even generic UI elements has different names <code>.button</code> vs <code>.btn</code>, isn't <code>.button</code> more descriptive?</p>
-    <p>Looking at cusotm developer's code - it sometimes even worse:). Why don't we come up with some general and flexible conventions that feels rigth? Why do we need to make up tricky class names each time while working on new project? And do we really need to get used to all aukward naming that is used by another developer you're working with?</p>
-    <p>Well truth is that all web interface elements you're building allready have their names. You use them in real life, communicating with designers, disscussing something with other developers. What if instead writing something like <code>.top-nav</code> or <code>.navig-bar</code> you can just use <code>.navigation</code>? It is pretty descriptive, it means what you're actually building and it is more semantic! And offcourse it can easily become a standard for all developers accross the world because everybody call it <em>navigation</em></p>
-    <p>If we go further we can agree on the same convention for lots of other widely used UI elements. </p>
+    <div class="mbl">
+      <p>Everything is an element - from <code>&lt;a&gt;</code> element to complex module like <code>.slideshow</code>.
+        Treating this elements as interface components allows you to write more modular and flexible code and gives you ability to use
+        this complonents inside application and even across multipe applications without re-implementing them.</p>
+      <div class="note">
+        Start crearting interface components instead of doing page by page markup!
+      </div>
+      <p>Most of modern methodologies like OOCSS, BEM, SMACSS are all about learning to think about your interface and CSS in terms of
+        modular and reusable components. </p>
+    </div>
+    <div class="heading">
+      <h3>Standardized Naming</h3>
+      <%= link_to "Read more &rarr;".html_safe, "/pages/approach/naming.html"%>
+    </div>
+    <div class="mbl">
+      <p>The more you do frontend development and write your own stylesheets, the more you begin to value using good names in your code. Naming is one
+      of the most difficult and controversial activity of a developer. CSS selectors should be easy to read, they must be descriptive but not too long and
+    of course they should follow unified code style.</p>
+      <div class="note">
+        Define interface components using class selectors only. Avoid IDs or tags selectors because they cause <a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/" target="_blank">issues</a>.
+      </div>
+      <p>Do we really need to make up custom and tricky class names for all those elements that we've allready implemented
+        for hundreds of times? Most of common interface components allready have their own names, we allready
+      use them in every day life talking to designers or other developers. Naming conventions can help us here.</p>
+        <div class="note">
+          Rather than making up your own tricky class names to insure 100% uniqueness name components with their real understandable names.
+        </div>
+    </div>
 
-    <h3>Keep it simple as you possibly can</h3>
-    <p>Reduce complexity of your HTML code. Try to avoid lots of nested elements or wrapper elements that are needed only for styling. If extra styling is needed, consider using pseudo selectors <code>:after</code> and <code>:before</code>. Reduce to minimum number of classes applied to a single element. Your code needs to be written in such way so that you are comfortable wit 2-3 classes (1 - element selector, 2 - class modifier, 3 - some helper class you might need). If you're going more than 3 classes for styling a single element - there's something wrong with your CSS code.</p>
+    <div class="heading">
+      <h3>Keep it simple</h3>
+      <%= link_to "Read more &rarr;".html_safe, "/pages/approach/simplicity.html"%>
+    </div>
+    <p>As a web developer you read more code than you write, so it's quite important to keep your code simple and clear. HTML code is a place
+    to start getting clearer.</p>
+    <p>Avoid lots of nested elements or wrapper elements that aren't needed or needed only for styling. Consider
+      using pseudo selectors <code>:after</code> and <code>:before</code> to move all decorative code from HTML to CSS.</p>
+      <div class="note">
+        Use minimum number of HTML elements with which you can achieve desired result.
+      </div>
 
-    <p>Avoid deep nesting of your CSS rules. It's ok if you're changing particular element's behaviour or even override/extend it's children elements depending on parrent node. For instance different navigation links styling and positioning depending on where <code>.navigation</code> element is placed. But still if your selectors nesting goes beyond 3 levels - you should re-think styling of this elements.</p>
+    <p>Do not overload HTML tags with lots of CSS classes. Three classes used for styling porpuses should be enough for a single component.
+    If you find yourself adding multiple presentational classes to a single element - this means you might need single class modifier that defines
+    all component's presentational features.</p>
+    <div class="note">
+      Avoid adding more than 3 classnames to a single element. According to OOCSS any component consist od class name that defines
+      component structure and class modifier if needed.
+    </div>
   </div> <!-- /article-content -->
 </article>

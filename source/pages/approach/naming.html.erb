@@ -50,7 +50,7 @@
       allows you keep track of possible collisions and helps modifying elements depending on their location.</p>
       <p>Off course conventions don't cover 100% of possible cases, there will always be situations when you'll need to make decisions yourself
       instead of blindly following conventions. But ApplePie is build to cover only most common and frequently solved problems, and all non-standard
-      tasks you can solve in the way you feel right. See <a href="#">full list</a> of standardized common elements class names. </p>
+      tasks you can solve in the way you feel right. See <%= link_to "full list", "/pages/approach/naming_table.html" %> of standardized common elements class names. </p>
     </div>
     <h3>Component modifier classes</h3>
     <div class="mbl">
@@ -65,7 +65,7 @@
     </div>
     <h3>Non-global scope classes</h3>
     <div class="mbl">
-      <p>There are simple and general class names like <code>.entry</code>, <code>.info</code>, <code>.description</code>, etc. that may
+      <p>There are simple and general class names like <code>.entry</code>, <code>.item</code>, <code>.description</code>, etc. that may
       be used inside different contexts. And it is kind of easy to run into collisions if you style <code>.entry</code> and will try to
       use this class name inside other context and style it differently. As a result class names like <code>.another-entry</code> appear.</p>
       <p>Off course there is a way to avoid this if you follow convention. This universal class names are defined as

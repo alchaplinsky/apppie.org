@@ -4,4 +4,44 @@
 </header>
 <article class="main">
   <h1>Simplicity</h1>
+  <div class="article-content">
+    <h3>HTML Structure</h3>
+    <div class="mbl">
+      <p>Keep your HTML structure as simple as possible. Use HTML tag for content markup in first place without thinking about presentational layers
+      that may be needed in the future. </p>
+    </div>
+    <h3>Nesting CSS selectors</h3>
+    <div class="mbl">
+      <p>While creating multy-level components follow namespace approach rather than using prefixes. For instance you're building some simple article block
+      that has title, description and thumbnail. Define a top level class <code>.article</code> and use it as a namespace for styling nested elements.
+    Look at this SASS example:</p>
+      <div class="row">
+        <div class="col1of2 prm">
+          <pre><code class="language-css">
+            .article
+              .....
+              .thumbnail
+                ....
+              .title
+                ....
+          </code></pre>
+        </div>
+        <div class="col1of2 plm">
+          <pre><code class="language-css">
+            .article
+              ....
+              .article-thumbnail
+                ....
+              .article-title
+                ....
+          </code></pre>
+        </div>
+      </div>
+      <p>Prefices look pretty obsolete here. If you always define <code>.title</code> and <code>.thumbnail</code> inside namespaces, you'll never need
+      to prefix them to be sure that you only affect titles and thumbnails inside article.</p>
+      <div class="note">
+        Do not user prefixes for nested elements. Style them using namespaces only.
+      </div>
+    </div>
+  </div>
 </article>

@@ -9,8 +9,41 @@
     <div class="mbl">
       <p>Keep your HTML structure as simple as possible. Use HTML tag for content markup in first place without thinking about presentational layers
       that may be needed in the future. </p>
+      <p>Minimize number of wrappers that are needed only for styling purposes. Consider
+        using pseudo selectors <code>:after</code> and <code>:before</code> to move all decorative code from HTML to CSS.</p>
+      <div class="note">
+        Do you really think that UL needs its own extra wrapping div? Well it doesn't!
+      </div>
     </div>
-    <h3>Nesting CSS selectors</h3>
+    <h3>Classes in HTML</h3>
+    <div class="mbl">
+      <p>Do not overload HTML tags with long chains of CSS classes. If you are following <%= link_to 'component approach', '/pages/approach/components.html'%>
+      there shouldn't be such case in your code, when you need to apply more than 3 classes to single HTML tag. All components can be defined by applying
+      2 classes - component name class and component modifier (if default component needs modification).</p>
+      <div class="row mbm">
+        <div class="col1of2 prm">
+          <div class="code-sample wrong">
+            <nav class="navigation dark default fixed">
+              ....
+            </nav>
+          </div>
+        </div>
+        <div class="col1of2 plm">
+          <div class="code-sample correct">
+            <nav class="navigation general">
+              ....
+            </nav>
+          </div>
+        </div>
+      </div>
+      <p>In some cases extra helper class needs to be applied to component. But for sake of readability and code simplicity it is better to
+      minimize using this helper classes as well and move all presentation to CSS layer.</p>
+    </div>
+<!--     <h3>CSS inheritance chain</h3>
+    <div class="mbl">
+      <p>Due to CSS cascading nature nested objects inherit bunch of parrent's styles. If you build deep nesting  </p>
+    </div>-->
+    <h3>Selector prefixes</h3>
     <div class="mbl">
       <p>While creating multy-level components follow namespace approach rather than using prefixes. For instance you're building some simple article block
       that has title, description and thumbnail. Define a top level class <code>.article</code> and use it as a namespace for styling nested elements.
@@ -24,6 +57,7 @@
                 ....
               .title
                 ....
+              .description
           </code></pre>
         </div>
         <div class="col1of2 plm">
@@ -34,10 +68,11 @@
                 ....
               .article-title
                 ....
+              .article-description
           </code></pre>
         </div>
       </div>
-      <p>Prefices look pretty obsolete here. If you always define <code>.title</code> and <code>.thumbnail</code> inside namespaces, you'll never need
+      <p>Prefixes look pretty obsolete here. If you always define <code>.title</code> and <code>.thumbnail</code> inside namespaces, you'll never need
       to prefix them to be sure that you only affect titles and thumbnails inside article.</p>
       <div class="note">
         Do not user prefixes for nested elements. Style them using namespaces only.

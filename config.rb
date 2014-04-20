@@ -54,6 +54,14 @@ helpers do
     match = /#{page}/ =~ current_page.url
     return match.nil? ? '' : 'class="current"'
   end
+
+  def subnavigation
+    if /approach/ =~ current_page.url
+      render_partial 'pages/subnavigation/approach'
+    elsif /toolkit/ =~ current_page.url
+      render_partial 'pages/subnavigation/toolkit'
+    end
+  end
 end
 
 set :css_dir, 'assets/stylesheets'

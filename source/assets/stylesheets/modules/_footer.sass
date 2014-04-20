@@ -1,0 +1,27 @@
+footer.footer
+  background-color: #81807a
+  padding: 40px 0
+  height: 175px
+  position: relative
+  z-index: 11
+  margin-left: 70px
+  +box-sizing(border-box)
+  .crafted
+    width: 97px
+    height: 94px
+    display: block
+    background: image-url("crafted.png") no-repeat 0 0
+    &:hover
+      background-position: 0 -94px
+  .footer-list
+    list-style-type: none
+    margin: 0
+    padding: 0
+    color: rgba(255,255,255, 0.3)
+    font-size: .75rem
+    li
+      margin-bottom: .3rem
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: underline

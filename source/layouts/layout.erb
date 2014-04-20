@@ -4,46 +4,57 @@
   <meta charset="UTF-8">
   <title><%= current_page.data.title || "ApplePie" %></title>
   <%=favicon_tag "favicon.ico" %>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "app" %>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <%= javascript_include_tag  "all" %>
-  <script type="text/javascript" src="/assets/javascripts/prism.js" data-manual></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
 </head>
 <body <%=section_class ? "class=#{section_class}" : nil%>>
-  <nav class="navbar">
-    <%= link_to 'ApplePie', '/', class: 'logo'%>
-    <ul class="navigation">
-      <li <%= navigation_helper('approach')%>>
-        <% link_to('/pages/approach') do %>
-          <span class="icon-approach"></span>
-          Approach
-        <% end %>
-      </li>
-      <li <%= navigation_helper('toolkit')%>>
-        <% link_to('/pages/toolkit/getting_started.html') do %>
-          <span class="icon-toolkit"></span>
-          Toolkit
-        <% end %>
-      </li>
-      <li <%= navigation_helper('faq')%>>
-        <% link_to('/pages/faq', { :class => 'faq'}) do %>
-          <span class="icon-faq"></span>
-          FAQ
-        <% end %>
-      </li>
-      <li>
-        <a href="http://github.com/alchapone/applepie" target="_blank">
-          <span class="icon-github"></span>
-          GitHub
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="side-navigation">
+    <li>
+      <%= link_to 'ApplePie', '/', class: 'logo'%>
+    </li>
+    <li <%= navigation_helper('approach')%>>
+      <% link_to('/pages/approach') do %>
+        <span class="icon-approach"></span>
+        Approach
+      <% end %>
+    </li>
+    <li <%= navigation_helper('toolkit')%>>
+      <% link_to('/pages/toolkit/getting_started.html') do %>
+        <span class="icon-toolkit"></span>
+        Toolkit
+      <% end %>
+    </li>
+    <li <%= navigation_helper('faq')%>>
+      <% link_to('/pages/faq', { :class => 'faq'}) do %>
+        <span class="icon-faq"></span>
+        FAQ
+      <% end %>
+    </li>
+    <li>
+      <a href="http://github.com/alchapone/applepie" target="_blank">
+        <span class="icon-github"></span>
+        GitHub
+      </a>
+    </li>
+  </ul>
+  <% if current_page.url != '/' %>
+  <% unless /faq/ =~ current_page.url %>
+  <ul class="side-subnavigation">
+    <%= subnavigation %>
+  </ul>
+  <%end%>
+  <%end%>
   <section class="content">
     <section class="body">
       <%= yield %>
     </section>
   </section>
+  <%if current_page.url == '/' %>
   <footer class="footer">
     <div class="container row">
       <div class="left">
@@ -94,6 +105,7 @@
       </div> <!-- /row -->
     </div>
   </footer>
+  <%end%>
   <script type="text/javascript">
     $(document).ready(function(){
       example = new Example();

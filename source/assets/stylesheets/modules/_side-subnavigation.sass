@@ -1,0 +1,27 @@
+@import "base/mixins"
+.side-subnavigation
+  list-style-type: none
+  position: fixed
+  top: 70px
+  left: 70px
+  margin: 0
+  padding: 0
+  width: 200px
+  background-color: rgb(238, 238, 238)
+  height: 100%
+  +transition(width .4s)
+  +box-sizing(border-box)
+  -webkit-font-smoothing: antialiased
+  li a
+    color: #777
+    text-decoration: none
+    display: block
+    padding: 8px 20px 8px 20px
+    +box-sizing(border-box)
+    +transition(color .4s)
+    &:hover
+      color: #333
+  li:first-child
+    margin-top: 10px
+  &.active
+    width: 220px

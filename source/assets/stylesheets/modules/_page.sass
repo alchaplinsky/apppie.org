@@ -6,6 +6,8 @@ $pages: approach #fec400, toolkit #04aa9e, faq #f8581f
     .logo
       background-color: darken(nth($page, 2), 15)
       background-image: image-url('pie-white.svg')
+      &:hover
+        background-color: darken(nth($page, 2), 15)
 
     article.main
       h1
@@ -18,12 +20,9 @@ $pages: approach #fec400, toolkit #04aa9e, faq #f8581f
       background-color: nth($page, 2)
       background-image: image-url('hero-#{nth($page, 1)}.svg')
 
-    .navigation
+    .side-navigation
       li
         &.current a
           +box-shadow(inset 3px 0 0 0 #{nth($page, 2)})
           [class^="icon-"], [class*="icon-"]
             color: nth($page, 2)
-
-body.approach header.header
-  margin-right: -10px

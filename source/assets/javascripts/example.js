@@ -1,22 +1,4 @@
-Example = function(component) {
-  this.component = component;
-  this.buildSample();
-};
-
-Example.prototype.buildSample = function(){
-  exampleEl = $(this.component).find('.example');
-  codeEl = $(this.component).find('pre code');
-  code = this.htmlToText($(exampleEl).html());
-  $(codeEl).html(this.codeClean(code));
-  return true;
-};
-
-Example.prototype.htmlToText = function(html) {
-  text = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  return text;
-};
-
-Example.prototype.codeClean = function(html) {
+codeClean = function(code) {
   var dirtyCodeArray, leadingSpaces, line, linesArray, _i, _len;
   code = code.replace(/(\r\n|\n|\r)/, '');
   leadingSpaces = code.substr(0, code.search(/\S/));
@@ -27,4 +9,22 @@ Example.prototype.codeClean = function(html) {
     linesArray.push(line.replace(leadingSpaces, ''));
   }
   return linesArray.join('').trim();
+};
+
+Example = function(component) {
+  this.component = component;
+  this.buildSample();
+};
+
+Example.prototype.buildSample = function(){
+  exampleEl = $(this.component).find('.example');
+  codeEl = $(this.component).find('pre code');
+  code = this.htmlToText($(exampleEl).html());
+  $(codeEl).html(codeClean(code));
+  return true;
+};
+
+Example.prototype.htmlToText = function(html) {
+  text = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return text;
 };

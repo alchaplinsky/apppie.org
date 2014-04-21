@@ -1,4 +1,4 @@
-@import "base/mixins"
+@import "applepie/mixins/vendor_prefixes"
 $nav-transition: background-color .4s, opacity .4s
 .side-navigation
   position: fixed
@@ -37,6 +37,6 @@ $nav-transition: background-color .4s, opacity .4s
       height: 71px
       text-indent: -9999px
       background: image-url('pie.svg') no-repeat 50% 45% #121212
-      +background-size(34px 36px)
+      background-size: 34px 36px
       border-bottom: 1px solid #2a2a2a
       +transition($nav-transition)

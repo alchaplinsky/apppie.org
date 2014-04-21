@@ -108,9 +108,7 @@
   <%end%>
   <script type="text/javascript">
     $(document).ready(function(){
-      //example = new Example();
-      $('div.component').each(function(){makeComponent($(this));});
-      $('code').each(function(){codePrepare($(this));});
+      $('div.component').each(function(){example = new Example(this);});
     });
   </script>
   <%= render_partial "layouts/yandex"%>

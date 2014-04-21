@@ -5,55 +5,143 @@
   <h1>Components</h1>
   <div class="article-content">
     <div class="component mbl">
-      <h2>Navigation</h2>
-      <div class="example">
+      <h3>Horizontal Navigation</h3>
+      <p>To create a horizontal navigation, add the <code>navigation</code> class name to a list.
+      In order to mark the active menu item, add the <code>active</code> class to the link inside list element.</p>
+      <div class="example mvl">
         <ul class="navigation">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Docs</a></li>
+          <li><a href="#" class="active">Docs</a></li>
           <li><a href="#">Blog</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
         </ul>
       </div>
+      <pre><code></code></pre>
     </div> <!-- /component -->
+
     <div class="component mbl">
-      <h3>Inside navbar</h3>
-      <p></p>
-      <div class="example">
-        <div class="navbar">
-          <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> <!-- /component -->
-    <div class="component mbl">
-      <h2>Tabs</h2>
-      <div class="example">
+      <h3>Tabs Navigation</h3>
+      <p>Tabs navigation is pretty similar to horizontal navigation. To create tabs, add <code>tabs</code> class to unorderd list.
+      To represent states for tabs, just add <code>active</code> or <code>disabled</code> classes to proper link elements.</p>
+      <div class="example mvl">
         <ul class="tabs">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Docs</a></li>
+          <li><a href="#" class="active">Profile</a></li>
+          <li><a href="#">Messages</a></li>
           <li><a href="#">Blog</a></li>
+          <li><a href="#" class="disabled">Disabled</a></li>
         </ul>
       </div> <!-- /example -->
+      <pre><code></code></pre>
     </div> <!-- /component -->
     <div class="component mbl">
-      <h2>Pagination</h2>
-      <div class="example">
+      <h3>Pagination</h3>
+      <p></p>
+      <div class="example mvl">
         <ul class="pagination">
-          <li class="prev"><a href="#">&lt;</a></li>
+          <li class="prev"><a href="#">«</a></li>
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
+          <li><a href="#" class="active">3</a></li>
           <li><a href="#">4</a></li>
           <li><a href="#">5</a></li>
-          <li class="next"><a href="#">&gt;</a></li>
+          <li>...</li>
+          <li><a href="#">9</a></li>
+          <li><a href="#">10</a></li>
+          <li class="next"><a href="#">»</a></li>
         </ul>
       </div> <!-- /example -->
+      <pre><code></code></pre>
     </div> <!-- /component -->
+
     <div class="component mbl">
-      <h2>Flash</h2>
-      <div class="example">
+      <h3>Buttons</h3>
+      <p>To create ApplePie button, add <code>button</code> class name to any of <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>,
+      <code>&lt;input type="button" /&gt;</code> elements.</p>
+      <div class="example mvl">
+        <a href="#" class="button">ApplePie Button</a>
+        <button class="button">ApplePie Button</button>
+        <input type="button" class="button" value="ApplePie Button" />
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h3>Customizing Buttons</h3>
+      <p>Following components and modifiers approach it is easy to build buttons and create customized
+      buttons for your own application. </p>
+      <p>By adding pretty common classes modifiers <code>success</code>, <code>danger</code>, <code>warning</code> or <code>pale</code>
+      you can easily modify button appearance. Moreover, you can easily override modifier styles and add your custom modifications.</p>
+      <div class="example mvl">
+        <a href="#" class="button danger">Button: danger</a>
+        <a href="#" class="button warning">Button: warning</a>
+        <a href="#" class="button success">Button: success</a>
+        <a href="#" class="button pale">Button: pale</a>
+      </div>
+      <pre><code></code></pre>
+    </div>
+
+    <div class="component mbl">
+      <h3>Disabling Buttons</h3>
+      <p>You can easily turn on disabled state for button by switching modifier class to <code>disabled</code>. This will remove
+      hover and active states of button and will change cursor from pinter to default. So it will look unclickable.</p>
+      <div class="example mvl">
+        <a href="#" class="button disabled">Disabled Button</a>
+      </div>
+      <pre class="mbm"><code></code></pre>
+      <div class="note">
+        Class <code>disabled</code> modifies only button's appearance. Disbling clickability should be handled with javascript.
+      </div>
+    </div>
+
+    <div class="component mbl">
+      <h3>Tables</h3>
+      <p>Since table elements are used in markup not only for creating table, ApplePie won't apply any styling
+      to <code>table</code> element by default, it uses class selector for tables. To style an HTML table, add the <code>table</code> classname.
+      This class adds some nice styling compared to default table: some padding and borders and emphasizes the header.</p>
+      <div class="example mvl">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Sheldon</td>
+              <td>Cooper</td>
+              <td>@DrSheldonCooper</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Leonard</td>
+              <td>Hofstadter</td>
+              <td>@Lenny</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Howard</td>
+              <td>Wolowitz</td>
+              <td>@RocketMan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h3>Flash Messages</h3>
+      <p>Flash messages are pretty common for today's web apps. With ApplePie you can easily create different flash messages
+      by applying <code>flash</code> class to a <code>div</code> element with text. You'll see it's default appearance.</p>
+      <p>By adding semantic classes modifiers <code>error</code>, <code>success</code>, <code>warning</code>
+      you can apply corresponding styles to your flash messages.</p>
+      <div class="example mvl">
         <div class="flash mbs">
           Flash message: default
         </div> <!-- /flash -->
@@ -68,65 +156,6 @@
         </div> <!-- /flash -->
       </div> <!-- /example -->
     </div> <!-- /component -->
-    <div class="component mbl">
-      <h2>Buttons</h2>
-      <div class="example">
-        <button class="button">Button: default</button>
-        <button class="button warning">Button: warning</button>
-        <button class="button success">Button: success</button>
-        <button class="button disabled">Button: disabled</button>
-        <hr class="mbs"/>
-        <a href="#" class="button">Button: default</a>
-        <a href="#" class="button warning">Button: warning</a>
-        <a href="#" class="button success">Button: success</a>
-        <a href="#" class="button disabled">Button: disabled</a>
-      </div> <!-- /example -->
-    </div> <!-- /component -->
-    <%#
-    <div class="component mbl">
-      <h2>Buttons Modifications</h2>
-      <div class="example">
-        <a href="#" class="button disabled">Button: disabled</a>
-      </div> <!-- example -->
-    </div>
-    <h2>Iconed Buttons</h2>
-    <div class="component mbl">
-      <div class="example">
-        example
-      </div> <!-- example -->
-    </div>
-    <div class="component mbl">
-      <h2>Input</h2>
-      <div class="example">
-        example
-      </div> <!-- example -->
-    </div>
-    <div class="component mbl">
-      <h2>Textarea</h2>
-      <div class="example">
-        example
-      </div> <!-- example -->
-    </div> <!-- component -->
-    <div class="component mbl">
-      <h2>Select</h2>
-      <div class="example">
-        <select id="form-select">
-          <option>test</option>
-        </select>
-      </div> <!-- example -->
-    </div> <!-- component -->
-    <div class="component mbl">
-      <h2 class="mbm">Tables</h2>
-      <div class="example">
-        <table>
-          <tbody>
-            <tr>
-              <td>Table</td>
-            </tr>
-          </tbody>
-        </table>
-      </div> <!-- example -->
-    </div> <!-- /component -->
-    %>
+
   </div> <!-- /article-content -->
 </article>

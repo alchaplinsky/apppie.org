@@ -4,13 +4,13 @@
 <article class="main">
   <h1>Naming Conventions</h1>
   <div class="article-content">
-    <p>If we compare class names of different frameworks like Bootstrap, Foundation, Skeleton etc we'll see that ther is quite big
-    difference in naming same elements. And if we look into code of websited accross the web, we'll find that class names are pretty messed up.
+    <p>If we compare class names of different frameworks like Bootstrap, Foundation, Skeleton etc we'll see that there is quite big
+    difference in naming same elements. And if we look into code of websites across the web, we'll find that class names are pretty messed up.
     But why? Aren't we implementing pretty similar interface components and aren't we call them same names while speaking. So why things get so
     complicated when it comes to naming selectors.</p>
     <h3>Layout class names</h3>
-    <p>Creating page layouts is one of the most commont tasks every frontend developer has to deal with. There are different types
-    of layouts and techniques to build them, but they still consist of pretty much the same units and have similar behaviour. So it
+    <p>Creating page layouts is one of the most common tasks every frontend developer has to deal with. There are different types
+    of layouts and techniques to build them, but they still consist of pretty much the same units and have similar behavior. So it
     is quite easy to come up with conventions about naming layout structural units.</p>
     <p><code>.wrapper</code> class is often used for an element that needs to wrap other elements for some reason.
     For instance in implementation of <a href="http://ryanfait.com/sticky-footer/" target="_blank">sticky footer</a> it wraps header
@@ -18,7 +18,7 @@
     <p><code>.container</code> is commonly user to set width and for centering page contents.</p>
     <p>Use a combination of tags (<code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>) and corresponding class names
     <code>.header</code> and <code>.footer</code> as a CSS selectors to target page header and footer. This allows you to use this
-    tags of class names seperately  in context of other objects. Because not only page can have header or footer, right? </p>
+    tags of class names separately  in context of other objects. Because not only page can have header or footer, right? </p>
     <p>As a result you should come up with clean, semantic and readable layout markup:</p>
     <div class="code-sample mbl">
       <div class="wrapper">
@@ -40,7 +40,7 @@
     <h3>Common components names</h3>
     <div class="mbl">
       <p>There are pretty straight forward and generally used names for almost each interface component that we create during frontend development.
-      Using this names as CSS selecort gives us most descriptive and understandable language to build web pages and communicate with other developers.</p>
+      Using this names as CSS selector gives us most descriptive and understandable language to build web pages and communicate with other developers.</p>
       <div class="note">
         Use only <strong>nouns</strong> as a class selector when naming your interface components.
       </div>
@@ -60,7 +60,7 @@
       <code>.font-size-xl</code>, because css for modification may change, but this classes most likely will remain in html. As a result you may
       get <strong>red button without border</strong> that is implemented like this: <code>&lt;a href="#" class="button blue bordered"&gt;&lt;/a&gt;</code></p>
       <p>The same rule is applicable to location class modifiers of the component - you never know when your component will be placed in completely
-      different part of the page. So it is better to use less meaningfull and abstract adjectives to define component modification.</p>
+      different part of the page. So it is better to use less meaningful and abstract adjectives to define component modification.</p>
     </div>
     <h3>Non-global scope classes</h3>
     <div class="mbl">

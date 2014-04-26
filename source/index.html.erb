@@ -2,7 +2,7 @@
 title: ApplePie - Semantic and modular CSS Framework. Better way to build web interfaces.
 ---
 <section class="presenter">
-  <div class="brand ptm pll mbl">
+  <div class="brand">
     <span class="brand-logo">applepie</span>
     <span class="authorship">
       by
@@ -15,28 +15,34 @@ title: ApplePie - Semantic and modular CSS Framework. Better way to build web in
     </a>
     <div class="col2of5">
       <h1 class="mbm">Better way to build web interfaces</h1>
-      <p class="mbl">As a web developer you read more code than you write, so it's quite important to keep your code clear, readable, consistent and explicit. ApplePie naming and organization conventions are built to bring standards to frontend development. </p>
-      <a href="https://github.com/railsware/applepie" class="button pale mrs">View on GitHub</a>
-      <a href="/pages/approach" class="button directed">Experience More :)</a>
+      <p class="description">
+        As a web developer you read more code than you write, so it's quite important to keep your code clear, readable, consistent and explicit.
+        <span class="shortener">ApplePie naming and organization conventions are built to bring standards to frontend development.</span></p>
+      <div class="mbm">
+        <a href="https://github.com/railsware/applepie" class="button pale mrs">On GitHub</a>
+        <a href="/pages/approach" class="button directed">Experience More :)</a>
+      </div>
     </div> <!-- /col1of2 -->
     <div class="col3of5 plm">
-      <%= image_tag 'hero.png', class: 'hero'%>
+      <%= image_tag 'hero.png', class: 'hero fittogrid'%>
     </div>
   </div>
 </section>
-<section class="light pvl">
+<section class="light">
   <div class="by-center">
     <iframe src="http://ghbtns.com/github-btn.html?user=railsware&repo=applepie&type=watch&count=true&size=large" style="margin-top: 2px;" allowtransparency="true" frameborder="0" scrolling="0" width="140" height="30"></iframe>
     <iframe src="http://ghbtns.com/github-btn.html?user=railsware&repo=applepie&type=fork&count=true&size=large" height="30" style="margin-top: 2px;" width="140" frameborder="0" scrolling="0" style="" allowtransparency="true"></iframe>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.apppie.org" data-size="large" data-hashtags="applepie">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
   </div>
 </section>
-<section class="shaded pvl">
-  <div class="container row">
+<section class="shaded">
+  <div class="container row adaptive">
     <div class="col1of2 prl">
       <div class="left mrm">
-        <%= image_tag 'icon01.png'%>
+        <%= image_tag 'icon01.png', class: 'fittogrid'%>
       </div>
       <div class="last-col">
         <h2 class="mbm">Semantic CSS <span class="emphasis">Approach</span></h2>
@@ -45,7 +51,7 @@ title: ApplePie - Semantic and modular CSS Framework. Better way to build web in
     </div>
     <div class="col1of2 prm">
       <div class="left mrm">
-        <%= image_tag 'icon02.png'%>
+        <%= image_tag 'icon02.png', class: 'fittogrid'%>
       </div>
       <div class="last-col">
         <h2 class="mbm">Modular <span class="emphasis">CSS toolkit</span></h2>
@@ -54,11 +60,11 @@ title: ApplePie - Semantic and modular CSS Framework. Better way to build web in
     </div>
   </div>
 </section>
-<section class="light pvl">
+<section class="light">
   <div class="container row">
     <h3 class="mbs">Some examples?</h3>
   </div> <!-- container row -->
-  <div class="container row mbm">
+  <div class="container row adaptive">
     <div class="col1of2 prs">
       <h4>Without any conventions</h4>
       <div class="component wrong">

@@ -9,6 +9,8 @@ section
     img.hero
       display: block
       margin: -90px 0 0 40px
+    .description
+      margin-bottom: 40px
     .button
       padding: 10px 15px
       font-size: 1.3em
@@ -43,7 +45,48 @@ section
         background: darken(#00b2a3, 5%)
         &:after
           border-left-color: darken(#00b2a3, 5%)
+    @media only screen and (max-width: 1090px)
+      h1
+        font-size: 2.5rem
+        letter-spacing: 0
+      .shortener
+        display: none
+      .button
+        padding: 10px
+    @media only screen and (max-width: 960px)
+      h1
+        font-size: 2rem
+      .button.pale, .description
+        display: none
+    @media only screen and (max-width: 768px)
+      .col2of5, .col3of5
+        width: 100%
+        float: none
+        padding: 0
+      .col2of5
+        margin-bottom: 30px
+        text-align: center
+      .button.pale
+        display: initial
+      h1
+        font-size: 3.5rem
+      img.hero
+        margin: 0
+    @media only screen and (max-width: 480px)
+      h1
+        font-size: 2.5rem
+      .button.pale
+        display: none
+  &.light, &.shaded
+    padding: 40px 0
   &.shaded
     background: #edebe8
   &.light
     background-color: #fff
+  &.shaded
+    @media only screen and (max-width: 1090px)
+      .left
+        width: 15%
+    @media only screen and (max-width: 768px)
+      .row.adaptive .col1of2:last-child
+        margin-bottom: 0

@@ -2,6 +2,7 @@
 .side-subnavigation
   list-style-type: none
   position: fixed
+  z-index: 100
   top: 70px
   left: 70px
   margin: 0
@@ -25,5 +26,34 @@
     margin-top: 10px
   @media only screen and (max-width: 820px)
     margin-left: -200px
+    &.expanded
+      margin-left: 0
   @media only screen and (max-width: 480px)
     margin-left: -220px
+    &.expanded
+      margin-left: -20px
+.subnavigation-toggle
+  display: none
+  width: 24px
+  height: 24px
+  padding: 10px 8px 8px
+  margin-bottom: 20px
+  cursor: pointer
+  background: #ECF0F1
+  +border-radius(20px)
+  +transition(all 0.3s)
+  &:hover
+    background: #D6DBDC
+  span
+    display: block
+    height: 4px
+    background: #9aa1a2
+    margin: 1px 0 4px 1px
+    +border-radius(3px)
+  @media only screen and (max-width: 820px)
+    display: block
+    &.expanded
+      margin-left: 160px
+  @media only screen and (max-width: 480px)
+    &.expanded
+      margin-left: 185px

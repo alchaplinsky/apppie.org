@@ -115,6 +115,9 @@
     $(document).ready(function(){
       $('div.component').each(function(){example = new Example(this);});
       $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
     });
   </script>
   <%= render_partial "layouts/yandex"%>

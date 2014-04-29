@@ -50,6 +50,7 @@
   <% if current_page.url != '/' %>
   <% unless /faq/ =~ current_page.url %>
   <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
     <%= subnavigation %>
   </ul>
   <%end%>

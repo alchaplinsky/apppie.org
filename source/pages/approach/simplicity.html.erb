@@ -19,16 +19,16 @@
       <p>Do not overload HTML tags with long chains of CSS classes. If you are following <%= link_to 'component approach', '/pages/approach/components.html'%>
       there shouldn't be such case in your code, when you need to apply more than 3 classes to single HTML tag. All components can be defined by applying
       2 classes - component name class and component modifier (if default component needs modification).</p>
-      <div class="row mbm">
-        <div class="col1of2 prm">
-          <div class="code-sample wrong">
+      <div class="row adaptive mbm">
+        <div class="col1of2 component prm">
+          <div class="example wrong">
             <nav class="navigation dark default fixed">
               ....
             </nav>
           </div>
         </div>
-        <div class="col1of2 plm">
-          <div class="code-sample correct">
+        <div class="col1of2 component plm">
+          <div class="example correct">
             <nav class="navigation general">
               ....
             </nav>
@@ -47,7 +47,7 @@
       <p>While creating multi-level components follow namespace approach rather than using prefixes. For instance you're building some simple article block
       that has title, description and thumbnail. Define a top level class <code>.article</code> and use it as a namespace for styling nested elements.
     Look at this SASS example:</p>
-      <div class="row">
+      <div class="row ">
         <div class="col1of2 prm">
           <pre><code class="language-css">
             .article

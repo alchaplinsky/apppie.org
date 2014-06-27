@@ -6,15 +6,63 @@
   <div class="article-content">
     <p><em>Most of stated here should be already familiar to you, as you may have heard about OOCSS or BEM methodology.
     Both of these approaches are built on top of general idea of modular and reusable CSS which is pretty common these days.
-    ApplePie is not about re-enventing the wheel, but about combining all the good parts and bring standards into frontend development.
+    ApplePie is not about re-inventing the wheel, but about combining all the good parts and bring standards into frontend development.
     </em></p>
 
-    <p><strong>Components</strong> are inended to be independent, reusable and extandable building blocks of your interface.
-    Basically everything is a component, from a link element to more complex block containing lots of different DOM elements.
-    Components (even though they )</p>
+    <p><strong>Components</strong> are intended to be independent, reusable and extandable building blocks of your interface.
+    Basically everything is a component, from a link element to more complex block containing lots of different DOM elements.</p>
 
-    <p>Upcoming web components technologies follow the principle of encapsulation all the logic behavior and look of a component so that you can modify it only via external API. Right now web components don’t yet ship in all browsers but we can do same approach with CSS.</p>
-    <h3>Application Layers</h3>
+    <p>Upcoming web components technologies follow the principle of encapsulation all the logic behavior and presentation allowing you control it via external API.
+     Right now web components don’t yet ship in all browsers but this principle is really applicable to CSS.</p>
+
+    <h3>Typography</h3>
+    <p>Typically one of the first decisions we’ll make when building a website is choosing the primary typeface and text color to be used across all the pages, to keep them consistent.
+    So it is a good idea to have typography and text colors generally applied to all application (layout) cascading from body element to child nodes. All of components will be built on top of general
+    typography rules, so you don't have to define font styles in multiple places.</p>
+    <p>That's why it is good idea to place all of typo styles in single file <code>typography.css</code> which starts with:</p>
+    <pre><code>
+        body {
+  font-family: 'Arial';
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #fff;
+}
+    </code></pre>
+    <div class="note">
+      Note that <code>input</code> and <code>button</code> elements do not inherit font styles fron body element. You'll need to define them directly for this elements.
+    </div>
+
+    <p>Choosing units to define font sizes is up to each developer. There are miltiple blog posts about px, em, rem size units which will help to determine which works best for you.</p>
+
+    <h3>Objects and Modules</h3>
+    <p><strong>Object</strong> is a simple and indivisible component (e.g. link, button, text field). Objects are independent from each other and from context: whether you place button on an empty page on
+      inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
+
+    <p><strong>Module</strong> is more complex component that consists of multiple objects it can be divided into. But it has nothing to do with HTML strucure. For instance if you have navigation component
+      which is simple unordered list with links inside, you theoreticaly could divide it on smaller components. But if navigation links styled in a way that they won't make sense outside navigation
+      context, you should not treat navigation as module. It is indivisible and it is an object. A modules can be either simple or compound (containing other modules).</p>
+
+    <p>
+    <ul>
+      <li>An object or module must have a unique "name" (a CSS class) that could be used in a CSS rule.</li>
+      <li>HTML elements must not be used in CSS selectors (.navigation li a) as such selectors are inherently not context-free.</li>
+      <li>Cascading selectors should be reduced.</li>
+    </ul>
+    </p>
+
+    <h3>Modifiers, States and Behaviors</h3>
+
+      <ul>
+        <li>modifications - styles that define different presentation of the same object.</li>
+        <li>states - are represented by element's presentation and behaviour (e.g. disabled state).</li>
+        <li>behaviors - margins, positioning that depends on element location.</li>
+      </ul>
+
+     <!-- -- Component is not tied to a particular class. But it is recommended to use common naming -->
+
+
+    <!-- <h3>Application Layers</h3>
     <p>Before we can start implement independent interface elements, there are couple of things we need to take care about. There are some basic setup, our components will depend on (yes, components aren't really fully independent). This base styles are divided into  two layers: Base layer (including resets, helpers and grids) and typography layer (globally defined styles for text elements).</p>
     <p>- <strong>Base layer</strong> does reset of inconsistent default browser styling. There are two most popular techniques for this: reset.css and normalize.css - you can use one you prefer most. ApplePie Toolkit includes some kind of merge of this two solutions. Also base layer adds different kinds of helpers you might need, like grids, responsive helpers, spacings helpers etc. Most of them have become almost standarized among developers from all over the world.</p>
     <p>- <strong>Typography layer</strong> defines basic text styles for all <strong>needed</strong> text elements like headings, paragraphs, link styles etc. Of course you wouldn't  want to include and repeat all those styling to each element individually, because you'd like to have ability to change typography styles in one place. A nice starting typography module is included to Apple Pie Toolkit which you can use as is or modify by your needs.</p>
@@ -22,7 +70,7 @@
     <h3>Building modular interface</h3>
     <p>Before getting to implementation of web pages out of design screens take a look at all those screens and define all the elements your interface consists of. Build components library first and it will save a lot of time while building actual pages out of existing components.</p>
     <p>Interface components are divided into two categories: objects and modules. Object is simple independent and indivisible element of a page, like heading, link, button or input.</p>
-    <p>In order Object Oriented approach set up one to one relationship between CSS selector (component name) and component itself considering <%= link_to 'naming convention', '/pages/approach/naming.html'%>. </p>
+    <p>In order Object Oriented approach set up one to one relationship between CSS selector (component name) and component itself considering <%= link_to 'naming convention', '/pages/approach/naming.html'%>. </p> -->
 
     <h3>Basic rules</h3>
     <p>- Avoid location dependent styling to keep component independent and preserve ability to re-use it in other part of application. </p>

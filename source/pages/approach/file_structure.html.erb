@@ -1,0 +1,81 @@
+<header class="header">
+  <h1>Approach</h1>
+</header>
+<article class="main">
+  <h1>File structure</h1>
+  <div class="article-content">
+    <h3>General agreements</h3>
+    <p>ApplePie approach comes with pretty well defined file structure and organization rules. These rules are built to provide standard and logical way of
+    organizing reusable modules that are easy to maintain and extend. This file structure originally comes from Ruby on Rails projects, but if fits well
+    for webapps built with or withou any other framework:</p>
+    <pre><code>
+    stylesheets/
+  ├── base/
+  ├── application.sass
+  ├── application/
+  │   ├── layout.sass
+  │   ├── typography.sass
+  │   ├── objects/
+  │   ├── modules/
+  │── shared/
+  └── vendor/</code></pre>
+    <p><strong>base/</strong> folder contains rules that are global to the site and potentially across multiple sites. These includes normalize.css, grids, helpers and some general mixins.
+      In other words it contains a foundation that consists of common styles and unlikely to be changed during development process.</p>
+    <p><strong>application/</strong> is the main folder containing styles of your application. In Rails project it is usually named after layout (e.g. 'application', 'admin', 'landing').
+      If you have multiple layouts in your application that are styled differently (like marketing site, app interface or admin area) it would be good idea to have multiple layout folders
+      containing styles specific to those layouts.</p>
+    <p><strong>shared/</strong> is simply folder that contains styles shared (in case of using identical components) between different layouts.</p>
+    <p><strong>vendor/</strong> folder is obviously for placing third-party vendor styles.</p>
+    <p><strong>application.sass</strong> is layout manifest file that defines which css files should be included to this particular layout. It links together base styles, all of
+    layout specific styles shared and vendor css. The application .sass file will look something like this:</p>
+    <pre><code>
+/*-----------
+/*  BASE
+/*-----------
+@import "base/variables"
+@import "base/reset"
+@import "base/spaces"
+@import "base/grids"
+@import "base/helpers"
+
+/*---------------------
+/*  Application styles
+/*---------------------
+@import "application/layout"
+@import "application/typography"
+
+@import "application/objects/button"
+..........
+@import "application/modules/article"
+..........
+
+/*---------------------
+/*  Shared
+/*---------------------
+@import "shared/stars"
+@import "shared/modals"
+    </code></pre>
+    <p>As follows from above it mostly acts as an aggregator for other files, which themselves import some other sass files, and so on. With a well thought organization,
+    this construct can prove very powerful. Ideally there should be one manifest file and folder of the same name for each layout.</p>
+    <h3>Application folder</h3>
+    <p>Structure of application (layout) folder is pretty straight forward - layout and typography styles are base for all components that are used in this layout.
+      However typography may not differ between multiple layouts, in this case it would be better to put it under <code>shared</code> folder.</p>
+    <p>Application components, each in single file, are divided into two folders <code>objects</code> and <code>modules</code> as follows from the <strong>components</strong> section.
+    Inside this two folders you can structure files depending on project's specificity and team agreements and preferences, or keep it plain just by placing all <em>object</em> files into <em>object</em> folder.</p>
+    <pre><code>
+    application/
+      ├── layout.sass
+      ├── typography.sass
+      ├── objects/
+      |   ├── buttons.sass
+      |   ├── inputs.sass
+      |   └── ..........
+      ├── modules/
+      |   ├── profile.sass
+      |   ├── dashboard.sass
+      |   └── ..........
+      </code></pre>
+      <p>Each object or module is fully described in its own single file, including modifications, states, behavior,
+        so it is easy to find place for styles that define object behaviour if it is placed inside particular blocks.</p>
+  </div>
+</article>

@@ -42,8 +42,7 @@
     <p><strong>Module</strong> is more complex component that consists of multiple objects it can be divided into. But it has nothing to do with HTML strucure. For instance if you have navigation component
       which is simple unordered list with links inside, you theoreticaly could divide it on smaller components. But if navigation links styled in a way that they won't make sense outside navigation
       context, you should not treat navigation as module. It is indivisible and it is an object. A modules can be either simple or compound (containing other modules).</p>
-
-    <p>
+    <!-- <p>This is not nesecary to have only unique selectors to achieve component's independency.</p> -->
     <ul>
       <li>An object or module must have a unique "name" (a CSS class) that could be used in a CSS rule.</li>
       <li>HTML elements must not be used in CSS selectors (.navigation li a) as such selectors are inherently not context-free.</li>
@@ -72,40 +71,5 @@
     <p>Interface components are divided into two categories: objects and modules. Object is simple independent and indivisible element of a page, like heading, link, button or input.</p>
     <p>In order Object Oriented approach set up one to one relationship between CSS selector (component name) and component itself considering <%= link_to 'naming convention', '/pages/approach/naming.html'%>. </p> -->
 
-    <h3>Basic rules</h3>
-    <p>- Avoid location dependent styling to keep component independent and preserve ability to re-use it in other part of application. </p>
-    <div class="row mbm">
-      <div class="col1of2 prs">
-        <pre class="wrong"><code class="language-scss">
-          .header ul.navigation {
-            ...
-          }
-        </code></pre>
-        </div>
-      <div class="col1of2 pls">
-        <pre class="correct"><code class="language-scss">
-          .navigation {
-            ...
-          }
-        </code></pre>
-      </div>
-    </div>
-    <p>- Do not use presentational class names. You never know when presentation of an object going to change and it may happen that class <code>.blue</code> will add a CSS rule like <code>background: green;</code></p>
-    <div class="row mbm">
-      <div class="col1of2 prs">
-        <div class="code-sample wrong">
-          <a href="#" class="button blue">
-            Button text
-          </a>
-        </div>
-      </div>
-      <div class="col1of2 pls">
-        <div class="code-sample correct">
-          <a href="#" class="button primary">
-            Button text
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </article>

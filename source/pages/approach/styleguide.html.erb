@@ -1,0 +1,85 @@
+---
+title: ApplePie CSS StyleGuide. Standards for developing modular and flexible HTML and CSS
+description: ApplePie HTML/CSS Style Guide provides you with recommendations on code formatting and organization
+keywords: styleguide, code style, css, sass, html, standards, conventions
+---
+<header class="header">
+  <h1>Approach</h1>
+</header>
+<article class="main">
+  <h1>CSS/HTML Styleguide</h1>
+  <div class="article-content">
+    <h3>Basic syntax</h3>
+    <ul class="mbl">
+      <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in each developer's environment.</li>
+      <li>If you write pure CSS or you're using CSS compatible SCSS syntax, always put spaces after <code>:</code> in property declarations and
+ before <code>{</code> in rule declarations - this makes code easier to read. SASS syntax enforces you to place space after each semicolon.</li>
+      <li>End all declarations with a semi-colon (for CSS and SCSS). Despite that fact that the last declaration's is optional, it is better to put semi-colon at the end of each line.</li>
+      <li>Each CSS declaration should appear on its own line. Do not place whole ruleset on a single line, minifier will do that for you.
+      Multiline blocks are easier to read and understand.</li>
+      <li>Comma-separated property values like multiple background or multiple box-shadows should include a space after each comma.
+        But do not include spaces after commas in <code>rgb()</code>, <code>hsl()</code>, or <code>deg()</code> values.</li>
+      <li>Use lowercase for all hex values. <code>#fff</code> instead of <code>#FFF</code>. And use shorthand hex values where possible
+      <code>#fff</code> instead of <code>#ffffff</code>. Remember that you can shorten hexes like <code>#aabbcc</code> to <code>#abc</code></li>
+      <li>You can drop leading zero for opacity in color parameters (e.g. <code>rgba(0,0,0,.4)</code>) and transition durations (e.g. <code>margin .5s linear</code>)</li>
+      <li>User shorthand notations for <code>margin</code>, <code>padding</code>, <code>font</code>, <code>background</code> and <code>border</code> where available (<code>margin: 5px 10px</code> instead of <code>margin: 5px 10px 5px 10px</code>). And avoid specifying units for zero values (<code>margin: 0;</code> instead of <code>margin: 0px;</code></li>
+      <li>Quote attribute values in selectors with double quotes (e.g. <code>input[type="text"]</code>). Even they are optional in some cases, it is a good practice to use them for consistency.</li>
+    </ul>
+
+    <h3>Selectors</h3>
+    <ul class="mbl">
+      <li>For styling purposes use <strong>classes</strong> only as CSS selectors. Using tag names as CSS selectors is a bad idea
+      unless you want to specify initial styling of specific tag (e.g. typography rules for text and headings). Using tag names
+      even if they are namespaced by a class name can lead to collisions and applying unwanted tag styles that were defined
+      elsewhere in stylesheets.</li>
+      <pre><code>
+        // Bad
+        .navigation li a {
+          ....
+        }
+      </code></pre>
+      <pre><code>
+        // Good
+        .navigation .item {
+          ....
+        }
+      </code></pre>
+      <li>Using <strong>id</strong>s is also anti-pattern because it makes element not re-usable on that page. And you never know when
+        you gona need another identical component on the page (even multiple modals are possible). And also ids have grater specifity than classes
+        so it will be harder to override them.</li>
+      <li>Always keep class names lowercase and use single dash between words. This look natural, it is easy to read and this is pretty common and nice CSS convention
+      whilst camelCase is more JavaScript style and underscore_case is used in Ruby. A mix of couple of this styles in your stylesheets is a worst crime against consistency.</li>
+        <pre><code>
+          // Bad
+          .navBarWide .popup-close_XL
+        </code></pre>
+
+        <pre><code>
+          // Good
+          .navbar-wide .popup-close-xl
+        </code></pre>
+        <li>Keep classes as short as possible, but use only meaningful names. You don't need to be so verbose to define class like
+          <code>.top-navigation-bar-stripped</code> instead of simple <code>.navigation</code>. But do not shorten in to
+          <code>.nav</code> or even <code>.n</code> because it might not have sense for other developers working with you and will not have
+          sense for you after some time.</li>
+        <li><p>Do not use presentational, positioning or purposeful class names. Presentation of various components changes over time as,
+         but class names in html remain. And soon you'll find class <code>.red</code> with <code>background: blue;</code> in your code.</p>
+         <p>As well as <code>.products-list</code> could be found in listing <strong>articles</strong> or <strong>tweets</strong> because these list are so similar in styles
+         that you can reuse this class for all of them. It is better to focus on what this UI component is for, rather that what is listed in this list. And something
+         like <code>.entries-list</code> will work for every listing in your app.</p>
+         </li>
+        <li>Distinguish your css classes and classes that are used in JavaScript. Use <code>js-</code> prefix to use in JavaScript, do not use 'style classes' there.
+        And of course do not use <code>js-</code> classes in your stylesheets. This will help you not to break functionality if you decide to rename or remove some of CSS classes.</li>
+    </ul>
+    <h3>HTML Simplicity</h3>
+    <ul>
+      <li>Keep your HTML structure as simple as possible. Use HTML tag for content markup in first place without thinking about presentational layers
+      that may be needed in the future. Minimize number of wrappers that are needed only for styling purposes. Consider
+      using pseudo elements <code>::after</code> and <code>::before</code> to move all decorative code from HTML to CSS.</li>
+      <li>Do not overload HTML tags with long chains of CSS classes. If you are following <%= link_to 'component approach', '/pages/approach/components.html'%>
+      there shouldn't be such case in your code, when you need to apply more than 3 classes to single HTML tag. All components can be defined by applying
+      2 classes - component name class and component modifier (if default component needs modification).</li>
+    </ul>
+
+  </div>
+</article>

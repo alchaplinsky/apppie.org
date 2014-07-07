@@ -1,75 +1,363 @@
+---
+title: Modular CSS ApplePie Components. Objects and Modules.
+description: Modular CSS components approach: Objects, modules, modifiers and states.
+keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
+---
 <header class="header">
   <h1>Approach</h1>
 </header>
 <article class="main">
   <h1>Components Approach</h1>
   <div class="article-content">
-    <p><em>Most of stated here should be already familiar to you, as you may have heard about OOCSS or BEM methodology.
-    Both of these approaches are built on top of general idea of modular and reusable CSS which is pretty common these days.
-    ApplePie is not about re-inventing the wheel, but about combining all the good parts and bring standards into frontend development.
-    </em></p>
+    <div class="mbl">
+      <p><em>Most of stated here should be already familiar to you, as you may have heard about OOCSS or BEM methodology.
+      Both of these approaches are built on top of general idea of modular and reusable CSS which is pretty common these days.
+      ApplePie is not about re-inventing the wheel, but about combining all the good parts and bring standards into frontend development.
+      </em></p>
 
-    <p><strong>Components</strong> are intended to be independent, reusable and extandable building blocks of your interface.
-    Basically everything is a component, from a link element to more complex block containing lots of different DOM elements.</p>
+      <p><strong>Components</strong> are intended to be independent, reusable and extandable building blocks of your interface.
+      Basically everything is a component, from a link element to more complex block containing lots of different DOM elements.</p>
 
-    <p>Upcoming web components technologies follow the principle of encapsulation all the logic behavior and presentation allowing you control it via external API.
-     Right now web components don’t yet ship in all browsers but this principle is really applicable to CSS.</p>
-
-    <h3>Typography</h3>
-    <p>Typically one of the first decisions we’ll make when building a website is choosing the primary typeface and text color to be used across all the pages, to keep them consistent.
-    So it is a good idea to have typography and text colors generally applied to all application (layout) cascading from body element to child nodes. All of components will be built on top of general
-    typography rules, so you don't have to define font styles in multiple places.</p>
-    <p>That's why it is good idea to place all of typo styles in single file <code>typography.css</code> which starts with:</p>
-    <pre><code>
-        body {
-  font-family: 'Arial';
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #fff;
-}
-    </code></pre>
-    <div class="note">
-      Note that <code>input</code> and <code>button</code> elements do not inherit font styles fron body element. You'll need to define them directly for this elements.
+      <p>Upcoming web components technologies follow the principle of encapsulation all the logic behavior and presentation allowing you control it via external API.
+       Right now web components don’t yet ship in all browsers but this principle is really applicable to CSS.</p>
     </div>
 
-    <p>Choosing units to define font sizes is up to each developer. There are miltiple blog posts about px, em, rem size units which will help to determine which works best for you.</p>
+    <h3>Typography</h3>
+    <div class="mbl">
+      <p>Typically one of the first decisions we’ll make when building a website is choosing the primary typeface and text color to be used across all the pages, to keep them consistent.
+      So it is a good idea to have typography and text colors generally applied to all application (layout) cascading from body element to child nodes. All of components will be built on top of general
+      typography rules, so you don't have to define font styles in multiple places.</p>
+      <p>That's why it is good idea to place all of typo styles in single file <code>typography.css</code> which starts with:</p>
+      <pre><code>
+          body {
+    font-family: 'Arial';
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+  }
+      </code></pre>
+      <div class="note">
+        Note that <code>input</code> and <code>button</code> elements do not inherit font styles fron body element. You'll need to define them directly for this elements.
+      </div>
 
-    <h3>Objects and Modules</h3>
-    <p><strong>Object</strong> is a simple and indivisible component (e.g. link, button, text field). Objects are independent from each other and from context: whether you place button on an empty page on
-      inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
+      <p>Choosing units to define font sizes is up to each developer. There are miltiple blog posts about px, em, rem size units which will help to determine which works best for you.</p>
+    </div>
 
-    <p><strong>Module</strong> is more complex component that consists of multiple objects it can be divided into. But it has nothing to do with HTML strucure. For instance if you have navigation component
-      which is simple unordered list with links inside, you theoreticaly could divide it on smaller components. But if navigation links styled in a way that they won't make sense outside navigation
-      context, you should not treat navigation as module. It is indivisible and it is an object. A modules can be either simple or compound (containing other modules).</p>
-    <!-- <p>This is not nesecary to have only unique selectors to achieve component's independency.</p> -->
-    <ul>
-      <li>An object or module must have a unique "name" (a CSS class) that could be used in a CSS rule.</li>
-      <li>HTML elements must not be used in CSS selectors (.navigation li a) as such selectors are inherently not context-free.</li>
-      <li>Cascading selectors should be reduced.</li>
-    </ul>
-    </p>
+    <h3>Definitions</h3>
+    <div class="mbl">
+      <p><strong>Object</strong> is a simple and indivisible component (e.g. link, button, text field). Objects are independent from each other and from context: whether you place button on an empty page or
+        inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
 
-    <h3>Modifiers, States and Behaviors</h3>
+      <p><strong>Module</strong> is more complex component that consists of multiple objects which can function independently
+      out of module context. Modules are ment to bring structure for complex components that are also independent and reusable,
+      but they ar too large and include objects that may already exist in interface.
+      Modules can be either simple or compound (containing other modules).</p>
 
-      <ul>
-        <li>modifications - styles that define different presentation of the same object.</li>
-        <li>states - are represented by element's presentation and behaviour (e.g. disabled state).</li>
-        <li>behaviors - margins, positioning that depends on element location.</li>
-      </ul>
+      <div class="note">To distinguish object from a module, try to imagine if it could be divided into obejcts that would
+      make senese out of component's context. For instance if you have navigation component
+      which is simple unordered list with links inside, you theoreticaly could divide it on smaller components.
+      But if navigation links styled in a way that they won't make sense outside navigation
+      context, you should not treat navigation as module. It is indivisible and it is an object.</div>
+      <br />
+      <p>Each <strong>object</strong> or <strong>module</strong> in order to be independent and reusable must have a unique name (selector). That obviously doesn't
+      mean that every single class name used in your HTML should be unique or that you need to use some fancy naming with
+      double underscores, double dashes prefixing or suffixing your classes with some abbreviations.</p>
 
-     <!-- -- Component is not tied to a particular class. But it is recommended to use common naming -->
+      <p>Keep your class names human readable and simple. You need to take care only for uniqueness of top level class names,
+      and there are enough english words to call each component of web interface with its own name. </p>
+    </div>
+    <!-- Example -->
 
+    <h3>Building an Object</h3>
+    <p>Make sure that you've chosen unique and understandable name for your object. Try to find some useful class names in
+    the <a href="/pages/approach/naming_table.html">table</a> from <a href="/pages/approach/naming.html">naming conventions</a>
+    section. Start new css (sass) file under <code>objects</code> folder with the same of component, replacing all dashes with underscore in filename.
+    It is really convinient and flexible to have each component's style in a seperate file.</p>
 
-    <!-- <h3>Application Layers</h3>
-    <p>Before we can start implement independent interface elements, there are couple of things we need to take care about. There are some basic setup, our components will depend on (yes, components aren't really fully independent). This base styles are divided into  two layers: Base layer (including resets, helpers and grids) and typography layer (globally defined styles for text elements).</p>
-    <p>- <strong>Base layer</strong> does reset of inconsistent default browser styling. There are two most popular techniques for this: reset.css and normalize.css - you can use one you prefer most. ApplePie Toolkit includes some kind of merge of this two solutions. Also base layer adds different kinds of helpers you might need, like grids, responsive helpers, spacings helpers etc. Most of them have become almost standarized among developers from all over the world.</p>
-    <p>- <strong>Typography layer</strong> defines basic text styles for all <strong>needed</strong> text elements like headings, paragraphs, link styles etc. Of course you wouldn't  want to include and repeat all those styling to each element individually, because you'd like to have ability to change typography styles in one place. A nice starting typography module is included to Apple Pie Toolkit which you can use as is or modify by your needs.</p>
-    <p>- Third layer is a <strong>components layer</strong>. It is built on top of typography layer - so every component inherits all styles of text elements. </p>
-    <h3>Building modular interface</h3>
-    <p>Before getting to implementation of web pages out of design screens take a look at all those screens and define all the elements your interface consists of. Build components library first and it will save a lot of time while building actual pages out of existing components.</p>
-    <p>Interface components are divided into two categories: objects and modules. Object is simple independent and indivisible element of a page, like heading, link, button or input.</p>
-    <p>In order Object Oriented approach set up one to one relationship between CSS selector (component name) and component itself considering <%= link_to 'naming convention', '/pages/approach/naming.html'%>. </p> -->
+    <div>Avoid location dependent style while creating an object.</div>
 
+    <div class="row mbm">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+          .button {
+            background: #cccc;
+          }
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+          .header .button {
+            background: #cccc;
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <div>Do not use compound selectors to group similar css rules. Even though it generates more CSS code in total,
+    it helps in keeping all elements independent, and allows easily modify objects without breaking other components. </div>
+
+    <div class="row mbm">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // flash.scss
+        .flash {
+          display: inline-block;
+          padding: 10px 20px;
+        }
+
+        // button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #cccc;
+        }
+      </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // common.scss
+        .flash, .button {
+          display: inline-block;
+          padding: 10px 20px;
+        }
+
+        // button.scss
+        .button {
+          background: #cccc;
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <p> You are free to use non-unique class names namespaced under object name (top level) class. For instance if you're
+    building some kind of <code>.entry</code> it can have nested element <code>.title</code> even though <code>title</code>
+    is used in multiple different components. Just make sure that <code>title</code> is not used in 'global namespace'
+    and their styles won't affect each other.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // objects/post.scss
+        .post {
+          .....
+          .title {
+            font-size: 24px
+            color: blue;
+          }
+        }
+
+        // objects/entry.css
+        .entry {
+          .....
+          .title {
+            font-size: 18px;
+            color: red;
+          }
+        }
+        // both .title are safe under namespaces
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // objects/title.scss
+        .title {
+          font-size: 20px;
+          border-bottom: 1px solid #ccc;
+          background: #fafafa;
+          ......
+        }
+
+        // objects/entry.css
+        .entry {
+          .....
+          .title {
+            font-size: 18px;
+            color: red;
+          }
+        }
+        // .title will inherit all the styles
+      </code></pre>
+      </div>
+    </div>
+
+    <h3>Composing a Module</h3>
+    <p>Creating a Module is fairly similar to object creation. You need to define unique name and create file under
+    <code>modules</code> folder. If module contains component that is already styled as an object or another module,
+    you don't need to re-define it's styles in context of this module. Simply use selector that is allready defined and
+    override particular properties inside module definition if needed.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // objects/button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #ccc;
+          font-size: 13px;
+        }
+
+        // modules/modal.scss
+        .modal {
+          .....
+          .button {
+            font-size: 18px;
+          }
+        }
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // objects/button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #ccc;
+          font-size: 13px;
+        }
+
+        // modules/modal.scss
+        .modal {
+          .....
+          .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ccc;
+            font-size: 18px;
+          }
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <p>Avoid cascading selector and deep nesting. Reduce nesting CSS selectors to maximum 3 level nesting. It is better to
+    have more plane structure of a module and avoid long selectors rather than mimic nesting of DOM elements in CSS.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // modules/dashboard.scss
+        .dashboard {
+          ....
+          .pannel {
+            ....
+          }
+          .points {
+            ....
+          }
+          .count {
+            ....
+          }
+        }
+
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // modules/dashboard.scss
+        .dashboard {
+          ....
+          .panel {
+            ....
+            .row .points {
+              ....
+              .count {
+                ....
+              }
+            }
+          }
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <h3>Component modifications</h3>
+    <div class="mbl">
+      <p>Since you've defined your object it has it's defaulr look and appearence. But there are usually such cases when you
+      need to create couple similar objects with minor differences. This is a right time to introduce classes <strong>modifiers</strong>,
+      which allow us to make modifications to objects properties (override them) and add new.</p>
+
+      <p>You are free to create as many
+      modifiers as you need. But you shouldn't apply more that one modifier to a single component. If there is case when you need
+      to combine couple modifiers like <code>.object.skin1.skin2</code>, you should think about <code>.skin3</code> that will
+      contain CSS rules of both <code>.skin1</code> and <code>.skin2</code>.</p>
+
+      <p>For naming objects or modules you would obviously use nouns (e.g. button, block, entry), modifiers are best described by
+      using adjectives (e.g. primary, secondary, disabled). Try to keep them as abstract as possible. It is better for classes not
+      to describe presentation or position. Let's say if you create modifier for button which adds <code>background: red;</code>
+      it is better not to call in <code>.red</code> but come up with some abstract name like <code>.expressive</code> which will
+      mean nothing in terms of colors. Then you'll be able to change button's color without need of changing class name.</p>
+    </div>
+
+    <h3>Component states</h3>
+    <div class="mbl">
+      <p>Except cases when you need to create couple of 'skins' for your object, there are also cases then you need to introduce
+      <strong>states</strong> for you object or a module. There may be tons of different states like <code>disabled</code>,
+      <code>active</code>, <code>highlighted</code> or <code>pending</code>. These are also kind of modifiers, but they can be
+      applied as third class to already modified components.</p>
+
+      <div class="mbm">
+        <pre><code>
+          &lt;div class="account extended active"&gt;
+            ....
+          &lt;/div&gt;
+        </code></pre>
+      </div>
+
+      <p>In this case <code>.account</code> is an <strong>object</strong>, <code>.extended</code> is <strong>modifier</strong>
+      and <code>.active</code> is <strong>state</strong>.</p>
+
+      <p>Each object modification should be styled taking in account that default object and all of it's modifications
+      can have states which may mean that states should override modificators if there are conflicting properties.</p>
+    </div>
+
+    <h3>Component behavior</h3>
+    <div class="mbl">
+      <p>Positioning and display properties should not be included to default component styles since they are considered
+      as component's behavior. In would be weird to have object with <code>display: none</code>, that is hidden by default.
+      Obvioulsy it should be hidden only when it is in a context where it should not be displayed.</p>
+      <p>For instance context menu that is shown when you click dropdown button. You definetly want it to be visible while you
+      still styling it or in ui library of your project unless it is placed in a context.</p>
+      <div class="row mbm">
+        <div class="col1of2 prs">
+          <pre><code>
+          // modules/context.css
+          .context-menu {
+            background: #fff;
+            font-size: 13px;
+            color: #333;
+            ...
+          }
+          .toggle-context .context-meny {
+            display: none;
+          }
+          </code></pre>
+        </div>
+        <div class="col1of2 pls">
+          <pre><code>
+          // modules/context.scss
+          .context-menu {
+            background: #fff;
+            font-size: 13px;
+            color: #333;
+            ...
+            .toggle-context & {
+              display: none;
+            }
+          }
+
+          </code></pre>
+        </div>
+      </div>
+      <p>Of course it is better to define behaviors of an object in the same file where object is defined. It makes it more
+      easy to find this behavior styles. If you're using SASS, you can define all behaviors in the same block of code
+      by using parent selector inside component's styles.</p>
+    </div>
+
+    <h3>Conclusion</h3>
+    <p>These are general recomendations following which you can feell more controll over your code and be more
+    flexible and modular. Of course there are still a lot of work to do and more conventions to bring in, but this is a nice
+    starting point to begin wisely organize your CSS code.</p>
   </div>
 </article>

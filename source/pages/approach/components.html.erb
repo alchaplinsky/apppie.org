@@ -50,13 +50,13 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
         inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
 
       <p><strong>Module</strong> is more complex component that consists of multiple objects which can function independently
-      out of module context. Modules are ment to bring structure for complex components that are also independent and reusable,
-      but they ar too large and include objects that may already exist in interface.
+      out of module context. Modules are meant to bring structure for complex components that are also independent and reusable,
+      but they are too large and include objects that may already exist in interface.
       Modules can be either simple or compound (containing other modules).</p>
 
-      <div class="note">To distinguish object from a module, try to imagine if it could be divided into obejcts that would
-      make senese out of component's context. For instance if you have navigation component
-      which is simple unordered list with links inside, you theoreticaly could divide it on smaller components.
+      <div class="note">To distinguish object from a module, try to imagine if it could be divided into objects that would
+      make sense out of component's context. For instance if you have navigation component
+      which is simple unordered list with links inside, you theoretically could divide it on smaller components.
       But if navigation links styled in a way that they won't make sense outside navigation
       context, you should not treat navigation as module. It is indivisible and it is an object.</div>
       <br />
@@ -73,7 +73,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
     <p>Make sure that you've chosen unique and understandable name for your object. Try to find some useful class names in
     the <a href="/pages/approach/naming_table.html">table</a> from <a href="/pages/approach/naming.html">naming conventions</a>
     section. Start new css (sass) file under <code>objects</code> folder with the same of component, replacing all dashes with underscore in filename.
-    It is really convinient and flexible to have each component's style in a seperate file.</p>
+    It is really convenient and flexible to have each component's style in a separate file.</p>
 
     <div>Avoid location dependent style while creating an object.</div>
 
@@ -184,7 +184,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
     <h3>Composing a Module</h3>
     <p>Creating a Module is fairly similar to object creation. You need to define unique name and create file under
     <code>modules</code> folder. If module contains component that is already styled as an object or another module,
-    you don't need to re-define it's styles in context of this module. Simply use selector that is allready defined and
+    you don't need to re-define it's styles in context of this module. Simply use selector that is already defined and
     override particular properties inside module definition if needed.</p>
 
     <div class="row mbl">
@@ -274,7 +274,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
 
     <h3>Component modifications</h3>
     <div class="mbl">
-      <p>Since you've defined your object it has it's defaulr look and appearence. But there are usually such cases when you
+      <p>Since you've defined your object it has it's default look and appearance. But there are usually such cases when you
       need to create couple similar objects with minor differences. This is a right time to introduce classes <strong>modifiers</strong>,
       which allow us to make modifications to objects properties (override them) and add new.</p>
 
@@ -316,8 +316,8 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
     <div class="mbl">
       <p>Positioning and display properties should not be included to default component styles since they are considered
       as component's behavior. In would be weird to have object with <code>display: none</code>, that is hidden by default.
-      Obvioulsy it should be hidden only when it is in a context where it should not be displayed.</p>
-      <p>For instance context menu that is shown when you click dropdown button. You definetly want it to be visible while you
+      Obviously it should be hidden only when it is in a context where it should not be displayed.</p>
+      <p>For instance context menu that is shown when you click dropdown button. You definitely want it to be visible while you
       still styling it or in ui library of your project unless it is placed in a context.</p>
       <div class="row mbm">
         <div class="col1of2 prs">
@@ -356,7 +356,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
     </div>
 
     <h3>Conclusion</h3>
-    <p>These are general recomendations following which you can feell more controll over your code and be more
+    <p>These are general recommendations following which you can feel more control over your code and be more
     flexible and modular. Of course there are still a lot of work to do and more conventions to bring in, but this is a nice
     starting point to begin wisely organize your CSS code.</p>
   </div>

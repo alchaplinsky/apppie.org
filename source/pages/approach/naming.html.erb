@@ -1,128 +1,175 @@
+---
+title: CSS naming conventions. Standard class names for components of web interface.
+description: Naming conventions for classes. ApplePie presents a simple approach to CSS class naming.
+keywords: css, sass, naming, conventions, elements, classes.
+---
 <header class="header">
   <h1>Approach</h1>
 </header>
 <article class="main">
-  <h1>Naming Conventions</h1>
+  <h1>Naming Convention</h1>
   <div class="article-content">
-    <p>If we compare class names of different frameworks like Bootstrap, Foundation, Skeleton etc we'll see that there is quite big
-    difference in naming same elements. And if we look into code of websites across the web, we'll find that class names are pretty messed up.
-    But why? Aren't we implementing pretty similar interface components and aren't we call them same names while speaking. So why things get so
-    complicated when it comes to naming selectors.</p>
-    <h3>Layout class names</h3>
-    <p>Creating page layouts is one of the most common tasks every frontend developer has to deal with. There are different types
-    of layouts and techniques to build them, but they still consist of pretty much the same units and have similar behavior. So it
-    is quite easy to come up with conventions about naming layout structural units.</p>
-    <p><code>.wrapper</code> class is often used for an element that needs to wrap other elements for some reason.
-    For instance in implementation of <a href="http://ryanfait.com/sticky-footer/" target="_blank">sticky footer</a> it wraps header
-    and content to push footer to bottom of the page.</p>
-    <p><code>.container</code> is commonly user to set width and for centering page contents.</p>
-    <p>Use a combination of tags (<code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>) and corresponding class names
-    <code>.header</code> and <code>.footer</code> as a CSS selectors to target page header and footer. This allows you to use this
-    tags of class names separately  in context of other objects. Because not only page can have header or footer, right? </p>
-    <p>As a result you should come up with clean, semantic and readable layout markup:</p>
-    <div class="code-sample mbl">
-      <div class="wrapper">
-        <header class="header">
-          <nav class="navigation">
-            <!-- Navigation -->
-          </nav>
-        </header>
-        <section class="body">
-          <div class="container">
-            <!-- Page content -->
-          </div>
-        </section>
-      </div>
-      <footer class="footer">
-        <!-- Footer content -->
-      </footer>
-    </div>
-    <h3>Common components names</h3>
-    <div class="mbl">
-      <p>There are pretty straight forward and generally used names for almost each interface component that we create during frontend development.
-      Using this names as CSS selector gives us most descriptive and understandable language to build web pages and communicate with other developers.</p>
-      <div class="note">
-        Use only <strong>nouns</strong> as a class selector when naming your interface components.
-      </div>
-      <p>If you are working on site navigation you don't need to make up some tricky class names like <code>.top-nav</code> or <code>.navig-bar</code>.
-      Just simply use <code>.navigation</code> without any worries about using this class name somewhere else on the page. Following ApplePie conventions
-      allows you keep track of possible collisions and helps modifying elements depending on their location.</p>
-      <p>Off course conventions don't cover 100% of possible cases, there will always be situations when you'll need to make decisions yourself
-      instead of blindly following conventions. But ApplePie is build to cover only most common and frequently solved problems, and all non-standard
-      tasks you can solve in the way you feel right. See <%= link_to "full list", "/pages/approach/naming_table.html" %> of standardized common elements class names. </p>
-    </div>
-    <h3>Component modifier classes</h3>
-    <div class="mbl">
-      <div class="note">
-        Use only <strong>adjectives</strong> as classes modifiers for components.
-      </div>
-      <p>If you are creating a modification of component, do not use presentational class names like <code>.blue</code>, <code>.bordered</code> or
-      <code>.font-size-xl</code>, because css for modification may change, but this classes most likely will remain in html. As a result you may
-      get <strong>red button without border</strong> that is implemented like this: <code>&lt;a href="#" class="button blue bordered"&gt;&lt;/a&gt;</code></p>
-      <p>The same rule is applicable to location class modifiers of the component - you never know when your component will be placed in completely
-      different part of the page. So it is better to use less meaningful and abstract adjectives to define component modification.</p>
-    </div>
-    <h3>Non-global scope classes</h3>
-    <div class="mbl">
-      <p>There are simple and general class names like <code>.entry</code>, <code>.item</code>, <code>.description</code>, etc. that may
-      be used inside different contexts. And it is kind of easy to run into collisions if you style <code>.entry</code> and will try to
-      use this class name inside other context and style it differently. As a result class names like <code>.another-entry</code> appear.</p>
-      <p>Off course there is a way to avoid this if you follow convention. This universal class names are defined as
-      <strong>non-global scope</strong> class names, which means that they can only be styles in context of some namespace objects.</p>
-      <p>Following example won't cause collisions:</p>
-      <div class="row">
-        <div class="col1of2 prm">
-          <div class="code-sample">
-            <div class="posts">
-              <div class="entry">
-                <!-- First post markup -->
-              </div>
-              <div class="entry">
-                <!-- Second post markup-->
-              </div>
-            </div>
+    <p><em>Naming is one of the most fundamental and important part of developer activities. Naming conventions help us
+    a lot making our code more readable, predictable. And when it comes to code modification and debugging, conventons
+    help us to easily find needed part of code. They also give us understanding where to put stuff, so it is extremly
+    important to stick to conventions espesially while working in a team.</em></p>
 
-            <div class="tweets">
-              <div class="entry">
-                <!-- First tweet content -->
-              </div>
-              <div class="entry">
-                <!-- Second tweet content -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col1of2 plm">
-          <pre><code class="language-css">
-            .posts .entry {
-              position: relative;
-              padding: 20px;
-              font-size: 18px;
-              background: #eee;
-              color: #333;
-              .....
-            }
+    <h3>Naming selectors</h3>
+    <div class="mbl">
+      <p>Avoid presentation or location specific words in the name, like <code>blue</code>, <code>text-gray</code>,
+        or <code>side-block</code>.
+        What happens when you decide to change the color? The class <code>blue</code> is actually red?</p>
+      <p>Do not use class names that describe content of an element. One day you can come up with a class name like
+      <code>.products-list</code> and another day you notice that product list styling is well suited for listing tweets.
+      So what would you do? Re-implement <code>.products-list</code> to with same styles but call it <code>.tweets-list</code>
+      or just let tweets live inside <code>.products-list</code>? It is better to give it abstract name like
+      <code>.entries</code> from the beginning.</p>
+      <p>Names should be lowercase, using a dash <code>-</code> as a separator in a multi-word class names.
+        It's clear, readable and distinguish CSS from underscore case and camel case naming.</p>
+      <p>Use full descriptive words. Abbreviating a word may save you a few milliseconds to type initially,
+        but may make your code harder to read, costing you more time down the road. Being consistent in this
+        will save you the time spent thinking how exactly you abbreviated a word couple of months ago.</p>
+      <p>Use <strong>nouns</strong> for naming objects and modules.</p>
+      <p>When it comes to naming modifiers and states, use <strong>adjectives</strong> as they are describing type or state
+        of an object.</p>
+    </div>
 
-            .tweets .entry {
-              padding: 5px;
-              font-size: 12px;
-              background: #fff;
-              color: #000;
-              border-bottom: 1px solid #eee;
-              .....
-            }
-          </code></pre>
-        </div>
-      </div>
+    <h3>Natural language</h3>
+    <div class="mbl">
+      <p>Literally every element in nowadays web interfaces already have it's own name (or even several names). We as web
+      developers are using them in every day life talking to other developers and designers. So why should we make up some
+      fancy class names with prefixes or suffixes, abbreviate words or concatenate several words to make selector more unique?</p>
+      <p>Just use <strong>natural language</strong> for naming classes. These words are mostly unique already, and they make your code a lot more
+      readable and understandable. Using this names as CSS selector gives us most descriptive and understandable language
+      to build web pages and communicate with other developers.</p>
     </div>
-    <h3>Helpers naming</h3>
-    <p>Apart from component names and modifications there is a group of classes that is basically helpers. They don't bring semantic
-    meaning to code but are used as until classes and helps developers to accomplish low level goals like text-alignment or element centering.</p>
-    <div class="note">
-      Helpers class names shouldn't be expressed by nouns or adjectives, but they should also be descriptive and human readable.
+
+    <h3 class="mbs">Reference to Frequently used classes</h3>
+    <p>Since we are using same terminology in web development, it would be not hard to come up with general conventions
+    on naming web components. May be even start using standard class names for standard elements. This table below (is being
+    constantly changing and extending) may be used as a convention on how to call elements or at least as reference when
+    looking for a nice class name.</p>
+    <div class="mbm">
+      <table>
+        <thead>
+          <tr>
+            <th width="150">Selector</th>
+            <th>Component</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="divider"><td colspan="3">Layout classes</td></tr>
+          <tr>
+            <td><code>.wrapper</code></td>
+            <td>Wrapper element</td>
+            <td>Most often used for sticky footer</td>
+          </tr>
+          <tr>
+            <td><code>.container</code></td>
+            <td>Wrapper that sets width and centers content</td>
+            <td>aka <code>{ width: 960px; margin: 0 auto }</code></td>
+          </tr>
+        </tr>
+          <tr>
+            <td><code>header.header</code></td>
+            <td>Page header</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>section.body</code></td>
+            <td>Page body</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>footer.footer</code></td>
+            <td>Page footer</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>aside.sidebar</code></td>
+            <td>Page Sidebar</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>section.content</code></td>
+            <td>Page main content</td>
+            <td>Used along with sidebar</td>
+          </tr>
+          <tr class="divider"><td colspan="3">Components</td></tr>
+          <tr>
+            <td><code>.navigation</code></td>
+            <td>Navigation element</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.pagination</code></td>
+            <td>Pagination</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.tabs > .tab</code></td>
+            <td>Tabs navigation</td>
+            <td>Parent element uses plural 'tabs' and each tab is named singular</td>
+          </tr>
+          <tr>
+            <td><code>.breadcrumbs</code></td>
+            <td>Breadcrumbs</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.dropdown</code></td>
+            <td>Context menu</td>
+            <td>Used to organize list of links that is hidden by default</td>
+          </tr>
+          <tr>
+            <td><code>.article</code></td>
+            <td>Entry item</td>
+            <td>Used for different kinds of entries</td>
+          </tr>
+          <tr>
+            <td><code>.thumbnail</code></td>
+            <td>Image thumbnails</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.media</code></td>
+            <td>Media object</td>
+            <td>Abstract object styles for building various types of entries (like blogposts, comments, etc) that feature a left- or right-aligned image alongside textual content.</td>
+          </tr>
+          <tr>
+            <td><code>.panel</code></td>
+            <td>Panel block</td>
+            <td>Used if you need to put some content in a box</td>
+          </tr>
+          <tr>
+            <td><code>.tooltip</code></td>
+            <td>Tooltips</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.popup</code></td>
+            <td>Popups</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.flash</code></td>
+            <td>Flash messages</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.label</code></td>
+            <td>Labels</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.button</code></td>
+            <td>Buttons</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
-    <p>It is also good practice not to use helpers really often - it is always better move component's properties inside CSS rather than
-    overload HTML with unnecessary classes. Especially helpers like <strong>spaces</strong> should only be used in cases when object has
-    non-standard spacing (padding or margin) otherwise this spacing should be included into component's CSS.</p>
   </div>
 </article>

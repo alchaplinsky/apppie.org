@@ -22,19 +22,19 @@
     <li>
       <%= link_to 'ApplePie', '/', class: 'logo'%>
     </li>
-    <li <%= navigation_helper('approach')%>>
-      <% link_to('/pages/approach') do %>
+    <li class="<%= navigation_helper('approach')%>">
+      <% link_to('/pages/approach/main.html') do %>
         <span class="icon-approach"></span>
         <span class="text">Approach</span>
       <% end %>
     </li>
-    <li <%= navigation_helper('toolkit')%>>
+    <li class="<%= navigation_helper('toolkit')%>">
       <% link_to('/pages/toolkit/getting_started.html') do %>
         <span class="icon-toolkit"></span>
         <span class="text">Toolkit</span>
       <% end %>
     </li>
-    <li <%= navigation_helper('faq')%>>
+    <li class="<%= navigation_helper('faq')%>">
       <% link_to('/pages/faq', { :class => 'faq'}) do %>
         <span class="icon-faq"></span>
         <span class="text">FAQ</span>

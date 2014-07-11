@@ -52,7 +52,7 @@ helpers do
 
   def navigation_helper(page)
     match = /#{page}/ =~ current_page.url
-    return match.nil? ? '' : 'class="current"'
+    return match.nil? ? '' : 'current'
   end
 
   def subnavigation

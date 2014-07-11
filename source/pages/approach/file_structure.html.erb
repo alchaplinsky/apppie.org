@@ -10,7 +10,7 @@ keywords: file, css, sass, styleshets, organization, file structure, convention
 <article class="main">
   <h1>File structure</h1>
   <div class="article-content">
-    <h3>General agreements</h3>
+    <h2>General agreements</h2>
     <p>ApplePie approach comes with pretty well defined file structure and organization rules. These rules are built to provide standard and logical way of
     organizing reusable modules that are easy to maintain and extend. This file structure originally comes from Ruby on Rails projects, but if fits well
     for webapps built with or withou any other framework:</p>
@@ -63,7 +63,7 @@ keywords: file, css, sass, styleshets, organization, file structure, convention
     </code></pre>
     <p>As follows from above it mostly acts as an aggregator for other files, which themselves import some other sass files, and so on. With a well thought organization,
     this construct can prove very powerful. Ideally there should be one manifest file and folder of the same name for each layout.</p>
-    <h3>Application folder</h3>
+    <h2>Application folder</h2>
     <p>Structure of application (layout) folder is pretty straight forward - layout and typography styles are base for all components that are used in this layout.
       However typography may not differ between multiple layouts, in this case it would be better to put it under <code>shared</code> folder.</p>
     <p>Application components, each in single file, are divided into two folders <code>objects</code> and <code>modules</code> as follows from the <strong>components</strong> section.

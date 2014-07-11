@@ -23,7 +23,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
        Right now web components don’t yet ship in all browsers but this principle is really applicable to CSS.</p>
     </div>
 
-    <h3>Typography</h3>
+    <h2>Typography</h2>
     <div class="mbl">
       <p>Typically one of the first decisions we’ll make when building a website is choosing the primary typeface and text color to be used across all the pages, to keep them consistent.
       So it is a good idea to have typography and text colors generally applied to all application (layout) cascading from body element to child nodes. All of components will be built on top of general
@@ -45,7 +45,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       <p>Choosing units to define font sizes is up to each developer. There are miltiple blog posts about px, em, rem size units which will help to determine which works best for you.</p>
     </div>
 
-    <h3>Definitions</h3>
+    <h2>Definitions</h2>
     <div class="mbl">
       <p><strong>Object</strong> is a simple and indivisible component (e.g. link, button, text field). Objects are independent from each other and from context: whether you place button on an empty page or
         inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
@@ -70,7 +70,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
     </div>
     <!-- Example -->
 
-    <h3>Building an Object</h3>
+    <h2>Building an Object</h2>
     <p>Make sure that you've chosen unique and understandable name for your object. Try to find some useful class names in
     the <a href="/pages/approach/naming_table.html">table</a> from <a href="/pages/approach/naming.html">naming conventions</a>
     section. Start new css (sass) file under <code>objects</code> folder with the same of component, replacing all dashes with underscore in filename.
@@ -182,7 +182,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       </div>
     </div>
 
-    <h3>Composing a Module</h3>
+    <h2>Composing a Module</h2>
     <p>Creating a Module is fairly similar to object creation. You need to define unique name and create file under
     <code>modules</code> folder. If module contains component that is already styled as an object or another module,
     you don't need to re-define it's styles in context of this module. Simply use selector that is already defined and
@@ -273,7 +273,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       </div>
     </div>
 
-    <h3>Component modifications</h3>
+    <h2>Component modifications</h2>
     <div class="mbl">
       <p>Since you've defined your object it has it's default look and appearance. But there are usually such cases when you
       need to create couple similar objects with minor differences. This is a right time to introduce classes <strong>modifiers</strong>,
@@ -291,7 +291,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       mean nothing in terms of colors. Then you'll be able to change button's color without need of changing class name.</p>
     </div>
 
-    <h3>Component states</h3>
+    <h2>Component states</h2>
     <div class="mbl">
       <p>Except cases when you need to create couple of 'skins' for your object, there are also cases then you need to introduce
       <strong>states</strong> for you object or a module. There may be tons of different states like <code>disabled</code>,
@@ -313,7 +313,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       can have states which may mean that states should override modificators if there are conflicting properties.</p>
     </div>
 
-    <h3>Component behavior</h3>
+    <h2>Component behavior</h2>
     <div class="mbl">
       <p>Positioning and display properties should not be included to default component styles since they are considered
       as component's behavior. In would be weird to have object with <code>display: none</code>, that is hidden by default.
@@ -356,7 +356,7 @@ keywords: css, sass, framework, toolkit, semantic, modular, conventions, naming
       by using parent selector inside component's styles.</p>
     </div>
 
-    <h3>Conclusion</h3>
+    <h2>Conclusion</h2>
     <p>These are general recommendations following which you can feel more control over your code and be more
     flexible and modular. Of course there are still a lot of work to do and more conventions to bring in, but this is a nice
     starting point to begin wisely organize your CSS code.</p>

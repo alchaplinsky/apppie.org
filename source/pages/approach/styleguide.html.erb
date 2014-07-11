@@ -9,7 +9,7 @@ keywords: styleguide, code style, css, sass, html, standards, conventions
 <article class="main">
   <h1>CSS/HTML Styleguide</h1>
   <div class="article-content">
-    <h3>Basic syntax</h3>
+    <h2>Basic syntax</h2>
     <ul class="mbl">
       <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in each developer's environment.</li>
       <li>If you write pure CSS or you're using CSS compatible SCSS syntax, always put spaces after <code>:</code> in property declarations and
@@ -26,7 +26,7 @@ keywords: styleguide, code style, css, sass, html, standards, conventions
       <li>Quote attribute values in selectors with double quotes (e.g. <code>input[type="text"]</code>). Even they are optional in some cases, it is a good practice to use them for consistency.</li>
     </ul>
 
-    <h3>Selectors</h3>
+    <h2>Selectors</h2>
     <ul class="mbl">
       <li>For styling purposes use <strong>classes</strong> only as CSS selectors. Using tag names as CSS selectors is a bad idea
       unless you want to specify initial styling of specific tag (e.g. typography rules for text and headings). Using tag names
@@ -71,7 +71,7 @@ keywords: styleguide, code style, css, sass, html, standards, conventions
         <li>Distinguish your css classes and classes that are used in JavaScript. Use <code>js-</code> prefix to use in JavaScript, do not use 'style classes' there.
         And of course do not use <code>js-</code> classes in your stylesheets. This will help you not to break functionality if you decide to rename or remove some of CSS classes.</li>
     </ul>
-    <h3>HTML Simplicity</h3>
+    <h2>HTML Simplicity</h2>
     <ul>
       <li>Keep your HTML structure as simple as possible. Use HTML tag for content markup in first place without thinking about presentational layers
       that may be needed in the future. Minimize number of wrappers that are needed only for styling purposes. Consider

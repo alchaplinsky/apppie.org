@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie - Approach to writing Semantic and Modular CSS.</title>
+  <meta name="description" content="Set of naming and organization conventions." />
+  <meta name="keywords" content="css, sass, applepie, oocss, semantics, framework" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body class=toolkit>
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="current">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  
+  <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
+    <li><a class="" href="/pages/toolkit/getting_started.html">Getting Started</a></li>
+<li><a class="current" href="/pages/toolkit/grid.html">Grid System</a></li>
+<li><a class="" href="/pages/toolkit/components.html">Components</a></li>
+<li><a class="" href="/pages/toolkit/helpers.html">Helpers</a></li>
+<!-- <li><a href="/pages/toolkit/typography.html">Typography</a></li> -->
+<!-- <li><a href="/pages/toolkit/customize.html">Customize</a></li> -->
+
+  </ul>
+  
+  
+  <section class="content">
+    <section class="body">
+      <header class="header">
+  <h1>Toolkit</h1>
+</header>
+<article class="main">
+  <h1>Grid System</h1>
+  <div class="article-content">
+    <div class="mbl">
+      <p>ApplePie Grid is easy to work with and very powerful tool for building complex flexible and responsive layouts. This grid 6-column nestable grid which is really simple because it is  based on proportions rather than columns count. It is similar to <a href="https://github.com/stubbornella/oocss/wiki/Grids">OOCSS Grid</a> with extra features and more consistent naming.</p>
+      <ul>
+        <li>Minimalistic and simple grid based on proportions (allows you not to count columns but divide page into half, thirds, fourth, etc.)</li>
+        <li>It is fluid and doesn't use fixed width for columns, so can scale to an arbitrary size (defined by the max width of the row)</li>
+        <li>Infinite nesting and stacking</li>
+        <li>It uses <code class="language-css">box-sizing: border-box</code> so that borders and padding do not affect the overall width of the columns</li>
+      </ul>
+    </div> <!-- mbl -->
+    <div class="mbl">
+      <h2 class="mbs">Usage</h2>
+      <p>Creating grid is pretty simple. Just add element with a class of <code class="inline">row</code> to create a horizontal block that will contain vertical columns. Row basically acts as css <code>clearfix</code> to fight the <a href="http://complexspiral.com/publications/containing-floats/" target="_blank">zero-height container problem</a>.</p>
+        <p>Columns are represented by various class names that describe their widths. For instance <code>.col1of2</code> has a width of 50%, and <code>.col1of5</code>  would have a width of 20%</p>
+        <p>All content which is visible to users needs to be contained inside a grid column. This ensures that the content will be rendered properly.</p>
+        <p>Let's start with a simple example. Here's a grid with three equal columns:</p>
+        <pre class="mbl"><code class="language-markup">
+          &lt;body&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content for first column --&gt;
+              &lt;/div&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content for second column --&gt;
+              &lt;/div&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content for third column --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/body&gt;
+      </code></pre>
+    </div> <!-- mbl -->
+    <div class="mbl">
+      <h2 class="mbs">Grid Column Sizes</h2>
+      <p>ApplePie ships with 6-column grid. Why not 12 or 24 columns? Because 6 is enough to build any layout! You are unlikely to have need to create as narrow grind units as 1/12 or 1/24 of your 960px overal width (but if you do, you can always nest columns inside other columns). And it is more convenient to think about columns in terms of proportions rather than think about how much space will take 4 columns out of 24 or 8 columns out of 24.</p>
+      <p>Columns don't always have to be equal width, you can mix different column width inside one row, but they should not take more than 100% width or parent row element. Depending on your needs you can create mixed grids:</p>
+      <pre class="mbm"><code class="language-markup">
+        &lt;div class="row"&gt;
+          &lt;div class="col2of3"&gt;
+            &lt;!-- Content for first column --&gt;
+          &lt;/div&gt;
+          &lt;div class="col1of3"&gt;
+            &lt;!-- Content for second column --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </code></pre>
+      <p>or</p>
+      <pre class="mbm"><code class="language-markup">
+        &lt;div class="row"&gt;
+          &lt;div class="col1of4"&gt;
+            &lt;!-- Content for first column --&gt;
+          &lt;/div&gt;
+          &lt;div class="col1of2"&gt;
+            &lt;!-- Content for second column --&gt;
+          &lt;/div&gt;
+          &lt;div class="col1of4"&gt;
+            &lt;!-- Content for third column --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div> <!-- mbl -->
+    <div class="mbl">
+      <h2 class="mbs">Nesting Grids</h2>
+      <p>If you need to create smaller fractions for your layout or if it is obvious that content of one grid column should also be divided into columns - you can nest grids as many times as you need. Remember that column width is calculated related to a parent element, not overall page width. So if you place <code class="inline">col1of3</code> into another column of 480px, you'll get a 160px wide fraction.</p>
+      <p>Trivial example: you have main content and a sidebar and there are 3 columns of text in main section - following markup will solve this problem:</p>
+      <pre class="mbm"><code class="language-markup">
+        &lt;div class="row"&gt;
+          &lt;div class="col3of4"&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content column one --&gt;
+              &lt;/div&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content column two --&gt;
+              &lt;/div&gt;
+              &lt;div class="col1of3"&gt;
+                &lt;!-- Content column three --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col1of4"&gt;
+            &lt;!-- Sidebar --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </code></pre>
+    </div> <!-- mbl -->
+    <div class="mbl">
+      <h2 class="mbs">Grid Gutters</h2>
+      <p>By default ApplePie grid columns don't have gutters because you might just not need them. And it's always easier to apply paddings where you need them, than do a reset each time when you don't. You can directly apply paddings and borders to columns &ndash; this won't break layout because of use of <code class="inline language-css">box-sizing: border-box</code>.</p>
+      <!--
+      <h2 class="mbs">Responsive Grid</h2>
+      <p>#####TO DO#####</p>
+      -->
+    </div> <!-- mbl -->
+  </div> <!-- /article-content -->
+</article>
+
+    </section>
+  </section>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

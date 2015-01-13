@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.apppie.org/</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/main.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/toolkit/getting_started.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/faq/</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/styleguide.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/components.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/naming.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/file_structure.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/toolkit/grid.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/toolkit/components.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/toolkit/helpers.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.apppie.org/pages/approach/naming_table.html</loc>
+  <lastmod>2014-07-03T01:15:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+</urlset>

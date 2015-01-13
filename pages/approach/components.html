@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Modular CSS ApplePie Components Objects and Modules</title>
+  <meta name="description" content="Modular CSS components approach. Objects, modules, modifiers and states." />
+  <meta name="keywords" content="css, sass, framework, toolkit, semantic, modular, conventions, naming" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body class=approach>
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="current">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  
+  <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
+    <li><a class="" href="/pages/approach/main.html">Main Principles</a></li>
+<li><a class="" href="/pages/approach/styleguide.html">Styleguide</a></li>
+<li><a class="current" href="/pages/approach/components.html">Components</a></li>
+<li><a class="" href="/pages/approach/naming.html">Naming Convention</a></li>
+<li><a class="" href="/pages/approach/file_structure.html">File Sctrucure</a></li>
+
+  </ul>
+  
+  
+  <section class="content">
+    <section class="body">
+      <header class="header">
+  <h1>Approach</h1>
+</header>
+<article class="main">
+  <h1>Components Approach</h1>
+  <div class="article-content">
+    <div class="mbl">
+      <p><em>Most of stated here should be already familiar to you, as you may have heard about OOCSS or BEM methodology.
+      Both of these approaches are built on top of general idea of modular and reusable CSS which is pretty common these days.
+      ApplePie is not about re-inventing the wheel, but about combining all the good parts and bring standards into frontend development.
+      </em></p>
+
+      <p><strong>Components</strong> are intended to be independent, reusable and extandable building blocks of your interface.
+      Basically everything is a component, from a link element to more complex block containing lots of different DOM elements.</p>
+
+      <p>Upcoming web components technologies follow the principle of encapsulation all the logic behavior and presentation allowing you control it via external API.
+       Right now web components don’t yet ship in all browsers but this principle is really applicable to CSS.</p>
+    </div>
+
+    <h2>Typography</h2>
+    <div class="mbl">
+      <p>Typically one of the first decisions we’ll make when building a website is choosing the primary typeface and text color to be used across all the pages, to keep them consistent.
+      So it is a good idea to have typography and text colors generally applied to all application (layout) cascading from body element to child nodes. All of components will be built on top of general
+      typography rules, so you don't have to define font styles in multiple places.</p>
+      <p>That's why it is good idea to place all of typo styles in single file <code>typography.css</code> which starts with:</p>
+      <pre><code>
+          body {
+    font-family: 'Arial';
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+  }
+      </code></pre>
+      <div class="note">
+        Note that <code>input</code> and <code>button</code> elements do not inherit font styles fron body element. You'll need to define them directly for this elements.
+      </div>
+
+      <p>Choosing units to define font sizes is up to each developer. There are miltiple blog posts about px, em, rem size units which will help to determine which works best for you.</p>
+    </div>
+
+    <h2>Definitions</h2>
+    <div class="mbl">
+      <p><strong>Object</strong> is a simple and indivisible component (e.g. link, button, text field). Objects are independent from each other and from context: whether you place button on an empty page or
+        inside deeply nested block with complex structure, it should look exactly identical unless you tell it to look different.</p>
+
+      <p><strong>Module</strong> is more complex component that consists of multiple objects which can function independently
+      out of module context. Modules are meant to bring structure for complex components that are also independent and reusable,
+      but they are too large and include objects that may already exist in interface.
+      Modules can be either simple or compound (containing other modules).</p>
+
+      <div class="note">To distinguish object from a module, try to imagine if it could be divided into objects that would
+      make sense out of component's context. For instance if you have navigation component
+      which is simple unordered list with links inside, you theoretically could divide it on smaller components.
+      But if navigation links styled in a way that they won't make sense outside navigation
+      context, you should not treat navigation as module. It is indivisible and it is an object.</div>
+      <br />
+      <p>Each <strong>object</strong> or <strong>module</strong> in order to be independent and reusable must have a unique name (selector). That obviously doesn't
+      mean that every single class name used in your HTML should be unique or that you need to use some fancy naming with
+      double underscores, double dashes prefixing or suffixing your classes with some abbreviations.</p>
+
+      <p>Keep your class names human readable and simple. You need to take care only for uniqueness of top level class names,
+      and there are enough english words to call each component of web interface with its own name. </p>
+    </div>
+    <!-- Example -->
+
+    <h2>Building an Object</h2>
+    <p>Make sure that you've chosen unique and understandable name for your object. Try to find some useful class names in
+    the <a href="/pages/approach/naming_table.html">table</a> from <a href="/pages/approach/naming.html">naming conventions</a>
+    section. Start new css (sass) file under <code>objects</code> folder with the same of component, replacing all dashes with underscore in filename.
+    It is really convenient and flexible to have each component's style in a separate file.</p>
+
+    <div>Avoid location dependent style while creating an object.</div>
+
+    <div class="row mbm">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+          .button {
+            background: #cccc;
+          }
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+          .header .button {
+            background: #cccc;
+          }
+        </code></pre>
+      </div>
+    </div>
+
+    <div>Do not use compound selectors to group similar css rules. Even though it generates more CSS code in total,
+    it helps in keeping all elements independent, and allows easily modify objects without breaking other components. </div>
+
+    <div class="row mbm">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // flash.scss
+        .flash {
+          display: inline-block;
+          padding: 10px 20px;
+        }
+
+        // button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #cccc;
+        }
+      </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // common.scss
+        .flash, .button {
+          display: inline-block;
+          padding: 10px 20px;
+        }
+
+        // button.scss
+        .button {
+          background: #cccc;
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <p> You are free to use non-unique class names namespaced under object name (top level) class. For instance if you're
+    building some kind of <code>.entry</code> it can have nested element <code>.title</code> even though <code>title</code>
+    is used in multiple different components. Just make sure that <code>title</code> is not used in 'global namespace'
+    and their styles won't affect each other.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // objects/post.scss
+        .post {
+          .....
+          .title {
+            font-size: 24px
+            color: blue;
+          }
+        }
+
+        // objects/entry.css
+        .entry {
+          .....
+          .title {
+            font-size: 18px;
+            color: red;
+          }
+        }
+        // both .title are safe under namespaces
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // objects/title.scss
+        .title {
+          font-size: 20px;
+          border-bottom: 1px solid #ccc;
+          background: #fafafa;
+          ......
+        }
+
+        // objects/entry.css
+        .entry {
+          .....
+          .title {
+            font-size: 18px;
+            color: red;
+          }
+        }
+        // .title will inherit all the styles
+      </code></pre>
+      </div>
+    </div>
+
+    <h2>Composing a Module</h2>
+    <p>Creating a Module is fairly similar to object creation. You need to define unique name and create file under
+    <code>modules</code> folder. If module contains component that is already styled as an object or another module,
+    you don't need to re-define it's styles in context of this module. Simply use selector that is already defined and
+    override particular properties inside module definition if needed.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // objects/button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #ccc;
+          font-size: 13px;
+        }
+
+        // modules/modal.scss
+        .modal {
+          .....
+          .button {
+            font-size: 18px;
+          }
+        }
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // objects/button.scss
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #ccc;
+          font-size: 13px;
+        }
+
+        // modules/modal.scss
+        .modal {
+          .....
+          .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ccc;
+            font-size: 18px;
+          }
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <p>Avoid cascading selector and deep nesting. Reduce nesting CSS selectors to maximum 3 level nesting. It is better to
+    have more plane structure of a module and avoid long selectors rather than mimic nesting of DOM elements in CSS.</p>
+
+    <div class="row mbl">
+      <div class="col1of2 prs">
+        <pre><code class="correct">
+        // modules/dashboard.scss
+        .dashboard {
+          ....
+          .pannel {
+            ....
+          }
+          .points {
+            ....
+          }
+          .count {
+            ....
+          }
+        }
+
+        </code></pre>
+      </div>
+      <div class="col1of2 pls">
+        <pre><code class="wrong">
+        // modules/dashboard.scss
+        .dashboard {
+          ....
+          .panel {
+            ....
+            .row .points {
+              ....
+              .count {
+                ....
+              }
+            }
+          }
+        }
+        </code></pre>
+      </div>
+    </div>
+
+    <h2>Component modifications</h2>
+    <div class="mbl">
+      <p>Since you've defined your object it has it's default look and appearance. But there are usually such cases when you
+      need to create couple similar objects with minor differences. This is a right time to introduce classes <strong>modifiers</strong>,
+      which allow us to make modifications to objects properties (override them) and add new.</p>
+
+      <p>You are free to create as many
+      modifiers as you need. But you shouldn't apply more that one modifier to a single component. If there is case when you need
+      to combine couple modifiers like <code>.object.skin1.skin2</code>, you should think about <code>.skin3</code> that will
+      contain CSS rules of both <code>.skin1</code> and <code>.skin2</code>.</p>
+
+      <p>For naming objects or modules you would obviously use nouns (e.g. button, block, entry), modifiers are best described by
+      using adjectives (e.g. primary, secondary, disabled). Try to keep them as abstract as possible. It is better for classes not
+      to describe presentation or position. Let's say if you create modifier for button which adds <code>background: red;</code>
+      it is better not to call in <code>.red</code> but come up with some abstract name like <code>.expressive</code> which will
+      mean nothing in terms of colors. Then you'll be able to change button's color without need of changing class name.</p>
+    </div>
+
+    <h2>Component states</h2>
+    <div class="mbl">
+      <p>Except cases when you need to create couple of 'skins' for your object, there are also cases then you need to introduce
+      <strong>states</strong> for you object or a module. There may be tons of different states like <code>disabled</code>,
+      <code>active</code>, <code>highlighted</code> or <code>pending</code>. These are also kind of modifiers, but they can be
+      applied as third class to already modified components.</p>
+
+      <div class="mbm">
+        <pre><code>
+          &lt;div class="account extended active"&gt;
+            ....
+          &lt;/div&gt;
+        </code></pre>
+      </div>
+
+      <p>In this case <code>.account</code> is an <strong>object</strong>, <code>.extended</code> is <strong>modifier</strong>
+      and <code>.active</code> is <strong>state</strong>.</p>
+
+      <p>Each object modification should be styled taking in account that default object and all of it's modifications
+      can have states which may mean that states should override modificators if there are conflicting properties.</p>
+    </div>
+
+    <h2>Component behavior</h2>
+    <div class="mbl">
+      <p>Positioning and display properties should not be included to default component styles since they are considered
+      as component's behavior. In would be weird to have object with <code>display: none</code>, that is hidden by default.
+      Obviously it should be hidden only when it is in a context where it should not be displayed.</p>
+      <p>For instance context menu that is shown when you click dropdown button. You definitely want it to be visible while you
+      still styling it or in ui library of your project unless it is placed in a context.</p>
+      <div class="row mbm">
+        <div class="col1of2 prs">
+          <pre><code>
+          // modules/context.css
+          .context-menu {
+            background: #fff;
+            font-size: 13px;
+            color: #333;
+            ...
+          }
+          .toggle-context .context-meny {
+            display: none;
+          }
+          </code></pre>
+        </div>
+        <div class="col1of2 pls">
+          <pre><code>
+          // modules/context.scss
+          .context-menu {
+            background: #fff;
+            font-size: 13px;
+            color: #333;
+            ...
+            .toggle-context & {
+              display: none;
+            }
+          }
+
+          </code></pre>
+        </div>
+      </div>
+      <p>Of course it is better to define behaviors of an object in the same file where object is defined. It makes it more
+      easy to find this behavior styles. If you're using SASS, you can define all behaviors in the same block of code
+      by using parent selector inside component's styles.</p>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>These are general recommendations following which you can feel more control over your code and be more
+    flexible and modular. Of course there are still a lot of work to do and more conventions to bring in, but this is a nice
+    starting point to begin wisely organize your CSS code.</p>
+  </div>
+</article>
+
+    </section>
+  </section>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

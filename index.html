@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie - Approach to writing Semantic and Modular CSS. Better way to build web interfaces.</title>
+  <meta name="description" content="Workflow that allows you to keep your CSS code clear, modular, consistent and easy to maintain. Set of naming and organization conventions." />
+  <meta name="keywords" content="css, sass, semantic, modular, conventions, naming" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body >
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  <section class="content">
+    <section class="body">
+      <section class="presenter">
+  <div class="brand">
+    <span class="brand-logo">applepie</span>
+    <span class="authorship">
+      by
+      <span class="company">Railsware</span>
+    </span>
+  </div>
+  <div class="container row">
+    <a href="https://github.com/railsware/applepie">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+    </a>
+    <div class="col2of5">
+      <h1 class="mbm">Better way to build web interfaces</h1>
+      <p class="description">
+        As a web developer you read more code than you write, so it's quite important to keep your code clear, readable, consistent and explicit.
+        <span class="shortener">ApplePie naming and organization conventions are built to bring standards to frontend development.</span></p>
+      <div class="mbm">
+        <a href="https://github.com/railsware/applepie" class="button pale mrs">On GitHub</a>
+        <a href="/pages/approach/main.html" class="button directed">Experience More :)</a>
+      </div>
+    </div> <!-- /col1of2 -->
+    <div class="col3of5 plm">
+      <img class="hero fittogrid" title="ApplePie CSS" alt="ApplePie CSS Toolkit" src="/assets/images/hero-c80f06cd.png" />
+    </div>
+  </div>
+</section>
+<section class="light">
+  <div class="by-center">
+    <iframe src="http://ghbtns.com/github-btn.html?user=railsware&repo=applepie&type=watch&count=true&size=large" style="margin-top: 2px;" allowtransparency="true" frameborder="0" scrolling="0" width="140" height="30"></iframe>
+    <iframe src="http://ghbtns.com/github-btn.html?user=railsware&repo=applepie&type=fork&count=true&size=large" height="30" style="margin-top: 2px;" width="140" frameborder="0" scrolling="0" style="" allowtransparency="true"></iframe>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.apppie.org" data-size="large" data-hashtags="applepie">Tweet</a>
+    <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </div>
+</section>
+<section class="shaded">
+  <div class="container row adaptive">
+    <div class="col1of2 prl">
+      <div class="left mrm">
+        <img class="fittogrid" src="/assets/images/icon01-09417e59.png" />
+      </div>
+      <div class="last-col">
+        <h2 class="mbm">Semantic CSS <span class="emphasis">Approach</span></h2>
+        <p>Naming and organization conventions are built to bring more clarity. Learn how to write and organize your CSS to preserve code readability, modularity and maintainability.</p>
+      </div>
+    </div>
+    <div class="col1of2 prm">
+      <div class="left mrm">
+        <img class="fittogrid" src="/assets/images/icon02-cadbded6.png" />
+      </div>
+      <div class="last-col">
+        <h2 class="mbm">Modular <span class="emphasis">CSS toolkit</span></h2>
+        <p>Getting started with ApplePie is easy. Whether you are building a simple site with some 'default' UI, or you are a SASS master building a new app - this toolkit will help you get up and running!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="light">
+  <div class="container row">
+    <h2 class="mbs">Some examples?</h2>
+  </div> <!-- container row -->
+  <div class="container row adaptive">
+    <div class="col1of2 prs">
+      <h4>Without any conventions</h4>
+      <div class="component wrong">
+        <div class="example hidden">
+
+        <header class="navbar navbar-default">
+
+  <div class="content-wrapp-960">
+    <ul class="nav navbar-nav">
+      <li class="item current-item"><a href="#">Home</a></li>
+      <li class="item"><a href="#">Blog</a></li>
+      <li class="item"><a href="#">Contacts</a></li>
+    </ul>
+    <a href="#" class="btn btn-default navbar-btn pull-right">
+      Sign in
+    </a>
+  </div>
+</header>
+<!-- -->
+<footer>
+  <ul class="secondary-footer-links muted">
+    <li><a href="#" class="underlined">Github</a></li>
+    <li><a href="#" class="underlined">Issues</a></li>
+  </ul>
+</footer>
+        </div> <!-- example hidden -->
+        <pre><code></code></pre>
+      </div> <!-- component -->
+    </div> <!-- col1of2 prl -->
+    <div class="col1of2 pls">
+      <h4>With ApplePie conventions</h4>
+      <div class="component correct">
+        <div class="example hidden">
+  <header class="header">
+
+    <div class="container">
+      <ul class="navigation">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+      <a href="#" class="button right">
+        Sign in
+      </a>
+    </div>
+  </header>
+  <!-- -->
+  <footer>
+    <ul class="navigation">
+      <li><a href="#">Github</a></li>
+      <li><a href="#">Issues</a></li>
+    </ul>
+  </footer>
+        </div> <!-- example hidden -->
+        <pre><code></code></pre>
+      </div> <!-- component -->
+    </div> <!-- col1of2 prm -->
+  </div> <!-- container row -->
+</section>
+
+    </section>
+  </section>
+  
+  <footer class="footer">
+    <div class="container row">
+      <div class="left">
+        <a href="http://railsware.com" class="crafted"><!-- crafted by Railsware --></a>
+      </div> <!-- /left -->
+      <div class="last-col pll">
+        <div class="col2of3 prs">
+          <div class="col1of2">
+            <h6 class="mbs intensive">Products</h6>
+            <ul class="footer-list">
+              <li>
+                <a href="http://pivotalbooster.com/">PivotalBooster</a>
+              </li>
+              <li>
+                <a href="http://piro.railsware.com/">PiRo</a>
+              </li>
+              <li>
+                <a href="http://mailtrap.io/">Mailtrap</a>
+              </li>
+            </ul>
+          </div> <!-- /col1of2 -->
+          <div class="col1of2">
+            <h6 class="mbs intensive">Experience</h6>
+            <ul class="footer-list">
+              <li>
+                <a href="http://railsware.github.io/">OpenSource</a>
+              </li>
+              <li>
+                <a href="http://railsware.com/blog/">Blog</a>
+              </li>
+            </ul>
+          </div> <!-- /col1of2 -->
+        </div> <!-- /col1of2 -->
+        <div class="col1of3 pls">
+          <h6 class="mbs">ApplePie</h6>
+          <ul class="footer-list">
+            <li>
+              <a href="mailto:applepie@railsware.com">Mail us</a>
+            </li>
+            <li>
+              <a href="https://github.com/alchapone">Alex</a> and <a href="https://github.com/varg">Dmitry</a> on GitHub
+            </li>
+            <li>
+              <a href="https://twitter.com/a1chapone">@a1chapone</a> and <a href="https://twitter.com/varg_ua">@varg_ua</a> twitters
+            </li>
+          </ul>
+        </div> <!-- /col1of2 -->
+      </div> <!-- /row -->
+    </div>
+  </footer>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

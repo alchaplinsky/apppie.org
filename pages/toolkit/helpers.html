@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie - Approach to writing Semantic and Modular CSS.</title>
+  <meta name="description" content="Set of naming and organization conventions." />
+  <meta name="keywords" content="css, sass, applepie, oocss, semantics, framework" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body class=toolkit>
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="current">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  
+  <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
+    <li><a class="" href="/pages/toolkit/getting_started.html">Getting Started</a></li>
+<li><a class="" href="/pages/toolkit/grid.html">Grid System</a></li>
+<li><a class="" href="/pages/toolkit/components.html">Components</a></li>
+<li><a class="current" href="/pages/toolkit/helpers.html">Helpers</a></li>
+<!-- <li><a href="/pages/toolkit/typography.html">Typography</a></li> -->
+<!-- <li><a href="/pages/toolkit/customize.html">Customize</a></li> -->
+
+  </ul>
+  
+  
+  <section class="content">
+    <section class="body">
+      <header class="header">
+  <h1>Toolkit</h1>
+</header>
+<article class="main">
+   <h1>Helpers</h1>
+   <div class="article-content">
+      <p>
+         Helpers is scope that provides some global tools that developers use to define simple element behavior which cannot be treated as element-specific. According to tendency to code elements location independent, these rules cannot be included within element (object or module) style rules.
+       </p>
+       <p>
+         So considering written above, we separated them as isolated classes which can be added to any element to bring needed effect. They can be appraised as a global modifier classes.
+       </p>
+       <p>
+         Obviously, each developer has own helpers or something that makes life easier. So feel free to add anything you feel considerable to <code class="language-markup inline">helpers.sass</code>
+       </p>
+       <pre><code class="language-scss">
+         .right {
+           float: right;
+         }
+
+         .left {
+           float: left;
+         }
+
+         .center {
+           margin-left: auto;
+           margin-right: auto;
+         }
+
+         .relative {
+           position: relative;
+         }
+
+         .hidden {
+           display: none;
+         }
+
+         .by-left {
+           text-align: left;
+         }
+
+         .by-right {
+           text-align: right;
+         }
+
+         .by-center {
+           text-align: center;
+         }
+
+         .fittogrid {
+           max-width: 100%;
+         }
+       </code></pre>
+   </div>
+</article>
+
+    </section>
+  </section>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

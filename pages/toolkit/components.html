@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie - Approach to writing Semantic and Modular CSS.</title>
+  <meta name="description" content="Set of naming and organization conventions." />
+  <meta name="keywords" content="css, sass, applepie, oocss, semantics, framework" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body class=toolkit>
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="current">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  
+  <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
+    <li><a class="" href="/pages/toolkit/getting_started.html">Getting Started</a></li>
+<li><a class="" href="/pages/toolkit/grid.html">Grid System</a></li>
+<li><a class="current" href="/pages/toolkit/components.html">Components</a></li>
+<li><a class="" href="/pages/toolkit/helpers.html">Helpers</a></li>
+<!-- <li><a href="/pages/toolkit/typography.html">Typography</a></li> -->
+<!-- <li><a href="/pages/toolkit/customize.html">Customize</a></li> -->
+
+  </ul>
+  
+  
+  <section class="content">
+    <section class="body">
+      <header class="header">
+  <h1>Toolkit</h1>
+</header>
+<article class="main">
+  <h1>Components</h1>
+  <div class="article-content">
+    <div class="component mbl">
+      <h2>Horizontal Navigation</h2>
+      <p>To create a horizontal navigation, add the <code>navigation</code> class name to a list.
+      In order to mark the active menu item, add the <code>active</code> class to the link inside list element.</p>
+      <div class="example mvl">
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#" class="active">Docs</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h2>Tabs Navigation</h2>
+      <p>Tabs navigation is pretty similar to horizontal navigation. To create tabs, add <code>tabs</code> class to unordered list.
+      To represent states for tabs, just add <code>active</code> or <code>disabled</code> classes to proper link elements.</p>
+      <div class="example mvl">
+        <ul class="tabs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#" class="active">Profile</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#" class="disabled">Disabled</a></li>
+        </ul>
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+    <div class="component mbl">
+      <h2>Pagination</h2>
+      <p></p>
+      <div class="example mvl">
+        <ul class="pagination">
+          <li class="prev"><a href="#">«</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#" class="active">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>...</li>
+          <li><a href="#">9</a></li>
+          <li><a href="#">10</a></li>
+          <li class="next"><a href="#">»</a></li>
+        </ul>
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h2>Buttons</h2>
+      <p>To create ApplePie button, add <code>button</code> class name to any of <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>,
+      <code>&lt;input type="button" /&gt;</code> elements.</p>
+      <div class="example mvl">
+        <a href="#" class="button">ApplePie Button</a>
+        <button class="button">ApplePie Button</button>
+        <input type="button" class="button" value="ApplePie Button" />
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h2>Customizing Buttons</h2>
+      <p>Following components and modifiers approach it is easy to build buttons and create customized
+      buttons for your own application. </p>
+      <p>By adding pretty common classes modifiers <code>success</code>, <code>danger</code>, <code>warning</code> or <code>pale</code>
+      you can easily modify button appearance. Moreover, you can easily override modifier styles and add your custom modifications.</p>
+      <div class="example mvl">
+        <a href="#" class="button danger">Button: danger</a>
+        <a href="#" class="button warning">Button: warning</a>
+        <a href="#" class="button success">Button: success</a>
+        <a href="#" class="button pale">Button: pale</a>
+      </div>
+      <pre><code></code></pre>
+    </div>
+
+    <div class="component mbl">
+      <h2>Disabling Buttons</h2>
+      <p>You can easily turn on disabled state for button by switching modifier class to <code>disabled</code>. This will remove
+      hover and active states of button and will change cursor from pointer to default. So it will look unclickable.</p>
+      <div class="example mvl">
+        <a href="#" class="button disabled">Disabled Button</a>
+      </div>
+      <pre class="mbm"><code></code></pre>
+      <div class="note">
+        Class <code>disabled</code> modifies only button's appearance. Disabling clickability should be handled with javascript.
+      </div>
+    </div>
+
+    <div class="component mbl">
+      <h2>Input Fields</h2>
+      <p>All text inputs come styled by default in ApplePie, so there's no additional classes need to be applied.
+        Inputs of all types <code>text</code>, <code>password</code>, <code>email</code>, <code>search</code>
+        look similar without any browser-specific styling. If you need to customize styling for different kinds of
+      <code>input</code> element - you can easily do it.</p>
+      <div class="example mvl">
+        <input type="text" placeholder="First Name" class="mbs" />
+
+        <input type="email" placeholder="Your Email" class="mbs" />
+        <input type="password" placeholder="Password" class="mbs" />
+      </div>
+      <pre class="mbm"><code></code></pre>
+    </div>
+
+    <div class="component mbl">
+      <h2>Textareas</h2>
+      <p>Textarea comes styled by default in ApplePie, so there's no additional classes need to be applied. It has width of
+      100%, to fit anywhere it is placed, and uses <code>box-sizing: border-box</code> so there is ability to combine
+      100% width with borders and paddings.</p>
+      <div class="example mvl">
+        <textarea name="text" rows="4" placeholder="Enter text here"></textarea>
+      </div>
+      <pre class="mbm"><code></code></pre>
+    </div>
+
+    <div class="component mbl">
+      <h2>Tables</h2>
+      <p>Since table elements are used in markup not only for creating table, ApplePie won't apply any styling
+      to <code>table</code> element by default, it uses class selector for tables. To style an HTML table, add the <code>table</code> classname.
+      This class adds some nice styling compared to default table: some padding and borders and emphasizes the header.</p>
+      <div class="example mvl">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Sheldon</td>
+              <td>Cooper</td>
+              <td>@DrSheldonCooper</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Leonard</td>
+              <td>Hofstadter</td>
+              <td>@Lenny</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Howard</td>
+              <td>Wolowitz</td>
+              <td>@RocketMan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- /example -->
+      <pre><code></code></pre>
+    </div> <!-- /component -->
+
+    <div class="component mbl">
+      <h2>Flash Messages</h2>
+      <p>Flash messages are pretty common for today's web apps. With ApplePie you can easily create different flash messages
+      by applying <code>flash</code> class to a <code>div</code> element with text. You'll see it's default appearance.</p>
+      <p>By adding semantic classes modifiers <code>error</code>, <code>success</code>, <code>warning</code>
+      you can apply corresponding styles to your flash messages.</p>
+      <div class="example mvl">
+        <div class="flash mbs">
+          Flash message: default
+        </div> <!-- /flash -->
+        <div class="flash error mbs">
+          Flash message: error
+        </div> <!-- /flash -->
+        <div class="flash warning mbs">
+          Flash message: warning
+        </div> <!-- /flash -->
+        <div class="flash success">
+          Flash message: success
+        </div> <!-- /flash -->
+      </div> <!-- /example -->
+    </div> <!-- /component -->
+
+  </div> <!-- /article-content -->
+</article>
+
+    </section>
+  </section>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

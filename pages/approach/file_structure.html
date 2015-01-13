@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylesheets organization conventions Apple Pie.</title>
+  <meta name="description" content="Stylesheets organization and CSS file structure conventions. Know where to put you styles." />
+  <meta name="keywords" content="file, css, sass, styleshets, organization, file structure, convention" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+  <link href="/assets/images/favicon.ico" rel="icon" type="image/ico" />
+  <link href="/assets/stylesheets/app-03a29dad.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/assets/javascripts/all-1c054c8e.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <meta name='yandex-verification' content='7f52ed2a69a5c658' />
+  <meta name="google-site-verification" content="_uEinoS__M5UW_4QdYFDUrAkU-IHaYMyGtt97Lhup3A" />
+</head>
+<body class=approach>
+  <ul class="side-navigation">
+    <li>
+      <a class="logo" href="/">ApplePie</a>
+    </li>
+    <li class="current">
+      <a href="/pages/approach/main.html">
+        <span class="icon-approach"></span>
+        <span class="text">Approach</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/pages/toolkit/getting_started.html">
+        <span class="icon-toolkit"></span>
+        <span class="text">Toolkit</span>
+      </a>
+    </li>
+    <li class="">
+      <a class="faq" href="/pages/faq">
+        <span class="icon-faq"></span>
+        <span class="text">FAQ</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/railsware/applepie" target="_blank">
+        <span class="icon-github"></span>
+        <span class="text">GitHub</span>
+      </a>
+    </li>
+  </ul>
+  
+  
+  <ul class="side-subnavigation">
+    <a href="#" class="subnavigation-toggle"> &rsaquo;</a>
+    <li><a class="" href="/pages/approach/main.html">Main Principles</a></li>
+<li><a class="" href="/pages/approach/styleguide.html">Styleguide</a></li>
+<li><a class="" href="/pages/approach/components.html">Components</a></li>
+<li><a class="" href="/pages/approach/naming.html">Naming Convention</a></li>
+<li><a class="current" href="/pages/approach/file_structure.html">File Sctrucure</a></li>
+
+  </ul>
+  
+  
+  <section class="content">
+    <section class="body">
+      <header class="header">
+  <h1>Approach</h1>
+</header>
+<article class="main">
+  <h1>File structure</h1>
+  <div class="article-content">
+    <h2>General agreements</h2>
+    <p>ApplePie approach comes with pretty well defined file structure and organization rules. These rules are built to provide standard and logical way of
+    organizing reusable modules that are easy to maintain and extend. This file structure originally comes from Ruby on Rails projects, but if fits well
+    for webapps built with or withou any other framework:</p>
+    <pre><code>
+    stylesheets/
+  ├── base/
+  ├── application.sass
+  ├── application/
+  │   ├── layout.sass
+  │   ├── typography.sass
+  │   ├── objects/
+  │   ├── modules/
+  │── shared/
+  └── vendor/</code></pre>
+    <p><strong>base/</strong> folder contains rules that are global to the site and potentially across multiple sites. These includes normalize.css, grids, helpers and some general mixins.
+      In other words it contains a foundation that consists of common styles and unlikely to be changed during development process.</p>
+    <p><strong>application/</strong> is the main folder containing styles of your application. In Rails project it is usually named after layout (e.g. 'application', 'admin', 'landing').
+      If you have multiple layouts in your application that are styled differently (like marketing site, app interface or admin area) it would be good idea to have multiple layout folders
+      containing styles specific to those layouts.</p>
+    <p><strong>shared/</strong> is simply folder that contains styles shared (in case of using identical components) between different layouts.</p>
+    <p><strong>vendor/</strong> folder is obviously for placing third-party vendor styles.</p>
+    <p><strong>application.sass</strong> is layout manifest file that defines which css files should be included to this particular layout. It links together base styles, all of
+    layout specific styles shared and vendor css. The application .sass file will look something like this:</p>
+    <pre><code>
+/*-----------
+/*  BASE
+/*-----------
+@import "base/variables"
+@import "base/reset"
+@import "base/spaces"
+@import "base/grids"
+@import "base/helpers"
+
+/*---------------------
+/*  Application styles
+/*---------------------
+@import "application/layout"
+@import "application/typography"
+
+@import "application/objects/button"
+..........
+@import "application/modules/article"
+..........
+
+/*---------------------
+/*  Shared
+/*---------------------
+@import "shared/stars"
+@import "shared/modals"
+    </code></pre>
+    <p>As follows from above it mostly acts as an aggregator for other files, which themselves import some other sass files, and so on. With a well thought organization,
+    this construct can prove very powerful. Ideally there should be one manifest file and folder of the same name for each layout.</p>
+    <h2>Application folder</h2>
+    <p>Structure of application (layout) folder is pretty straight forward - layout and typography styles are base for all components that are used in this layout.
+      However typography may not differ between multiple layouts, in this case it would be better to put it under <code>shared</code> folder.</p>
+    <p>Application components, each in single file, are divided into two folders <code>objects</code> and <code>modules</code> as follows from the <strong>components</strong> section.
+    Inside this two folders you can structure files depending on project's specificity and team agreements and preferences, or keep it plain just by placing all <em>object</em> files into <em>object</em> folder.</p>
+    <pre><code>
+    application/
+      ├── layout.sass
+      ├── typography.sass
+      ├── objects/
+      |   ├── buttons.sass
+      |   ├── inputs.sass
+      |   └── ..........
+      ├── modules/
+      |   ├── profile.sass
+      |   ├── dashboard.sass
+      |   └── ..........
+      </code></pre>
+      <p>Each object or module is fully described in its own single file, including modifications, states, behavior,
+        so it is easy to find place for styles that define object behaviour if it is placed inside particular blocks.</p>
+  </div>
+</article>
+
+    </section>
+  </section>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('div.component').each(function(){example = new Example(this);});
+      $('pre code').each(function(i, el){ html = codeClean($(el).html()); $(el).html(html) });
+      $('.subnavigation-toggle').click(function(){
+        $('.side-subnavigation, .subnavigation-toggle').toggleClass('expanded')
+      })
+    });
+  </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24307159 = new Ya.Metrika({id:24307159,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24307159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
